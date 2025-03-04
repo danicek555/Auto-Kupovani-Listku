@@ -2,7 +2,9 @@ import puppeteer from "puppeteer";
 import { solveCaptcha } from "./captchaSolver.js"; // mock solver
 import dotenv from "dotenv";
 import open from "open";
-const Jimp = require("jimp");
+import { Jimp } from "jimp";
+import { intToRGBA } from "@jimp/utils";
+import { rgbaToInt } from "@jimp/utils";
 
 dotenv.config();
 
@@ -31,7 +33,7 @@ async function runBot() {
     document.body.style.transform = "scale(1)";
     document.body.style.transformOrigin = "top left";
   });
-  await page.screenshot({ path: "before_cookies.png", fullPage: true });
+  //await page.screenshot({ path: "before_cookies.png", fullPage: true });
 
   const cookieButton = await page.$("#didomi-notice-agree-button");
   if (cookieButton) {
@@ -48,7 +50,7 @@ async function runBot() {
     if (banner) banner.remove();
   });
 
-  await page.screenshot({ path: "after_cookies.png", fullPage: true });
+  await page.screenshot({ path: "1_after_cookies.png", fullPage: true });
   //await open("after_cookies.png");
 
   // CAPTCHA řešení (mock)
@@ -65,7 +67,7 @@ async function runBot() {
       `document.getElementById("g-recaptcha-response").innerHTML="${captchaSolution}";`
     );
 
-    await page.screenshot({ path: "after_captcha.png", fullPage: true });
+    await page.screenshot({ path: "2_after_captcha.png", fullPage: true });
     console.log("CAPTCHA vyřešena (mock).");
 
     const submitButton = await page.$('button[type="submit"]');
@@ -89,7 +91,7 @@ async function runBot() {
   }
 
   // Teď ten kritický krok - klikání na tlačítko "Koupit"
-  console.log("Čekám na tlačítko 'Koupit'...");
+  console.log("Čekám/Hledám na tlačítko 'Koupit'...");
   const buyButton = await page.waitForSelector("a.btn.btn-buy.flex-c", {
     visible: true,
   });
@@ -126,9 +128,9 @@ async function runBot() {
     timeout: 10000,
   });
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  await page.screenshot({ path: "side_with_seats.png", fullPage: true });
-  await open("side_with_seats.png");
-  console.log("jsem na stánce s mapou míst");
+  await page.screenshot({ path: "3_site_with_seats.png", fullPage: true });
+  //await open("3_site_with_seats.png");
+  console.log("Jsem na stánce s mapou míst");
   // await browser.close();
   // Po kliku na Koupit počkej, až se objeví sedadla nebo ceník
   //await page.waitForSelector("#Sektor406", { visible: true, timeout: 10000 });
@@ -151,63 +153,146 @@ async function runBot() {
 
   // Uděláme screenshot celého canvasu
   const canvas = await page.$("#canvas");
-  await canvas.screenshot({ path: "canvas.png" });
+  await canvas.screenshot({ path: "4_canvas.png" });
   console.log("Načetla se mapa a udělal se screenshot");
 
-  // Analyzujeme obrázek (Jimp)
-  const image = await Jimp.read("canvas.png");
+  const image = await Jimp.read("4_canvas.png");
+  // Normalizace barev (body 4)
+  image.contrast(0.3); // Zvýší kontrast
 
   const width = image.bitmap.width;
   const height = image.bitmap.height;
 
-  let freeSpots = [];
+  let clusters = [];
+  let visited = new Set();
+
+  function isFreeSeatColor(r, g, b) {
+    const greenDominates = g > r + 15 && g > b + 15 && g > 50;
+    const redDominates = r > g + 15 && r > b + 15 && r > 50;
+    const blueDominates = b > r + 15 && b > g + 15 && b > 50;
+    const yellowDominates = r > 200 && g > 200 && b < 100;
+
+    return greenDominates || redDominates || blueDominates || yellowDominates;
+  }
+
+  // Hledání shluků barevných bodů (body 3 + 5)
+  function floodFill(x, y, cluster) {
+    const stack = [{ x, y }];
+    while (stack.length > 0) {
+      const { x, y } = stack.pop();
+      if (x < 0 || y < 0 || x >= width || y >= height) continue;
+      const key = `${x},${y}`;
+      if (visited.has(key)) continue;
+
+      const color = image.getPixelColor(x, y);
+      const { r, g, b } = intToRGBA(color);
+      if (!isFreeSeatColor(r, g, b)) continue;
+
+      visited.add(key);
+      cluster.push({ x, y });
+
+      stack.push({ x: x + 1, y }); // Doplněno
+      stack.push({ x: x - 1, y });
+      stack.push({ x, y: y + 1 });
+      stack.push({ x, y: y - 1 });
+    }
+  }
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-      const { r, g, b } = Jimp.intToRGBA(image.getPixelColor(x, y));
-
+      if (visited.has(`${x},${y}`)) continue;
+      const color = image.getPixelColor(x, y);
+      const { r, g, b } = intToRGBA(color);
       if (isFreeSeatColor(r, g, b)) {
-        freeSpots.push({ x, y });
+        let cluster = [];
+        floodFill(x, y, cluster);
+        if (cluster.length >= 10) {
+          // Minimální velikost shluku
+          clusters.push(cluster);
+        }
       }
     }
   }
 
-  function isFreeSeatColor(r, g, b) {
-    return (
-      (g > 150 && r < 100 && b < 100) || // Zelená
-      (r > 150 && g < 100 && b < 100) || // Červená
-      (b > 150 && r < 100 && g < 100) || // Modrá
-      (r > 200 && g > 200 && b < 100) // Žlutá
-    );
-  }
-
-  if (freeSpots.length === 0) {
+  if (clusters.length === 0) {
     console.log("Žádná volná místa nenalezena!");
-    await browser.close();
     return;
   }
 
-  // Klikneme na první volné místo
-  const { x, y } = freeSpots[0];
+  // Najdeme střed prvního shluku (body 5)
+  const firstCluster = clusters[0];
+  const avgX = Math.round(
+    firstCluster.reduce((sum, p) => sum + p.x, 0) / firstCluster.length
+  );
+  const avgY = Math.round(
+    firstCluster.reduce((sum, p) => sum + p.y, 0) / firstCluster.length
+  );
+
   const canvasBox = await canvas.boundingBox();
-  const clickX = canvasBox.x + x;
-  const clickY = canvasBox.y + y;
+  const clickX = canvasBox.x + avgX;
+  const clickY = canvasBox.y + avgY;
+  console.log(`Klikám na absolutní souřadnice: ${clickX}, ${clickY}`);
+
+  await page.screenshot({ path: "before_click.png" });
 
   await page.mouse.click(clickX, clickY);
-  console.log(`Kliknuto na volné místo: ${x}, ${y}`);
 
-  // Po kliknutí se ukáže bublina s detaily místa
-  await page.waitForSelector("#rootPopisMiesta", { visible: true });
+  await page.screenshot({ path: "after_click.png" });
 
-  // Potvrzení místa přes tlačítko "Pokračovat"
-  const continueButton = await page.$(".hladisko-basket-btn.btn-success");
-  if (continueButton) {
-    await continueButton.click();
-    console.log("Potvrzeno, sedadlo přidáno do košíku.");
-  } else {
-    throw new Error("Tlačítko 'Pokračovat' nebylo nalezeno!");
+  await page.screenshot({ path: "5_seat_selected.png", fullPage: true });
+  //await open("5_seat_selected.png");
+  // Debug: vykreslit do obrázku shluky a uložit
+  // Debug: vykreslit do obrázku shluky a uložit
+  for (const cluster of clusters) {
+    for (const { x, y } of cluster) {
+      image.setPixelColor(rgbaToInt(0, 0, 255, 255), x, y); // Modrá značí nalezené místo
+    }
   }
 
+  // Přidání černé tečky do středu prvního shluku (kde jsme klikli)
+  function drawDot(image, x, y, size = 7) {
+    const color = rgbaToInt(255, 0, 0, 255); // Červená
+
+    for (let dx = -Math.floor(size / 2); dx <= Math.floor(size / 2); dx++) {
+      for (let dy = -Math.floor(size / 2); dy <= Math.floor(size / 2); dy++) {
+        const px = x + dx;
+        const py = y + dy;
+
+        if (
+          px >= 0 &&
+          py >= 0 &&
+          px < image.bitmap.width &&
+          py < image.bitmap.height
+        ) {
+          image.setPixelColor(color, px, py);
+        }
+      }
+    }
+  }
+
+  // Vykreslíme černou tečku přímo do toho debug obrázku
+  drawDot(image, avgX, avgY, 7);
+
+  await image.write("6_blue_free_spots.png");
+  console.log("Debug obrázek uložen jako 6_blue_free_spots.png");
+
+  // Tady bys normálně udělal klik:
+  // const canvasBox = await canvas.boundingBox();
+  // const clickX = canvasBox.x + avgX;
+  // const clickY = canvasBox.y + avgY;
+  // await page.mouse.click(clickX, clickY);
+  // A dál podle tvého flow...
+
+  // Hotovo
+
+  // Tady bys normálně udělal klik:
+  // const canvasBox = await canvas.boundingBox();
+  // const clickX = canvasBox.x + avgX;
+  // const clickY = canvasBox.y + avgY;
+  // await page.mouse.click(clickX, clickY);
+  // A dál podle tvého flow...
+
+  // Hotovo
   // Dál můžeš přidat přechod do košíku atd.
 
   //   await page.screenshot({ path: "after_sector.png", fullPage: true });
