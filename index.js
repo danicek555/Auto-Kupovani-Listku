@@ -1,7 +1,6 @@
 import puppeteer from "puppeteer";
 import { solveCaptcha } from "./captchaSolver.js"; // mock solver
 import dotenv from "dotenv";
-import open from "open";
 import { Jimp } from "jimp";
 import { intToRGBA } from "@jimp/utils";
 import { rgbaToInt } from "@jimp/utils";
@@ -149,16 +148,19 @@ async function runBot() {
 
   // Po kliku na "Koupit" čekáme rovnou na sedadla
   // Po kliknutí na "Koupit" čekej na canvas
+  // Čekáme na načtení canvasu
   await page.waitForSelector("#canvas", { visible: true });
-
-  // Uděláme screenshot celého canvasu
   const canvas = await page.$("#canvas");
+
+  // Screenshot canvasu
   await canvas.screenshot({ path: "4_canvas.png" });
   console.log("Načetla se mapa a udělal se screenshot");
 
+  // Načteme do Jimp
   const image = await Jimp.read("4_canvas.png");
-  // Normalizace barev (body 4)
-  image.contrast(0.3); // Zvýší kontrast
+
+  // Zvýšíme kontrast (klidně si uprav podle testování)
+  image.contrast(0.3);
 
   const width = image.bitmap.width;
   const height = image.bitmap.height;
@@ -166,6 +168,7 @@ async function runBot() {
   let clusters = [];
   let visited = new Set();
 
+  // Detekce barev sedadel (tolerantní)
   function isFreeSeatColor(r, g, b) {
     const greenDominates = g > r + 15 && g > b + 15 && g > 50;
     const redDominates = r > g + 15 && r > b + 15 && r > 50;
@@ -175,7 +178,7 @@ async function runBot() {
     return greenDominates || redDominates || blueDominates || yellowDominates;
   }
 
-  // Hledání shluků barevných bodů (body 3 + 5)
+  // Flood fill algoritmus pro hledání shluků
   function floodFill(x, y, cluster) {
     const stack = [{ x, y }];
     while (stack.length > 0) {
@@ -191,13 +194,14 @@ async function runBot() {
       visited.add(key);
       cluster.push({ x, y });
 
-      stack.push({ x: x + 1, y }); // Doplněno
+      stack.push({ x: x + 1, y });
       stack.push({ x: x - 1, y });
       stack.push({ x, y: y + 1 });
       stack.push({ x, y: y - 1 });
     }
   }
 
+  // Najdeme všechny shluky
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
       if (visited.has(`${x},${y}`)) continue;
@@ -219,39 +223,40 @@ async function runBot() {
     return;
   }
 
-  // Najdeme střed prvního shluku (body 5)
-  const firstCluster = clusters[0];
-  const avgX = Math.round(
-    firstCluster.reduce((sum, p) => sum + p.x, 0) / firstCluster.length
-  );
-  const avgY = Math.round(
-    firstCluster.reduce((sum, p) => sum + p.y, 0) / firstCluster.length
-  );
+  // Funkce pro kliknutí na střed shluku + černá tečka
+  async function clickOnCluster(page, canvas, cluster, image) {
+    const avgX = Math.round(
+      cluster.reduce((sum, p) => sum + p.x, 0) / cluster.length
+    );
+    const avgY = Math.round(
+      cluster.reduce((sum, p) => sum + p.y, 0) / cluster.length
+    );
 
-  const canvasBox = await canvas.boundingBox();
-  const clickX = canvasBox.x + avgX;
-  const clickY = canvasBox.y + avgY;
-  console.log(`Klikám na absolutní souřadnice: ${clickX}, ${clickY}`);
+    const canvasBox = await canvas.boundingBox();
+    const clickX = canvasBox.x + avgX;
+    const clickY = canvasBox.y + avgY;
+    console.log(`Klikám na absolutní souřadnice: ${clickX}, ${clickY}`);
 
-  await page.screenshot({ path: "before_click.png" });
+    await page.screenshot({
+      path: `before_click_${clickX}_${clickY}.png`,
+      fullPage: true,
+    });
 
-  await page.mouse.click(clickX, clickY);
+    await page.mouse.click(clickX, clickY);
 
-  await page.screenshot({ path: "after_click.png" });
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    await page.screenshot({
+      path: `after_click_${clickX}_${clickY}.png`,
+      fullPage: true,
+    });
 
-  await page.screenshot({ path: "5_seat_selected.png", fullPage: true });
-  //await open("5_seat_selected.png");
-  // Debug: vykreslit do obrázku shluky a uložit
-  // Debug: vykreslit do obrázku shluky a uložit
-  for (const cluster of clusters) {
-    for (const { x, y } of cluster) {
-      image.setPixelColor(rgbaToInt(0, 0, 255, 255), x, y); // Modrá značí nalezené místo
-    }
+    // Přidáme černou tečku do debug obrázku
+    drawDot(image, avgX, avgY, 7, { r: 0, g: 0, b: 0 }); // černá tečka
   }
 
-  // Přidání černé tečky do středu prvního shluku (kde jsme klikli)
-  function drawDot(image, x, y, size = 7) {
-    const color = rgbaToInt(255, 0, 0, 255); // Červená
+  // Funkce pro vykreslení tečky
+  function drawDot(image, x, y, size = 7, color = { r: 255, g: 0, b: 0 }) {
+    const dotColor = rgbaToInt(color.r, color.g, color.b, 255);
 
     for (let dx = -Math.floor(size / 2); dx <= Math.floor(size / 2); dx++) {
       for (let dy = -Math.floor(size / 2); dy <= Math.floor(size / 2); dy++) {
@@ -264,17 +269,95 @@ async function runBot() {
           px < image.bitmap.width &&
           py < image.bitmap.height
         ) {
-          image.setPixelColor(color, px, py);
+          image.setPixelColor(dotColor, px, py);
         }
       }
     }
   }
 
-  // Vykreslíme černou tečku přímo do toho debug obrázku
-  drawDot(image, avgX, avgY, 7);
+  // Vybarvíme všechny nalezené clustery modře
+  for (const cluster of clusters) {
+    for (const { x, y } of cluster) {
+      image.setPixelColor(rgbaToInt(0, 0, 255, 255), x, y); // Modrá
+    }
+  }
 
-  await image.write("6_blue_free_spots.png");
-  console.log("Debug obrázek uložen jako 6_blue_free_spots.png");
+  // Klikneme na první 4 volné shluky (sedačky vedle sebe)
+  for (let i = 0; i < Math.min(4, clusters.length); i++) {
+    await clickOnCluster(page, canvas, clusters[i], image);
+  }
+
+  // Uložíme finální obrázek s modrými shluky + černými tečkami na kliknutých místech
+  await image.write("5_blue_free_spots.png");
+  console.log("Debug obrázek uložen jako 5_blue_free_spots.png");
+
+  await page.waitForSelector("#hladisko-basket-btn", { visible: true });
+  await page.click("#hladisko-basket-btn");
+  console.log("Kliknuto na tlačítko 'Pokračovat do košíku'.");
+
+  //STRANKA NA ZAPLACENI
+  await page.waitForFunction(() => window.location.href.includes("Basket"));
+  console.log("Stránka 'Basket' načtena.");
+
+  await page.screenshot({ path: "6_Jsem na strance na zaplacení.png" });
+
+  await page.waitForSelector("#optionsRadiosPoistenie2", { visible: true });
+  await page.click("#optionsRadiosPoistenie2");
+  console.log("Zvoleno: Ne, nepotřebuji pojištění.");
+
+  await page.waitForSelector('label[for="pickupTypeOption"]', {
+    visible: true,
+  });
+  const labels = await page.$$('label[for="pickupTypeOption"]'); // Vrátí všechny labely s tímto `for`
+  await labels[1].click(); // 1 = druhý v pořadí (první je eTicket, druhý je MOBIL-ticket)
+  console.log("Kliknuto na label pro MOBIL-ticket.");
+
+  await page.waitForSelector('label[for="pickupTypeOption"]', {
+    visible: true,
+  });
+  await page.click('label[for="pickupTypeOption"]');
+  console.log("Kliknuto na label pro eTicket.");
+
+  // await page.waitForSelector("#pickupTypeOptionContainer_7", { visible: true });
+
+  await page.waitForSelector("#email_pickup_7", { visible: true });
+  await page.type("#email_pickup_7", "listecky007@gmail.com");
+  console.log("Vyplněn email: danmitka@gmail.com");
+
+  await page.waitForSelector('input[name="ht_separe"]', { visible: true });
+  await page.click('input[name="ht_separe"]');
+  console.log("Zaškrtnuto: Zaslat každou vstupenku jako samostatnou přílohu.");
+
+  await page.waitForSelector("#template_payOption_17", { visible: true });
+  await page.click("#template_payOption_17");
+  console.log("Zvolena platba kartou / Google Pay / Apple Pay.");
+
+  await page.waitForSelector("#termsAccept_TicketportalTermsAccept", {
+    visible: true,
+  });
+  await page.click("#termsAccept_TicketportalTermsAccept");
+  console.log(
+    "Zaškrtnuto: Souhlasím s VŠEOBECNÉ A OBCHODNÍ PODMÍNKY A REKLAMAČNÍ ŘÁD."
+  );
+
+  await page.screenshot({
+    path: "7_Vyplnena stranka na zaplaceni.png",
+    fullPage: true,
+  });
+
+  await page.waitForSelector("#basket-btn-zaplatit", { visible: true });
+  await page.click("#basket-btn-zaplatit");
+  console.log("Kliknuto na tlačítko 'Zaplatit'.");
+
+  await page.waitForFunction(() =>
+    window.location.href.includes("Basket#modalEmailOK")
+  );
+  console.log("Stránka s potvrzením emailu načtena.");
+  await page.waitForSelector("#quick-buy-btn-confirm-confirm", {
+    visible: true,
+  });
+  await page.click("#quick-buy-btn-confirm-confirm");
+  console.log("Kliknuto na 'Ano, potvrdit'.");
 
   // Tady bys normálně udělal klik:
   // const canvasBox = await canvas.boundingBox();

@@ -11,13 +11,10 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@jimp/core": "^1.6.0",
-    "@jimp/jpeg": "^0.22.12",
     "@jimp/utils": "^1.6.0",
     "axios": "^1.8.1",
     "dotenv": "^16.4.7",
     "jimp": "^1.6.0",
-    "open": "^10.1.0",
     "proxy-agent": "^6.5.0",
     "puppeteer": "^24.3.0"
   }
