@@ -16,13 +16,13 @@ export async function clickOnCluster(page, canvas, cluster, image) {
   console.log(`Klikám na souřadnice: ${clickX}, ${clickY}`);
 
   await page.screenshot({
-    path: `./clicks/before/before_click_${clickX}_${clickY}.png`,
+    path: `./public/clicks/before/before_click_${clickX}_${clickY}.png`,
     fullPage: true,
   });
   await page.mouse.click(clickX, clickY);
   await sleep(1000);
   await page.screenshot({
-    path: `./clicks/after/after_click_${clickX}_${clickY}.png`,
+    path: `./public/clicks/after/after_click_${clickX}_${clickY}.png`,
     fullPage: true,
   });
 

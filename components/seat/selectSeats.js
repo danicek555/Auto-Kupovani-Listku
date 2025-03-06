@@ -10,15 +10,15 @@ export async function selectSeats(page) {
   await sleep(100); // místo sleep()
 
   await page.screenshot({
-    path: "./screenshots/3_site_with_seats.png",
+    path: "./public/screenshots/3_site_with_seats.png",
     fullPage: true,
   });
-  await canvas.screenshot({ path: "./screenshots/4_canvas.png" });
+  await canvas.screenshot({ path: "./public/screenshots/4_canvas.png" });
 
   console.log("Načetla se mapa a udělal se screenshot");
 
   const { image, clusters } = await detectFreeSeats(
-    "./screenshots/4_canvas.png"
+    "./public/screenshots/4_canvas.png"
   );
 
   if (clusters.length === 0) {
@@ -31,8 +31,10 @@ export async function selectSeats(page) {
     await clickOnCluster(page, canvas, clusters[i], image);
   }
 
-  await image.write("./screenshots/5_blue_free_spots.png");
-  console.log("Debug obrázek uložen jako ./screenshots/5_blue_free_spots.png");
+  await image.write("./public/screenshots/5_blue_free_spots.png");
+  console.log(
+    "Debug obrázek uložen jako ./public/screenshots/5_blue_free_spots.png"
+  );
 
   await page.waitForSelector("#hladisko-basket-btn", { visible: true });
   await page.click("#hladisko-basket-btn");

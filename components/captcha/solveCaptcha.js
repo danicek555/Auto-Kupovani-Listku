@@ -12,7 +12,7 @@ export async function solveCaptcha(page, captchaFrame, url) {
   `);
 
   await page.screenshot({
-    path: "./screenshots/2_after_captcha.png",
+    path: "./public/screenshots/2_after_captcha.png",
     fullPage: true,
   });
   console.log("CAPTCHA vyřešena (mock).");

@@ -1,4 +1,4 @@
-import { sleep } from "../utils/sleep.js";
+import { sleep } from "./sleep.js";
 
 export async function handleCookies(page) {
   const cookieButton = await page.$("#didomi-notice-agree-button");
@@ -17,7 +17,7 @@ export async function handleCookies(page) {
   });
 
   await page.screenshot({
-    path: "./screenshots/1_after_cookies.png",
+    path: "./public/screenshots/1_after_cookies.png",
     fullPage: true,
   });
 }

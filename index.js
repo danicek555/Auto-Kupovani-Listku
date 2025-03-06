@@ -1,12 +1,12 @@
-import { solveCaptcha } from "./components/captchaSolver.js"; // mock solver
+import { solveCaptcha } from "./components/captcha/captchaSolver.js"; // mock solver
 import dotenv from "dotenv";
-import { setupBrowser } from "./components/setupBrowser.js";
-import { handleCookies } from "./components/handleCookies.js";
-import { closePopups } from "./components/closePopUps.js";
-import { sleep } from "./utils/sleep.js";
-import { clickBuyButton } from "./components/clickBuyButton.js";
-import { selectSeats } from "./components/selectSeats.js";
-import { detectFreeSeats } from "./components/seatDetection.js";
+import { setupBrowser } from "./components/browser/setupBrowser.js";
+import { handleCookies } from "./components/utils/handleCookies.js";
+import { closePopups } from "./components/utils/closePopUps.js";
+import { sleep } from "./components/utils/sleep.js";
+import { clickBuyButton } from "./components/action/clickBuyButton.js";
+import { selectSeats } from "./components/seat/selectSeats.js";
+import { detectFreeSeats } from "./components/seat/seatDetection.js";
 dotenv.config();
 
 const TICKET_URL =
@@ -55,7 +55,7 @@ async function runBot() {
   const viewport = await page.viewport();
   console.log(`Aktuální viewport: ${viewport.width}x${viewport.height}`);
   await page.screenshot({
-    path: `./screenshots/6_Jsem na strance na zaplaceni.png`,
+    path: `./public/screenshots/6_Jsem na strance na zaplaceni.png`,
     fullPage: true,
   });
 
@@ -106,7 +106,7 @@ async function runBot() {
   );
 
   await page.screenshot({
-    path: "./screenshots/7_Vyplnena stranka na zaplaceni.png",
+    path: "./public/screenshots/7_Vyplnena stranka na zaplaceni.png",
     fullPage: true,
   });
 
@@ -120,6 +120,10 @@ async function runBot() {
   console.log("Stránka s potvrzením emailu načtena.");
   await page.waitForSelector("#quick-buy-btn-confirm-confirm", {
     visible: true,
+  });
+  await page.screenshot({
+    path: "./public/screenshots/8_Stranka s potvrzením emailu.png",
+    fullPage: true,
   });
   await page.click("#quick-buy-btn-confirm-confirm");
   console.log("Kliknuto na 'Ano, potvrdit'.");
