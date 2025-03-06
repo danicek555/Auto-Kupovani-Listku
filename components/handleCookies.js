@@ -17,7 +17,7 @@ export async function handleCookies(page) {
   });
 
   await page.screenshot({
-    path: "./screenshots/1_after_cookies.png",
+    path: "./screenshots/2_after_cookies.png",
     fullPage: true,
   });
 }

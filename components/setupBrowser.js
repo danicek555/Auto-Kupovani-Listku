@@ -21,7 +21,7 @@ export async function setupBrowser(url) {
     document.body.style.transformOrigin = "top left";
   });
 
-  await page.screenshot({ path: "./screenshots/0_site.png", fullPage: true });
+  await page.screenshot({ path: "./screenshots/1_site.png", fullPage: true });
 
   return { browser, page };
 }
