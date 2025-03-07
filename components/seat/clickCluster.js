@@ -1,4 +1,4 @@
-import drawDot from "../utils/drawDot.js";
+import drawDot from "./drawDot.js";
 import { sleep } from "../utils/sleep.js";
 
 export async function clickOnCluster(page, canvas, cluster, image) {

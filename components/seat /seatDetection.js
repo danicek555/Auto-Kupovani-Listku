@@ -1,6 +1,6 @@
 import { Jimp } from "jimp";
-import floodFill from "./floodFill.js";
-import isFreeSeatColor from "./isFreeSeatColor.js";
+import floodFill from "../seat/floodFill.js";
+import isFreeSeatColor from "../seat/isFreeSeatColor.js";
 import { intToRGBA } from "@jimp/utils";
 import { rgbaToInt } from "@jimp/utils";
 
