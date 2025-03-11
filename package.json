@@ -17,5 +17,9 @@
     "jimp": "^1.6.0",
     "proxy-agent": "^6.5.0",
     "puppeteer": "^24.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "globals": "^16.0.0"
   }
 }
