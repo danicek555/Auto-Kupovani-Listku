@@ -17,13 +17,14 @@ import { submitPayment } from "./components/action/submitPayment.js";
 import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
 dotenv.config();
 const TICKET_URL =
-  process.env.TICKET_URL || console.log("Nezadal jsi EMAIL do .env!!!");
+  process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
+
 async function runBot() {
   const { browser, page } = await setupBrowser(TICKET_URL);
 
   await handleCookies(page);
 
-  // CAPTCHA řešení
+  //* CAPTCHA řešení
   const captchaFrame = page
     .frames()
     .find((frame) => frame.url().includes("recaptcha"));
@@ -37,7 +38,7 @@ async function runBot() {
 
   await selectSeats(page);
 
-  //STRANKA NA ZAPLACENI
+  //* STRANKA NA ZAPLACENI
   await waitForPaymentPage(page);
   await selectInsurance(page);
   await selectTicketType(page);
@@ -49,3 +50,10 @@ async function runBot() {
 }
 
 runBot().catch(console.error);
+
+//TODO: Sektory, informace o listkach, opakovani celeho programu, jaky je maximalni pocet requestu na ticket portal at to nepretizim?,
+//? co captcha a recaptcha? Co to dela a potrebuju to do meho programu? Jak ticket portal blokuje boty?
+//TODO: optimalizace celeho kodu aby byl RYCHLEJŠÍ!!!
+//** husty */
+//! co musim udealt
+//// tohle uz ne

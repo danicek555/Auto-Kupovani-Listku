@@ -1,13 +1,14 @@
 import { detectFreeSeats } from "./seatDetection.js";
 import { clickOnCluster } from "./clickCluster.js";
 import { sleep } from "../utils/sleep.js";
+import { extractNumbersFromImage } from "../utils/extractNumbers.js";
 
 export async function selectSeats(page) {
   console.log("Čekám na načtení canvasu...");
   await page.waitForSelector("#canvas", { visible: true });
 
   const canvas = await page.$("#canvas");
-  await sleep(100); // místo sleep()
+  await sleep(2000); // místo sleep()
 
   await page.screenshot({
     path: "./public/screenshots/3_site_with_seats.png",
@@ -16,6 +17,10 @@ export async function selectSeats(page) {
   await canvas.screenshot({ path: "./public/screenshots/4_canvas.png" });
 
   console.log("Načetla se mapa a udělal se screenshot");
+  // Příklad použití
+  await extractNumbersFromImage("./public/screenshots/4_canvas.png")
+    .then((numbers) => console.log("Výstup OCR:", numbers))
+    .catch((err) => console.error("Chyba při OCR:", err));
 
   const { image, clusters } = await detectFreeSeats(
     "./public/screenshots/4_canvas.png"
