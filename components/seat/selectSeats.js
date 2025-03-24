@@ -2,7 +2,14 @@ import { detectFreeSeats } from "./seatDetection.js";
 import { clickOnCluster } from "./clickCluster.js";
 import { sleep } from "../utils/sleep.js";
 import { extractNumbersFromImage } from "../utils/extractNumbers.js";
-
+import { selectSections } from "../section/section.js";
+import { clickOnSection } from "../section/clickOnSection.js";
+import { clickPlusButtonFiveTimes } from "../section/clickPlusButton.js";
+import { getMAll } from "../pokus/mAll.js";
+import { getM } from "../pokus/mAll.js";
+import { getSAll } from "../pokus/mAll.js";
+import { mergeData } from "../pokus/mergeM.js";
+import { mergeSectorData } from "../pokus/mergeM.js";
 export async function selectSeats(page) {
   console.log("Čekám na načtení canvasu...");
   await page.waitForSelector("#canvas", { visible: true });
@@ -17,11 +24,36 @@ export async function selectSeats(page) {
   await canvas.screenshot({ path: "./public/screenshots/4_canvas.png" });
 
   console.log("Načetla se mapa a udělal se screenshot");
-  // Příklad použití
-  await extractNumbersFromImage("./public/screenshots/4_canvas.png")
-    .then((numbers) => console.log("Výstup OCR:", numbers))
-    .catch((err) => console.error("Chyba při OCR:", err));
 
+  // await extractNumbersFromImage("./public/screenshots/4_canvas.png")
+  //   .then(async (numbers) => {
+  //     console.log("Výstup OCR:", numbers);
+
+  //     // Převod na čísla a filtrování platných hodnot (1 až 500)
+  //     const validNumbers = numbers
+  //       .map((num) => parseInt(num, 10)) // Převede řetězce na čísla
+  //       .filter((num) => !isNaN(num) && num > 100 && num <= 500); // Filtruje jen čísla v rozmezí 1-500
+
+  //     console.log("Validní čísla:", validNumbers); // Debugging
+
+  //     if (validNumbers.some((num) => num > 100 && num < 500)) {
+  //       console.log("Jsou tam sekce!");
+  //       await selectSections(page);
+  //     } else {
+  //       console.log("Nebyly nalezeny sekce!");
+  //     }
+  //   })
+  //   .catch((err) => console.error("Chyba při OCR:", err));
+
+  // await clickOnSection(page, "999");
+  // await clickPlusButtonFiveTimes(page);
+  await getMAll(page);
+  await getM(page);
+  await getSAll(page);
+  await mergeData();
+  await mergeSectorData();
+
+  console.log("Detekuji volná místa");
   const { image, clusters } = await detectFreeSeats(
     "./public/screenshots/4_canvas.png"
   );
