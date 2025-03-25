@@ -10,6 +10,9 @@ import { getM } from "../pokus/mAll.js";
 import { getSAll } from "../pokus/mAll.js";
 import { mergeData } from "../pokus/mergeM.js";
 import { mergeSectorData } from "../pokus/mergeM.js";
+import { appendPricesFromPriceCategories } from "../pokus/mergeM.js";
+import { getGPerformance } from "../pokus/mAll.js";
+import { seatClick } from "../pokus/seatClick.js";
 export async function selectSeats(page) {
   console.log("Čekám na načtení canvasu...");
   await page.waitForSelector("#canvas", { visible: true });
@@ -50,28 +53,31 @@ export async function selectSeats(page) {
   await getMAll(page);
   await getM(page);
   await getSAll(page);
+  await getGPerformance(page);
   await mergeData();
   await mergeSectorData();
+  await appendPricesFromPriceCategories();
+  await seatClick(page);
 
-  console.log("Detekuji volná místa");
-  const { image, clusters } = await detectFreeSeats(
-    "./public/screenshots/4_canvas.png"
-  );
+  // console.log("Detekuji volná místa");
+  // const { image, clusters } = await detectFreeSeats(
+  //   "./public/screenshots/4_canvas.png"
+  // );
 
-  if (clusters.length === 0) {
-    console.log("Žádná volná místa nenalezena!");
-    return;
-  }
+  // if (clusters.length === 0) {
+  //   console.log("Žádná volná místa nenalezena!");
+  //   return;
+  // }
 
-  // Kliknutí na první 4 volná místa
-  for (let i = 0; i < Math.min(4, clusters.length); i++) {
-    await clickOnCluster(page, canvas, clusters[i], image);
-  }
+  // // Kliknutí na první 4 volná místa
+  // for (let i = 0; i < Math.min(4, clusters.length); i++) {
+  //   await clickOnCluster(page, canvas, clusters[i], image);
+  // }
 
-  await image.write("./public/screenshots/5_blue_free_spots.png");
-  console.log(
-    "Debug obrázek uložen jako ./public/screenshots/5_blue_free_spots.png"
-  );
+  // await image.write("./public/screenshots/5_blue_free_spots.png");
+  // console.log(
+  //   "Debug obrázek uložen jako ./public/screenshots/5_blue_free_spots.png"
+  // );
 
   await page.waitForSelector("#hladisko-basket-btn", { visible: true });
   await page.click("#hladisko-basket-btn");

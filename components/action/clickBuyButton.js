@@ -1,24 +1,34 @@
 export async function clickBuyButton(page) {
-  console.log("Čekám/Hledám tlačítko 'Koupit'...");
-  const buyButton = await page.waitForSelector("a.btn.btn-buy.flex-c", {
-    visible: true,
-  });
+  const start = Date.now();
+  console.log("🔁 Začínám rychlý polling tlačítka 'Koupit'...");
 
-  await buyButton.evaluate((el) =>
-    el.scrollIntoView({ behavior: "smooth", block: "center" })
-  );
+  const maxTime = 2000; // max čekání (ms)
+  const interval = 10; // interval mezi pokusy (ms)
 
-  try {
-    await buyButton.click();
-    console.log("Kliknutí na 'Koupit' proběhlo (standardní click).");
-  } catch (err) {
-    console.warn(
-      "Klasické kliknutí selhalo, zkouším hard click přes evaluate..."
-    );
-    await page.evaluate(() => {
-      const button = document.querySelector("a.btn.btn-buy.flex-c");
-      if (button) button.click();
+  let clicked = false;
+
+  while (Date.now() - start < maxTime) {
+    clicked = await page.evaluate(() => {
+      const btn = document.querySelector("a.btn.btn-buy.flex-c");
+      if (btn) {
+        btn.click();
+        return true;
+      }
+      return false;
     });
-    console.log("Kliknutí na 'Koupit' proběhlo (hard click).");
+
+    if (clicked) {
+      const duration = Date.now() - start;
+      console.log(`✅ Kliknutí proběhlo za ${duration} ms.`);
+      return duration;
+    }
+
+    await new Promise((r) => setTimeout(r, interval));
   }
+
+  const total = Date.now() - start;
+  console.warn(
+    `❌ Tlačítko se neobjevilo do ${maxTime} ms. Čekal jsem ${total} ms.`
+  );
+  return null;
 }

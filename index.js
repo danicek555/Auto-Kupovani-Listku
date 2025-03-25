@@ -20,19 +20,24 @@ const TICKET_URL =
   process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
 
 async function runBot() {
-  const { browser, page } = await setupBrowser(TICKET_URL);
+  const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
 
-  await handleCookies(page);
+  //await handleCookies(page);
 
   //* CAPTCHA řešení
-  const captchaFrame = page
-    .frames()
-    .find((frame) => frame.url().includes("recaptcha"));
-  if (captchaFrame) {
-    await solveCaptcha(page, captchaFrame, TICKET_URL);
-  }
-
-  await closePopups(page);
+  // const captchaFrame = page
+  //   .frames()
+  //   .find((frame) => frame.url().includes("recaptcha"));
+  // if (captchaFrame) {
+  //   await solveCaptcha(page, captchaFrame, TICKET_URL);
+  // }
+  // const usesRecaptcha = await page.evaluate(
+  //   () => !!document.querySelector("script[src*='recaptcha']")
+  // );
+  // if (usesRecaptcha) {
+  //   console.log("✅ Stránka používá Google reCAPTCHA.");
+  // } //TODO: musim v budoucnu udelat captcha solver
+  // await closePopups(page);
 
   await clickBuyButton(page);
 

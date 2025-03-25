@@ -27,9 +27,11 @@ export async function mergeData() {
     });
 
     fs.writeFileSync("merged_data.json", JSON.stringify(mAll, null, 2));
-    console.log("Data byla úspěšně spojena a uložena do merged_data.json");
+    console.log(
+      "✅ m_all a m data byla úspěšně spojena a uložena do merged_data.json"
+    );
   } catch (error) {
-    console.error("Chyba při spojování dat:", error);
+    console.error("❌ Chyba při spojování dat:", error);
   }
 }
 
@@ -51,9 +53,43 @@ export async function mergeSectorData() {
     );
 
     console.log(
-      "✅ Hotovo! Výsledky jsou v merged_data_with_sector_labels.json"
+      "✅ s_all byly přidány na konec každého záznamu → merged_data_with_sector_labels.json"
     );
   } catch (err) {
     console.error("❌ Chyba při zpracování:", err);
+  }
+}
+
+export async function appendPricesFromPriceCategories() {
+  try {
+    const data = JSON.parse(
+      fs.readFileSync("merged_data_with_sector_labels.json", "utf-8")
+    );
+    const performance = JSON.parse(
+      fs.readFileSync("g_performance_data.json", "utf-8")
+    );
+
+    const priceCategories = performance.PriceCategories;
+
+    Object.keys(data).forEach((key) => {
+      const record = data[key];
+      const priceCategoryId = record[3]; // 3. index je ID kategorie
+
+      const category = priceCategories[priceCategoryId];
+      const price = category?.Price ?? null;
+
+      record.push(price); // přidáme cenu na konec
+    });
+
+    fs.writeFileSync(
+      "merged_data_with_prices.json",
+      JSON.stringify(data, null, 2)
+    );
+
+    console.log(
+      "✅ g.performance.PriceCategories byly přidány na konec každého záznamu → merged_data_with_prices.json"
+    );
+  } catch (err) {
+    console.error("❌ Chyba při zpracování cen:", err);
   }
 }

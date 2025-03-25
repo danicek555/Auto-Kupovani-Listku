@@ -1,7 +1,7 @@
 import fs from "fs";
 
 export async function getMAll(page) {
-  console.time("getMAll execution time");
+  console.time("m_all execution time");
 
   await page.waitForFunction('typeof m_all !== "undefined"');
 
@@ -22,11 +22,11 @@ export async function getMAll(page) {
     console.log("Stránka byla znovu načtena.");
   }
 
-  console.timeEnd("getMAll execution time");
+  console.timeEnd("m_all execution time");
 }
 
 export async function getM(page) {
-  console.time("getM execution time");
+  console.time("m execution time");
 
   await page.waitForFunction('typeof m !== "undefined"');
 
@@ -47,7 +47,7 @@ export async function getM(page) {
     console.log("Stránka byla znovu načtena.");
   }
 
-  console.timeEnd("getM execution time");
+  console.timeEnd("m execution time");
 }
 export async function getSAll(page) {
   console.time("s_all execution time");
@@ -73,6 +73,31 @@ export async function getSAll(page) {
 
   console.timeEnd("s_all execution time");
 }
+export async function getGPerformance(page) {
+  console.time("GPerformance execution time");
+
+  await page.waitForFunction('typeof g_performance !== "undefined"');
+
+  try {
+    const data = await page.evaluate(() => {
+      const obj = {};
+      Object.keys(window.g_performance).forEach((key) => {
+        obj[key] = window.g_performance[key];
+      });
+      return obj;
+    });
+
+    fs.writeFileSync("g_performance_data.json", JSON.stringify(data));
+    console.log("Data byla úspěšně uložena do souboru g_performance_data.json");
+  } catch (error) {
+    console.error("Evaluate failed:", error);
+    await page.reload({ waitUntil: "networkidle0" });
+    console.log("Stránka byla znovu načtena.");
+  }
+
+  console.timeEnd("GPerformance execution time");
+}
+
 // let allData = []; // Vytvoříme pole pro uchování dat
 
 // export async function getMAll(page) {
