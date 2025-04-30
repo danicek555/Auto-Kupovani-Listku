@@ -17,6 +17,7 @@
     "@jimp/utils": "^1.6.0",
     "axios": "^1.8.1",
     "dotenv": "^16.4.7",
+    "fs-extra": "^11.3.0",
     "jimp": "^1.6.0",
     "proxy-agent": "^6.5.0",
     "puppeteer": "^24.3.0",

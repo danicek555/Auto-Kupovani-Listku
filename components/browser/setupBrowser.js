@@ -29,14 +29,18 @@
 //   return { browser, page };
 // }
 import puppeteer from "puppeteer";
+import fs from "fs-extra";
+
+await fs.remove("./tmp");
 
 export async function setupBrowser(url) {
   const totalStart = Date.now();
 
   const launchStart = Date.now();
   const browser = await puppeteer.launch({
-    headless: "new", // změň na false pokud chceš okno
+    headless: process.env.BROWSER === "ano" ? false : true, // změň na false pokud chceš okno, pokud bez na "new" nebo na True, ale lepší je na "new" - tedka mi to treba nejde
     defaultViewport: null,
+    userDataDir: "./tmp", // čistý profil
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -60,22 +64,26 @@ export async function setupBrowser(url) {
   const page = await browser.newPage();
 
   const interceptionStart = Date.now();
-  await page.setRequestInterception(true);
-  page.on("request", (req) => {
-    const resource = req.resourceType();
-    if (["image", "stylesheet", "font", "media"].includes(resource)) {
-      req.abort();
-    } else {
-      req.continue();
-    }
-  });
+  if (process.env.STYLY === "ne") {
+    await page.setRequestInterception(true);
+    page.on("request", (req) => {
+      const resource = req.resourceType();
+      if (
+        ["image", "stylesheet", "font", "media", "other"].includes(resource)
+      ) {
+        req.abort();
+      } else {
+        req.continue();
+      }
+    });
+  }
   console.log(
     `⚙️ Nastavení blokace zdrojů: ${Date.now() - interceptionStart} ms`
   );
 
   const userAgentStart = Date.now();
   await page.setUserAgent(
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
   );
   console.log(`🧭 Nastavení user agentu: ${Date.now() - userAgentStart} ms`);
 
@@ -91,26 +99,18 @@ export async function setupBrowser(url) {
   });
   console.log(`📐 Nastavení viewportu: ${Date.now() - viewportStart} ms`);
 
-  const transformStart = Date.now();
-  await page.evaluate(() => {
-    document.body.style.transform = "scale(1)";
-    document.body.style.transformOrigin = "top left";
-  });
-  console.log(
-    `🔧 Transformace těla stránky: ${Date.now() - transformStart} ms`
-  );
-
-  const screenshotStart = Date.now();
-  await page.screenshot({
-    path: "./public/screenshots/0_site.png",
-    fullPage: false,
-  });
-  console.log(`📸 Screenshot: ${Date.now() - screenshotStart} ms`);
+  if (process.env.SCREENSHOTS === "ano") {
+    const screenshotStart = Date.now();
+    await page.screenshot({
+      path: "./public/screenshots/0_site.png",
+      fullPage: false,
+    });
+    console.log(`📸 Screenshot: ${Date.now() - screenshotStart} ms`);
+  }
 
   console.log(`⏱️ Celkový čas setupu: ${Date.now() - totalStart} ms`);
 
   return { browser, page };
 }
-//TODO: změnit na false pokud chceš vidět jak to všechno probíhá
+//! změnit na false pokud chceš vidět jak to všechno probíhá
 //TODO: že by google chrome by lpořád zapnutý a ty by jsi jen otevíral stránky a pracoval s nimi??
-//TODO: screenshot by měl být vypnutý
