@@ -13,8 +13,8 @@ import { submitPayment } from "./components/action/submitPayment.js";
 import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
 
 dotenv.config();
-const TICKET_URL =
-  process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
+const TICKET_URL = process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
+
 
 async function runBot() {
   const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
@@ -22,6 +22,7 @@ async function runBot() {
   //await handleCookies(page);
 
   //* CAPTCHA řešení
+
   // const captchaFrame = page
   //   .frames()
   //   .find((frame) => frame.url().includes("recaptcha"));
@@ -35,6 +36,7 @@ async function runBot() {
   //   console.log("✅ Stránka používá Google reCAPTCHA.");
   // } //TODO: musim v budoucnu udelat captcha solver
   // await closePopups(page);
+
 
   await clickBuyButton(page);
   await selectSeats(page);

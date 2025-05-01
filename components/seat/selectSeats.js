@@ -1,10 +1,5 @@
-import { detectFreeSeats } from "./seatDetection.js";
 import { clickOnCluster } from "./clickCluster.js";
 import { sleep } from "../utils/sleep.js";
-import { extractNumbersFromImage } from "../utils/extractNumbers.js";
-import { selectSections } from "../section/section.js";
-import { clickOnSection } from "../section/clickOnSection.js";
-import { clickPlusButtonFiveTimes } from "../section/clickPlusButton.js";
 import { getMAll } from "../pokus/mAll.js";
 import { getM } from "../pokus/mAll.js";
 import { getSAll } from "../pokus/mAll.js";
@@ -15,7 +10,11 @@ import { getGPerformance } from "../pokus/mAll.js";
 import { seatClick } from "../pokus/seatClick.js";
 export async function selectSeats(page) {
   console.log("Čekám na načtení canvasu...");
-  await page.waitForSelector("#canvas", { visible: true });
+  await page.waitForSelector("#canvas", { visible: true, timeout: 5000 });
+  await page.waitForFunction(() => {
+    const canvas = document.querySelector("#canvas");
+    return canvas && canvas.width > 0 && canvas.height > 0;
+  });
 
   const canvas = await page.$("#canvas");
   await sleep(2000); // místo sleep()
@@ -79,7 +78,15 @@ export async function selectSeats(page) {
   //   "Debug obrázek uložen jako ./public/screenshots/5_blue_free_spots.png"
   // );
 
-  await page.waitForSelector("#hladisko-basket-btn", { visible: true });
+  // Click seats quickly
+  for (let i = 0; i < Math.min(4, clusters.length); i++) {
+    await clickOnCluster(page, canvas, clusters[i], image);
+    await sleep(500);
+  }
+
+  await page.waitForSelector("#hladisko-basket-btn", {
+    visible: true,
+    timeout: 5000,
+  });
   await page.click("#hladisko-basket-btn");
-  console.log("Kliknuto na tlačítko 'Pokračovat do košíku'.");
 }

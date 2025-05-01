@@ -22,5 +22,6 @@
     "proxy-agent": "^6.5.0",
     "puppeteer": "^24.3.0",
     "tesseract.js": "^6.0.0"
+
   }
 }
