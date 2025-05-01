@@ -1,13 +1,12 @@
-import { clickOnCluster } from "./clickCluster.js";
 import { sleep } from "../utils/sleep.js";
-import { getMAll } from "../pokus/mAll.js";
-import { getM } from "../pokus/mAll.js";
-import { getSAll } from "../pokus/mAll.js";
-import { mergeData } from "../pokus/mergeM.js";
-import { mergeSectorData } from "../pokus/mergeM.js";
-import { appendPricesFromPriceCategories } from "../pokus/mergeM.js";
-import { getGPerformance } from "../pokus/mAll.js";
-import { seatClick } from "../pokus/seatClick.js";
+import { getMAll } from "../getSeatData/mAll.js";
+import { getM } from "../getSeatData/mAll.js";
+import { getSAll } from "../getSeatData/mAll.js";
+import { mergeData } from "../getSeatData/mergeM.js";
+import { mergeSectorData } from "../getSeatData/mergeM.js";
+import { appendPricesFromPriceCategories } from "../getSeatData/mergeM.js";
+import { getGPerformance } from "../getSeatData/mAll.js";
+import { seatClick } from "../getSeatData/seatClick.js";
 export async function selectSeats(page) {
   console.log("Čekám na načtení canvasu...");
   await page.waitForSelector("#canvas", { visible: true, timeout: 5000 });
@@ -79,14 +78,14 @@ export async function selectSeats(page) {
   // );
 
   // Click seats quickly
-  for (let i = 0; i < Math.min(4, clusters.length); i++) {
-    await clickOnCluster(page, canvas, clusters[i], image);
-    await sleep(500);
-  }
+  // for (let i = 0; i < Math.min(4, clusters.length); i++) {
+  //   await clickOnCluster(page, canvas, clusters[i], image);
+  //   await sleep(500);
+  // }
 
-  await page.waitForSelector("#hladisko-basket-btn", {
-    visible: true,
-    timeout: 5000,
-  });
-  await page.click("#hladisko-basket-btn");
+  // await page.waitForSelector("#hladisko-basket-btn", {
+  //   visible: true,
+  //   timeout: 5000,
+  // });
+  // await page.click("#hladisko-basket-btn");
 }
