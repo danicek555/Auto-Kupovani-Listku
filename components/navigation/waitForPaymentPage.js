@@ -12,10 +12,6 @@ export async function waitForPaymentPage(page) {
   console.log(`Aktuální viewport: ${viewport.width}x${viewport.height}`);
 
   await page.screenshot({
-<<<<<<< HEAD
-    path: `./screenshots/6_Jsem na strance na zaplaceni.png`,
-=======
     path: `./public/screenshots/6_Jsem na strance na zaplaceni.png`,
->>>>>>> zkouskaCisel
   });
 }
