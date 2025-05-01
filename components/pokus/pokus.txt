@@ -1,0 +1,9 @@
+m - stav sedadla 
+m_all - vsechny sedadla
+
+1) Z m zjisti volne sedadla, vytahni 
+2) Pomoci m_all dostat object celeho mista s id sedala z m
+3) Pomoci funkce OnSeat_click(m_all[136051241]) pridat sedadlo do basketu
+
+SektorPocetVolnych ukaze sektory a kolik je tam volnych mist
+s_all vsechny sektory
