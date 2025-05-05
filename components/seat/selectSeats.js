@@ -1,11 +1,11 @@
 import { sleep } from "../utils/sleep.js";
-import { getMAll } from "../getSeatData/mAll.js";
-import { getM } from "../getSeatData/mAll.js";
-import { getSAll } from "../getSeatData/mAll.js";
-import { mergeData } from "../getSeatData/mergeM.js";
-import { mergeSectorData } from "../getSeatData/mergeM.js";
-import { appendPricesFromPriceCategories } from "../getSeatData/mergeM.js";
-import { getGPerformance } from "../getSeatData/mAll.js";
+import { getMAll } from "../getSeatData/getMALL.js";
+import { getM } from "../getSeatData/getM.js";
+import { getSAll } from "../getSeatData/getSALL.js";
+import { mergeData } from "../getSeatData/mergeData.js";
+import { mergeSectorData } from "../getSeatData/mergeSectorData.js";
+import { appendPricesFromPriceCategories } from "../getSeatData/appendPricesFromPriceCategories.js";
+import { getGPerformance } from "../getSeatData/getGPerformance.js";
 import { seatClick } from "../getSeatData/seatClick.js";
 export async function selectSeats(page) {
   console.log("Čekám na načtení canvasu...");
@@ -18,13 +18,15 @@ export async function selectSeats(page) {
   const canvas = await page.$("#canvas");
   await sleep(2000); // místo sleep()
 
-  await page.screenshot({
-    path: "./public/screenshots/3_site_with_seats.png",
-    fullPage: true,
-  });
-  await canvas.screenshot({ path: "./public/screenshots/4_canvas.png" });
+  if (process.env.SCREENSHOT_ENABLED === "true") {
+    await page.screenshot({
+      path: "./public/screenshots/3_site_with_seats.png",
+      fullPage: true,
+    });
+    await canvas.screenshot({ path: "./public/screenshots/4_canvas.png" });
+  }
 
-  console.log("Načetla se mapa a udělal se screenshot");
+  console.log("Načetla se mapa, musel jsem čekat 2 sekundy");
 
   // await extractNumbersFromImage("./public/screenshots/4_canvas.png")
   //   .then(async (numbers) => {

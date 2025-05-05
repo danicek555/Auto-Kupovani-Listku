@@ -1,7 +1,7 @@
 import { Jimp } from "jimp";
 import { intToRGBA } from "@jimp/utils";
 import { rgbaToInt } from "@jimp/utils";
-import { sleep } from "../utils/sleep.js";
+import { sleep } from "../../utils/sleep.js";
 
 function isSectionColor(r, g, b) {
   // First check if it's not a white/light background
