@@ -3,3 +3,7 @@
 //? Co dalsiho musim opatrit aby kod byl safe?
 //TODO: optimalizace celeho kodu aby byl RYCHLEJŠÍ!!!
 //DOKONCIT BOTA
+//udelat vsude CONSOLELOGS a EXECUTIONTIME
+//udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
+//dodelat vsude screenshots - hlavne je zase naprogramovat vsude
+//zmenit v env veci na false nebo true (ne na ano nebo ne)

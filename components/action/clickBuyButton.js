@@ -1,9 +1,15 @@
 export async function clickBuyButton(page) {
-  const start = Date.now();
-  console.log("🔁 Začínám rychlý polling tlačítka 'Koupit'...");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("⏱️ Kliknutí na tlačítko 'Koupit'");
+  }
+
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.log("🔁 Začínám rychlý polling tlačítka 'Koupit'...");
+  }
 
   const maxTime = 2000; // max čekání (ms)
   const interval = 10; // interval mezi pokusy (ms)
+  const start = Date.now();
 
   let clicked = false;
 
@@ -18,17 +24,17 @@ export async function clickBuyButton(page) {
     });
 
     if (clicked) {
-      const duration = Date.now() - start;
-      console.log(`✅ Kliknutí proběhlo za ${duration} ms.`);
-      return duration;
+      if (process.env.EXECUTION_TIME === "true") {
+        console.timeEnd("⏱️ Kliknutí na tlačítko 'Koupit'");
+      }
+      return true;
     }
 
     await new Promise((r) => setTimeout(r, interval));
   }
 
-  const total = Date.now() - start;
-  console.warn(
-    `❌ Tlačítko se neobjevilo do ${maxTime} ms. Čekal jsem ${total} ms.`
-  );
-  return null;
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.warn(`❌ Tlačítko Buy Button se neobjevilo.`);
+  }
+  return false;
 }
