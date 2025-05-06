@@ -1,7 +1,9 @@
 import fs from "fs";
 
 export async function getGPerformance(page) {
-  console.time("GPerformance execution time");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("GPerformance execution time");
+  }
 
   await page.waitForFunction('typeof g_performance !== "undefined"');
 
@@ -18,12 +20,21 @@ export async function getGPerformance(page) {
       "public/data/g_performance_data.json",
       JSON.stringify(data)
     );
-    console.log("Data byla úspěšně uložena do souboru g_performance_data.json");
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log(
+        "Data byla úspěšně uložena do souboru g_performance_data.json"
+      );
+    }
   } catch (error) {
-    console.error("Evaluate failed:", error);
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.error("Evaluate failed:", error);
+    }
     await page.reload({ waitUntil: "networkidle0" });
-    console.log("Stránka byla znovu načtena.");
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("Stránka byla znovu načtena.");
+    }
   }
-
-  console.timeEnd("GPerformance execution time");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("GPerformance execution time");
+  }
 }

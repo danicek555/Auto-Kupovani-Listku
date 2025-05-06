@@ -1,6 +1,10 @@
 import fs from "fs";
 
 export async function mergeData() {
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("mergeData execution time");
+  }
+
   try {
     const mAll = JSON.parse(
       fs.readFileSync("public/data/m_all_data.json", "utf-8")
@@ -32,10 +36,17 @@ export async function mergeData() {
       "public/data/merged_data.json",
       JSON.stringify(mAll, null, 2)
     );
-    console.log(
-      "✅ m_all a m data byla úspěšně spojena a uložena do merged_data.json"
-    );
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log(
+        "✅ m_all a m data byla úspěšně spojena a uložena do merged_data.json"
+      );
+    }
   } catch (error) {
-    console.error("❌ Chyba při spojování dat:", error);
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.error("❌ Chyba při spojování dat:", error);
+    }
+  }
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("mergeData execution time");
   }
 }

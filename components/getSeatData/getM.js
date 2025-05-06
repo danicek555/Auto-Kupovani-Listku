@@ -1,7 +1,9 @@
 import fs from "fs";
 
 export async function getM(page) {
-  console.time("m execution time");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("m execution time");
+  }
 
   await page.waitForFunction('typeof m !== "undefined"');
 
@@ -15,12 +17,19 @@ export async function getM(page) {
     });
 
     fs.writeFileSync("public/data/m_data.json", JSON.stringify(data));
-    console.log("Data byla úspěšně uložena do souboru m_data.json");
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("Data byla úspěšně uložena do souboru m_data.json");
+    }
   } catch (error) {
-    console.error("Evaluate failed:", error);
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.error("Evaluate failed:", error);
+    }
     await page.reload({ waitUntil: "networkidle0" });
-    console.log("Stránka byla znovu načtena.");
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("Stránka byla znovu načtena.");
+    }
   }
-
-  console.timeEnd("m execution time");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("m execution time");
+  }
 }

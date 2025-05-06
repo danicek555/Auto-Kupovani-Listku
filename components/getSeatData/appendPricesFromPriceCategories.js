@@ -1,6 +1,10 @@
 import fs from "fs";
 
 export async function appendPricesFromPriceCategories() {
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("appendPricesFromPriceCategories execution time");
+  }
+
   try {
     const data = JSON.parse(
       fs.readFileSync(
@@ -29,10 +33,17 @@ export async function appendPricesFromPriceCategories() {
       JSON.stringify(data, null, 2)
     );
 
-    console.log(
-      "✅ g.performance.PriceCategories byly přidány na konec každého záznamu → merged_data_with_prices.json"
-    );
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log(
+        "✅ g.performance.PriceCategories byly přidány na konec každého záznamu → merged_data_with_prices.json"
+      );
+    }
   } catch (err) {
-    console.error("❌ Chyba při zpracování cen:", err);
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.error("❌ Chyba při zpracování cen:", err);
+    }
+  }
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("appendPricesFromPriceCategories execution time");
   }
 }

@@ -11,10 +11,10 @@ import { acceptTerms } from "./components/formFilling/acceptTerms.js";
 import { choosePayment } from "./components/formFilling/choosePayment.js";
 import { submitPayment } from "./components/action/submitPayment.js";
 import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
-
+import { clickBasketButton } from "./components/navigation/clickBasketButton.js";
 dotenv.config();
-const TICKET_URL = process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
-
+const TICKET_URL =
+  process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
 
 async function runBot() {
   const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
@@ -37,12 +37,12 @@ async function runBot() {
   // } //TODO: musim v budoucnu udelat captcha solver
   // await closePopups(page);
 
-
   await clickBuyButton(page);
   await selectSeats(page);
 
   //* STRANKA NA ZAPLACENI
-  await waitForPaymentPage(page);
+  await clickBasketButton(page);
+  //await waitForPaymentPage(page);
   await selectInsurance(page);
   await selectTicketType(page);
   await fillEmail(page);
@@ -54,9 +54,6 @@ async function runBot() {
 
 runBot().catch(console.error);
 
-//TODO: Sektory, informace o listkach, opakovani celeho programu, jaky je maximalni pocet requestu na ticket portal at to nepretizim?,
-//? co captcha a recaptcha? Co to dela a potrebuju to do meho programu? Jak ticket portal blokuje boty?
-//TODO: optimalizace celeho kodu aby byl RYCHLEJŠÍ!!!
 //** husty */
 //! co musim udealt
 //// tohle uz ne

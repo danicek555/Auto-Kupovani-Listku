@@ -1,5 +1,5 @@
 export async function waitForPaymentPage(page) {
-  await page.waitForFunction(() => window.location.href.includes("Basket"));
+  await page.waitForFunction(() => window.location.href.includes("basket"));
   console.log("Stránka 'Basket' načtena.");
 
   await page.waitForSelector(".loading-overlay", { hidden: true }).catch(() => {

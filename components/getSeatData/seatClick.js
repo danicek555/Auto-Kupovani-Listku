@@ -3,7 +3,10 @@ import dotenv from "dotenv";
 
 dotenv.config(); // ⬅️ aktivuje .env
 export async function seatClick(page) {
-  const start = Date.now(); // začátek měření
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("seatClick execution time");
+  }
+
   const m_all = JSON.parse(
     fs.readFileSync("public/data/merged_data_with_prices.json", "utf-8")
   );
@@ -29,9 +32,11 @@ export async function seatClick(page) {
     maxCount
   );
 
-  const end = Date.now();
-  const durationMs = end - start;
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.log(clickedLogs.join("\n")); // výpis kliknutých ID
+  }
 
-  console.log(clickedLogs.join("\n")); // výpis kliknutých ID
-  console.log(`⏱️ Trvalo to ${durationMs} ms`);
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("seatClick execution time");
+  }
 }

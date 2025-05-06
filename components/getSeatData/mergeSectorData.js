@@ -1,6 +1,10 @@
 import fs from "fs";
 
 export async function mergeSectorData() {
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("mergeSectorData execution time");
+  }
+
   try {
     const data = JSON.parse(
       fs.readFileSync("public/data/merged_data.json", "utf-8")
@@ -21,10 +25,17 @@ export async function mergeSectorData() {
       JSON.stringify(data, null, 2)
     );
 
-    console.log(
-      "✅ s_all byly přidány na konec každého záznamu → merged_data_with_sector_labels.json"
-    );
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log(
+        "✅ s_all byly přidány na konec každého záznamu → merged_data_with_sector_labels.json"
+      );
+    }
   } catch (err) {
-    console.error("❌ Chyba při zpracování:", err);
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.error("❌ Chyba při zpracování:", err);
+    }
+  }
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("mergeSectorData execution time");
   }
 }
