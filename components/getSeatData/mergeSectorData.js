@@ -31,9 +31,7 @@ export async function mergeSectorData() {
       );
     }
   } catch (err) {
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.error("❌ Chyba při zpracování:", err);
-    }
+    console.error("❌ Chyba při zpracování:", err);
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("mergeSectorData execution time");

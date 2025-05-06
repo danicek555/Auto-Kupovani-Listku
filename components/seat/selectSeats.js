@@ -8,7 +8,9 @@ import { appendPricesFromPriceCategories } from "../getSeatData/appendPricesFrom
 import { getGPerformance } from "../getSeatData/getGPerformance.js";
 import { seatClick } from "../getSeatData/seatClick.js";
 export async function selectSeats(page) {
-  console.log("Čekám na načtení canvasu...");
+  if (process.env.CONSOLE_LOG === "true") {
+    console.log("Čekám na načtení canvasu...");
+  }
   await page.waitForSelector("#canvas", { visible: true, timeout: 5000 });
   await page.waitForFunction(() => {
     const canvas = document.querySelector("#canvas");
@@ -18,15 +20,17 @@ export async function selectSeats(page) {
   const canvas = await page.$("#canvas");
   await sleep(2000); // místo sleep()
 
-  if (process.env.SCREENSHOT_ENABLED === "true") {
+  if (process.env.SCREENSHOTS === "true") {
     await page.screenshot({
-      path: "./public/screenshots/3_site_with_seats.png",
+      path: "./public/screenshots/1_site_with_seats.png",
       fullPage: true,
     });
-    await canvas.screenshot({ path: "./public/screenshots/4_canvas.png" });
+    await canvas.screenshot({ path: "./public/screenshots/2_canvas.png" });
   }
 
-  console.log("Načetla se mapa, musel jsem čekat 2 sekundy");
+  if (process.env.CONSOLE_LOG === "true") {
+    console.log("Načetla se mapa, musel jsem čekat 2 sekundy");
+  }
 
   // await extractNumbersFromImage("./public/screenshots/4_canvas.png")
   //   .then(async (numbers) => {

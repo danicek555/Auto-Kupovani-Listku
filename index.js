@@ -45,11 +45,15 @@ async function runBot() {
   //await waitForPaymentPage(page);
   await selectInsurance(page);
   await selectTicketType(page);
+
   await fillEmail(page);
+
   await acceptTerms(page);
   await choosePayment(page);
-  await submitPayment(page);
-  await confirmEmailModal(page);
+  if (process.env.SUBMIT_PAYMENT === "true") {
+    await submitPayment(page);
+    await confirmEmailModal(page);
+  }
 }
 
 runBot().catch(console.error);

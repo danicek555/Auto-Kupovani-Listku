@@ -44,13 +44,11 @@ export async function selectInsurance(page) {
     }
 
     // Only show warning if we never clicked the button
-    if (!clicked && process.env.CONSOLE_LOGS === "true") {
+    if (!clicked) {
       console.warn("❌ Pojištění 'ne' se neobjevilo včas.");
     }
   } catch (error) {
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.warn("❌ Chyba při výběru pojištění:", error.message);
-    }
+    console.warn("❌ Chyba při výběru pojištění:", error.message);
   }
 
   if (process.env.EXECUTION_TIME === "true") {

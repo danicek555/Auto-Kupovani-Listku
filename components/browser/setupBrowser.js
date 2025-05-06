@@ -72,7 +72,7 @@ export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Nastavení blokace zdrojů");
   }
-  if (process.env.STYLY === "ne") {
+  if (process.env.STYLY === "false") {
     await page.setRequestInterception(true);
     page.on("request", (req) => {
       const resource = req.resourceType();
@@ -119,7 +119,7 @@ export async function setupBrowser(url) {
     console.timeEnd("⏱️ Nastavení viewportu");
   }
 
-  if (process.env.SCREENSHOTS === "ano") {
+  if (process.env.SCREENSHOTS === "true") {
     if (process.env.EXECUTION_TIME === "true") {
       console.time("⏱️ Screenshot");
     }

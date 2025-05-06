@@ -39,9 +39,7 @@ export async function appendPricesFromPriceCategories() {
       );
     }
   } catch (err) {
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.error("❌ Chyba při zpracování cen:", err);
-    }
+    console.error("❌ Chyba při zpracování cen:", err);
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("appendPricesFromPriceCategories execution time");

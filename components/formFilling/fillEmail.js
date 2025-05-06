@@ -1,20 +1,51 @@
+// export async function fillEmail(page) {
+//   if (process.env.EXECUTION_TIME === "true") {
+//     console.time("⏱️ Vyplňování emailu");
+//   }
+//   const email = process.env.CONTACT_EMAIL || "danmitka@gmail.com";
+
+//   await page.waitForSelector("#email_pickup_7", { visible: true });
+
+//   await page.evaluate((email) => {
+//     const input = document.querySelector("#email_pickup_7");
+//     if (input) input.value = email;
+//   }, email);
+
+//   if (process.env.CONSOLE_LOGS === "true") {
+//     console.log(`✅ Vyplněn e-mail: ${email}`);
+//   }
+//   if (process.env.EXECUTION_TIME === "true") {
+//     console.timeEnd("⏱️ Vyplňování emailu");
+//   }
+// }
 export async function fillEmail(page) {
-  if (process.env.EXECUTION_TIME === "true") {
+  if (process.env.EXECUTION_TIME === "true")
     console.time("⏱️ Vyplňování emailu");
-  }
   const email = process.env.CONTACT_EMAIL || "danmitka@gmail.com";
 
-  await page.waitForSelector("#email_pickup_7", { visible: true });
+  try {
+    await page.waitForSelector("#email_pickup_7", {
+      visible: true,
+      timeout: 2000,
+    });
 
-  await page.evaluate((email) => {
-    const input = document.querySelector("#email_pickup_7");
-    if (input) input.value = email;
-  }, email);
+    await page.$eval(
+      "#email_pickup_7",
+      (input, email) => {
+        input.value = email;
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+      },
+      email
+    );
 
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.log(`✅ Vyplněn e-mail: ${email}`);
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log(`✅ Vyplněn e-mail: ${email}`);
+    }
+  } catch (error) {
+    console.warn("❌ E-mail se nepodařilo vyplnit:", error.message);
   }
-  if (process.env.EXECUTION_TIME === "true") {
+
+  if (process.env.EXECUTION_TIME === "true")
     console.timeEnd("⏱️ Vyplňování emailu");
-  }
 }

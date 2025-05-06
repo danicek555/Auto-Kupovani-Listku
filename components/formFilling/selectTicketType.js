@@ -38,15 +38,10 @@ export async function selectTicketType(page) {
       await new Promise((r) => setTimeout(r, interval));
     }
   } catch (error) {
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.warn("❌ Chyba při výběru typu lístku:", error.message);
-    }
+    console.warn("❌ Chyba při výběru typu lístku:", error.message);
   }
 
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Výběr typu lístku");
-  }
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.warn("❌ Výběr typu lístku se neprovedl včas.");
   }
 }

@@ -35,7 +35,12 @@ export async function seatClick(page) {
   if (process.env.CONSOLE_LOGS === "true") {
     console.log(clickedLogs.join("\n")); // výpis kliknutých ID
   }
-
+  if (process.env.SCREENSHOTS === "true") {
+    await page.screenshot({
+      path: "./public/screenshots/3_seats_selected.png",
+      fullPage: true,
+    });
+  }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("seatClick execution time");
   }

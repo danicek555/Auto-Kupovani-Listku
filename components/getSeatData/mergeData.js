@@ -42,9 +42,7 @@ export async function mergeData() {
       );
     }
   } catch (error) {
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.error("❌ Chyba při spojování dat:", error);
-    }
+    console.error("❌ Chyba při spojování dat:", error);
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("mergeData execution time");

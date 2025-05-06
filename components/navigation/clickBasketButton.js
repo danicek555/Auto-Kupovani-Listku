@@ -3,7 +3,7 @@ export async function clickBasketButton(page) {
     console.log("🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'...");
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("⏱️ Doba do kliknutí na 'Pokračovat do košíku'");
+    console.time("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
   }
 
   const maxTime = 2000; // maximální doba čekání (ms)
@@ -27,7 +27,7 @@ export async function clickBasketButton(page) {
         console.log("✅ Kliknutí na 'Pokračovat do košíku' proběhlo.");
       }
       if (process.env.EXECUTION_TIME === "true") {
-        console.timeEnd("⏱️ Doba do kliknutí na 'Pokračovat do košíku'");
+        console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
       }
       return performance.now() - start;
     }
@@ -35,11 +35,10 @@ export async function clickBasketButton(page) {
     await page.waitForTimeout(interval);
   }
 
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.warn(`❌ Tlačítko se neobjevilo do ${maxTime} ms.`);
-  }
+  console.warn(`❌ Tlačítko se neobjevilo do ${maxTime} ms.`);
+
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("⏱️ Doba do kliknutí na 'Pokračovat do košíku'");
+    console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
   }
   return null;
 }
