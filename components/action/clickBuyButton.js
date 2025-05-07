@@ -16,11 +16,16 @@ export async function clickBuyButton(page) {
   while (Date.now() - start < maxTime) {
     clicked = await page.evaluate(() => {
       const btn = document.querySelector("a.btn.btn-buy.flex-c");
+      if (!btn) {
+        console.error(
+          "Element 'a.btn.btn-buy.flex-c' v clickBuyButton.js nebyl nalezen"
+        );
+        return false;
+      }
       if (btn) {
         btn.click();
         return true;
       }
-      return false;
     });
 
     if (clicked) {

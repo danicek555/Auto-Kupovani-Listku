@@ -104,7 +104,9 @@ export async function setupBrowser(url) {
   }
   await page
     .goto(url, { waitUntil: "domcontentloaded", timeout: 10000 })
-    .catch((err) => console.error("❌ Timeout nebo jiná chyba:", err));
+    .catch((err) =>
+      console.error("❌ Timeout nebo jiná chyba v setupBrowser.js", err.message)
+    );
 
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Načtení stránky");

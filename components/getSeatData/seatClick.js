@@ -7,9 +7,21 @@ export async function seatClick(page) {
     console.time("seatClick execution time");
   }
 
-  const m_all = JSON.parse(
-    fs.readFileSync("public/data/merged_data_with_prices.json", "utf-8")
-  );
+  let m_all;
+  try {
+    const fileContent = fs.readFileSync(
+      "public/data/merged_data_with_prices.json",
+      "utf-8"
+    );
+    m_all = JSON.parse(fileContent);
+  } catch (err) {
+    console.error(
+      "❌ Chyba při čtení nebo parsování souboru 'merged_data_with_prices.json' v seatClick.js:",
+      err.message
+    );
+    return; // Exit the function if we can't get the data
+  }
+
   const maxCount = parseInt(process.env.TICKET_COUNT) || 3; // fallback když není v .env
 
   const clickedLogs = await page.evaluate(
@@ -36,10 +48,17 @@ export async function seatClick(page) {
     console.log(clickedLogs.join("\n")); // výpis kliknutých ID
   }
   if (process.env.SCREENSHOTS === "true") {
-    await page.screenshot({
-      path: "./public/screenshots/3_seats_selected.png",
-      fullPage: true,
-    });
+    await page
+      .screenshot({
+        path: "./public/screenshots/3_seats_selected.png",
+        fullPage: true,
+      })
+      .catch((err) =>
+        console.error(
+          "❌ Screenshot 3_seats_selected.png selhal v seatClick.js",
+          err.message
+        )
+      );
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("seatClick execution time");

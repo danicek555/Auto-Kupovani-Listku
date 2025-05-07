@@ -53,6 +53,8 @@ async function runBot() {
   if (process.env.SUBMIT_PAYMENT === "true") {
     await submitPayment(page);
     await confirmEmailModal(page);
+  } else {
+    console.log("🔴 Není zapnuto submit payment");
   }
 }
 

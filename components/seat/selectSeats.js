@@ -11,21 +11,52 @@ export async function selectSeats(page) {
   if (process.env.CONSOLE_LOG === "true") {
     console.log("Čekám na načtení canvasu...");
   }
-  await page.waitForSelector("#canvas", { visible: true, timeout: 5000 });
-  await page.waitForFunction(() => {
-    const canvas = document.querySelector("#canvas");
-    return canvas && canvas.width > 0 && canvas.height > 0;
-  });
+  await page
+    .waitForSelector("#canvas", { visible: true, timeout: 5000 })
+    .catch((err) =>
+      console.error(
+        "❌ Element 'canvas' v selectSeats.js nebyl nalezen",
+        err.message
+      )
+    );
+  await page
+    .waitForFunction(
+      () => {
+        const canvas = document.querySelector("#canvas");
+        return canvas && canvas.width > 0 && canvas.height > 0;
+      },
+      { timeout: 5000 }
+    )
+    .catch((err) =>
+      console.error(
+        "❌ Element 'canvas' v selectSeats.js nebyl nalezen",
+        err.message
+      )
+    );
 
   const canvas = await page.$("#canvas");
   await sleep(2000); // místo sleep()
 
   if (process.env.SCREENSHOTS === "true") {
-    await page.screenshot({
-      path: "./public/screenshots/1_site_with_seats.png",
-      fullPage: true,
-    });
-    await canvas.screenshot({ path: "./public/screenshots/2_canvas.png" });
+    await page
+      .screenshot({
+        path: "./public/screenshots/1_site_with_seats.png",
+        fullPage: true,
+      })
+      .catch((err) =>
+        console.error(
+          "❌ Screenshot 1_site_with_seats.png selhal v selectSeats.js",
+          err.message
+        )
+      );
+    await canvas
+      .screenshot({ path: "./public/screenshots/2_canvas.png" })
+      .catch((err) =>
+        console.error(
+          "❌ Screenshot 2_canvas.png selhal v selectSeats.js",
+          err.message
+        )
+      );
   }
 
   if (process.env.CONSOLE_LOG === "true") {

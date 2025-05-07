@@ -14,14 +14,13 @@ export async function clickBasketButton(page) {
 
   while (performance.now() - start < maxTime) {
     clicked = await page.evaluate(() => {
-      const btn = document
-        .querySelector("#hladisko-basket-btn")
-        .catch((err) =>
-          console.error(
-            "❌ Element 'hladisko-basket-btn' v clickBasketButton.js nebyl nalezen",
-            err.message
-          )
+      const btn = document.querySelector("#hladisko-basket-btn");
+      if (!btn) {
+        console.error(
+          "❌ Element 'hladisko-basket-btn' v clickBasketButton.js nebyl nalezen"
         );
+        return false;
+      }
       if (btn) {
         btn.click();
         return true;
