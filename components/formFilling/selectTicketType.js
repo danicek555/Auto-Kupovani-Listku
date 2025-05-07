@@ -13,10 +13,22 @@ export async function selectTicketType(page) {
     // Čekej než se elementy objeví
     await page
       .waitForSelector('label[for="pickupTypeOption"]', { timeout: maxTime })
-      .catch(() => null);
+      .catch((err) =>
+        console.error(
+          "❌ Element 'label[for='pickupTypeOption']' v selectTicketType.js nebyl nalezen",
+          err.message
+        )
+      );
 
     while (performance.now() - start < maxTime) {
-      labels = await page.$$('label[for="pickupTypeOption"]');
+      labels = await page
+        .$$('label[for="pickupTypeOption"]')
+        .catch((err) =>
+          console.error(
+            "❌ Element 'label[for='pickupTypeOption']' v selectTicketType.js nebyl nalezen",
+            err.message
+          )
+        );
 
       if (labels.length >= 2) {
         // await labels[1].click(); // MOBIL-ticket
@@ -38,7 +50,10 @@ export async function selectTicketType(page) {
       await new Promise((r) => setTimeout(r, interval));
     }
   } catch (error) {
-    console.warn("❌ Chyba při výběru typu lístku:", error.message);
+    console.warn(
+      "❌ Chyba při výběru typu lístku v selectTicketType.js:",
+      error.message
+    );
   }
 
   if (process.env.EXECUTION_TIME === "true") {

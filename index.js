@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { setupBrowser } from "./components/browser/setupBrowser.js";
 import { clickBuyButton } from "./components/action/clickBuyButton.js";
 import { selectSeats } from "./components/seat/selectSeats.js";
-import { waitForPaymentPage } from "./components/navigation/waitForPaymentPage.js";
+// import { waitForPaymentPage } from "./components/old/waitForPaymentPage.js";
 import { selectInsurance } from "./components/formFilling/selectInsurance.js";
 import { selectTicketType } from "./components/formFilling/selectTicketType.js";
 import { fillEmail } from "./components/formFilling/fillEmail.js";

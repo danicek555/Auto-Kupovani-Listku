@@ -4,9 +4,24 @@ export async function confirmEmailModal(page) {
   );
   console.log("Stránka s potvrzením emailu načtena.");
 
-  await page.waitForSelector("#quick-buy-btn-confirm-confirm", {
-    visible: true,
-  });
+  await page
+    .waitForSelector("#quick-buy-btn-confirm-confirm", {
+      visible: true,
+      timeout: 10000,
+    })
+    .catch(() =>
+      console.error(
+        "❌ Objevila se chyba při načítání confirmEmailModal tlačítka"
+      )
+    );
+
   await page.click("#quick-buy-btn-confirm-confirm");
   console.log("Kliknuto na 'Ano, potvrdit'.");
+
+  if (process.env.SCREENSHOTS === "true") {
+    await page.screenshot({
+      path: "./public/screenshots/6_Stranka na zaplaceni.png",
+      fullPage: true,
+    });
+  }
 }

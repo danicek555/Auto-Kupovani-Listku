@@ -102,7 +102,10 @@ export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Načtení stránky");
   }
-  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 10000 });
+  await page
+    .goto(url, { waitUntil: "domcontentloaded", timeout: 10000 })
+    .catch((err) => console.error("❌ Timeout nebo jiná chyba:", err));
+
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Načtení stránky");
   }

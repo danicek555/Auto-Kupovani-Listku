@@ -12,7 +12,12 @@ export async function selectInsurance(page) {
     // Wait for the page to be ready
     await page
       .waitForSelector("#optionsRadiosPoistenie2", { timeout: maxTime })
-      .catch(() => null);
+      .catch((err) =>
+        console.error(
+          "❌ Element 'optionsRadiosPoistenie2' v selectInsurance.js nebyl nalezen",
+          err.message
+        )
+      );
 
     while (!clicked && performance.now() - start < maxTime) {
       try {

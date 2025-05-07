@@ -1,26 +1,39 @@
 export async function submitPayment(page) {
-  try {
-    await page.waitForSelector("#basket-btn-zaplatit", {
+  await page
+    .waitForSelector("#basket-btn-zaplatit", {
       visible: true,
       timeout: 3000,
-    });
+    })
+    .catch((err) =>
+      console.error("❌ Tlačítko 'Zaplatit' nebylo nalezeno", err)
+    );
 
-    const clicked = await page.$eval("#basket-btn-zaplatit", (btn) => {
+  await page
+    .$eval("#basket-btn-zaplatit", (btn) => {
       btn.click();
       return true;
-    });
-
-    console.log("✅ Kliknuto na tlačítko 'Zaplatit'.");
-  } catch (error) {
-    console.warn(
-      "❌ Tlačítko 'Zaplatit' nebylo nalezeno nebo kliknutí selhalo:",
-      error.message
+    })
+    .catch((err) =>
+      console.error("❌ Kliknutí na tlačítko 'Zaplatit' selhalo", err)
     );
-    return;
+
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.log("✅ Kliknuto na tlačítko 'Zaplatit'.");
   }
 
-  await page.screenshot({
-    path: "./public/screenshots/7_Vyplnena stranka na zaplaceni.png",
-    fullPage: true,
-  });
+  if (process.env.SCREENSHOTS === "true") {
+    await page
+      .screenshot({
+        path: "./public/screenshots/5_Vyplnena stranka na zaplaceni.png",
+        fullPage: true,
+      })
+      .catch((err) => {
+        if (process.env.CONSOLE_LOGS === "true") {
+          console.error(
+            "❌ Screenshot 5_Vyplnena stranka na zaplaceni.png selhal",
+            err
+          );
+        }
+      });
+  }
 }

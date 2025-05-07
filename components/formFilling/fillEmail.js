@@ -24,10 +24,17 @@ export async function fillEmail(page) {
   const email = process.env.CONTACT_EMAIL || "danmitka@gmail.com";
 
   try {
-    await page.waitForSelector("#email_pickup_7", {
-      visible: true,
-      timeout: 2000,
-    });
+    await page
+      .waitForSelector("#email_pickup_7", {
+        visible: true,
+        timeout: 2000,
+      })
+      .catch((err) =>
+        console.error(
+          "❌ Element 'email_pickup_7' v fillEmail.js nebyl nalezen",
+          err.message
+        )
+      );
 
     await page.$eval(
       "#email_pickup_7",
