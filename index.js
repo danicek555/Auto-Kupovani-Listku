@@ -12,6 +12,7 @@ import { choosePayment } from "./components/formFilling/choosePayment.js";
 import { submitPayment } from "./components/action/submitPayment.js";
 import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
 import { clickBasketButton } from "./components/navigation/clickBasketButton.js";
+import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 dotenv.config();
 const TICKET_URL =
   process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
@@ -19,6 +20,24 @@ const TICKET_URL =
 async function runBot() {
   console.time("🔁 Doba spuštění botu");
   const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
+  page.on("console", (msg) => {
+    const text = msg.text();
+
+    const alertPrefixes = [
+      "🔍 Žádný viditelný alert nalezen.",
+      "🔍 Detekován viditelný alert:",
+      "⏱️ Alert monitor skončil po 30s.",
+    ];
+
+    if (alertPrefixes.some((prefix) => text.startsWith(prefix))) {
+      console.log(`🧠 LOG Z BROWSERU: ${text}`);
+    }
+    // else {
+    //   console.log(`🌐 BROWSER: ${text}`);
+    // }
+  });
+
+  await setupAlertMonitor(page);
 
   //await handleCookies(page);
 
@@ -44,6 +63,7 @@ async function runBot() {
   //* STRANKA NA ZAPLACENI
   await clickBasketButton(page);
   //await waitForPaymentPage(page);
+  //await setupAlertMonitor(page);
   await selectInsurance(page);
   await selectTicketType(page);
 

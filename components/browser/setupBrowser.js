@@ -30,6 +30,7 @@
 // }
 import puppeteer from "puppeteer";
 import fs from "fs-extra";
+import setupAlertMonitor from "../utils/setupAlertMonitor.js";
 
 await fs.remove("./tmp");
 
@@ -68,6 +69,19 @@ export async function setupBrowser(url) {
   }
 
   const page = await browser.newPage();
+
+  let lastUrl = null;
+
+  page.on("framenavigated", async (frame) => {
+    if (frame !== page.mainFrame()) return; // 👈 ignoruj navigace iframe
+
+    const url = frame.url();
+    if (url === lastUrl) return;
+    lastUrl = url;
+
+    console.log("🔁 Stránka byla přesměrována – znovu spouštím alert monitor.");
+    await setupAlertMonitor(page);
+  });
 
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Nastavení blokace zdrojů");
@@ -137,5 +151,5 @@ export async function setupBrowser(url) {
 
   return { browser, page };
 }
-//! změnit na false pokud chceš vidět jak to všechno probíhá
+
 //TODO: že by google chrome by lpořád zapnutý a ty by jsi jen otevíral stránky a pracoval s nimi??

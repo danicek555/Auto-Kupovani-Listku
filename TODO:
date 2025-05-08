@@ -3,7 +3,7 @@
 //? Co dalsiho musim opatrit aby kod byl safe?
 
 //udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
-//FUNGUJE SELECT INSURANCE
+//NEFUNGUJE SELECT INSURANCE
 //pozor nenechavejte misty mezi sedadly!
 //co kdyz me to presmeruje uplne na jinou stranku?
 //jak vyresit ty dve sekundy v select seats?
