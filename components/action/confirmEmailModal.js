@@ -1,32 +1,85 @@
 export async function confirmEmailModal(page) {
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("⏱️ Klikání na tlačítko 'Ano, potvrdit'");
+  }
+
   try {
-    await page.waitForFunction(() =>
-      window.location.href.includes("Basket#modalEmailOK")
-    );
-    console.log("Stránka s potvrzením emailu načtena.");
+    // Čekání na URL s #modalEmailOK
+    const maxTime = 5000;
+    const interval = 50;
+    const start = Date.now();
 
-    await page
-      .waitForSelector("#quick-buy-btn-confirm-confirm", {
-        visible: true,
-        timeout: 10000,
-      })
-      .catch(() =>
-        console.error(
-          "❌ Objevila se chyba při načítání confirmEmailModal tlačítka"
-        )
-      );
+    let urlReady = false;
 
-    await page.click("#quick-buy-btn-confirm-confirm");
-    console.log("Kliknuto na 'Ano, potvrdit'.");
-
-    if (process.env.SCREENSHOTS === "true") {
-      await page.screenshot({
-        path: "./public/screenshots/6_Stranka na zaplaceni.png",
-        fullPage: true,
-      });
+    while (Date.now() - start < maxTime) {
+      const currentUrl = page.url();
+      if (currentUrl.includes("Basket#modalEmailOK")) {
+        urlReady = true;
+        break;
+      }
+      await new Promise((res) => setTimeout(res, interval));
     }
+
+    if (!urlReady) {
+      throw new Error(
+        "URL s 'Basket#modalEmailOK' se neobjevila včas v confirmEmailModal.js"
+      );
+    }
+
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("✅ Stránka s potvrzením emailu načtena.");
+    }
+
+    // Pooling na tlačítko
+    let clicked = false;
+    const buttonStart = Date.now();
+
+    while (Date.now() - buttonStart < maxTime) {
+      clicked = await page.evaluate(() => {
+        const btn = document.querySelector("#quick-buy-btn-confirm-confirm");
+        if (!btn) return false;
+        btn.click();
+        return true;
+      });
+
+      if (clicked) break;
+      await new Promise((res) => setTimeout(res, interval));
+    }
+
+    if (clicked) {
+      if (process.env.CONSOLE_LOGS === "true") {
+        console.log("✅ Kliknuto na 'Ano, potvrdit'.");
+      }
+    } else {
+      throw new Error(
+        "Tlačítko 'Ano, potvrdit' nebylo nalezeno nebo se nepodařilo kliknout."
+      );
+    }
+
+    // Screenshot (volitelný)
+    if (process.env.SCREENSHOTS === "true") {
+      try {
+        await page.screenshot({
+          path: "./public/screenshots/6_Stranka s potvrzenim emailu.png",
+          fullPage: true,
+        });
+      } catch (err) {
+        if (process.env.CONSOLE_LOGS === "true") {
+          console.error(
+            "❌ Screenshot selhal v confirmEmailModal.js:",
+            err.message
+          );
+        }
+      }
+    }
+
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd("⏱️ Klikání na tlačítko 'Ano, potvrdit'");
+    }
+
+    return true;
   } catch (err) {
-    console.error("❌ Chyba při čekání na potvrzení emailu:", err.message);
-    throw err; // Re-throw the error to handle it in the calling function
+    console.error("❌ Chyba v confirmEmailModal.js:", err.message);
+    return false;
   }
 }

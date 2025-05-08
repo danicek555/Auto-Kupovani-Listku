@@ -27,11 +27,11 @@ export async function fillEmail(page) {
     await page
       .waitForSelector("#email_pickup_7", {
         visible: true,
-        timeout: 2000,
+        timeout: 5000,
       })
       .catch((err) =>
         console.error(
-          "❌ Element 'email_pickup_7' v fillEmail.js nebyl nalezen",
+          "❌ Element 'email_pickup_7' v fillEmail.js nebyl nalezen:",
           err.message
         )
       );

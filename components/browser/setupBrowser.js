@@ -42,7 +42,7 @@ export async function setupBrowser(url) {
     console.time("⏱️ Spuštění prohlížeče");
   }
   const browser = await puppeteer.launch({
-    headless: process.env.BROWSER === "true" ? false : true, // změň na false pokud chceš okno, pokud bez na "new" nebo na True, ale lepší je na "new" - tedka mi to treba nejde
+    headless: process.env.BROWSER_HEADLESS === "true" ? false : true, // změň na false pokud chceš okno, pokud bez na "new" nebo na True, ale lepší je na "new" - tedka mi to treba nejde
     defaultViewport: null,
     userDataDir: "./tmp", // čistý profil
     args: [
@@ -125,18 +125,10 @@ export async function setupBrowser(url) {
   }
 
   if (process.env.SCREENSHOTS === "true") {
-    if (process.env.EXECUTION_TIME === "true") {
-      console.time("⏱️ Screenshot");
-    }
-
     await page.screenshot({
       path: "./public/screenshots/0_site.png",
       fullPage: false,
     });
-
-    if (process.env.EXECUTION_TIME === "true") {
-      console.timeEnd("⏱️ Screenshot");
-    }
   }
 
   if (process.env.EXECUTION_TIME === "true") {

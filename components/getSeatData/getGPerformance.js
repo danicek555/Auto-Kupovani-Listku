@@ -2,7 +2,7 @@ import fs from "fs";
 
 export async function getGPerformance(page) {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("GPerformance execution time");
+    console.time("⏱️ GPerformance execution time");
   }
 
   await page.waitForFunction('typeof g_performance !== "undefined"');
@@ -22,12 +22,12 @@ export async function getGPerformance(page) {
     );
     if (process.env.CONSOLE_LOGS === "true") {
       console.log(
-        "Data byla úspěšně uložena do souboru g_performance_data.json"
+        "✅ Data byla úspěšně uložena do souboru g_performance_data.json"
       );
     }
   } catch (error) {
     if (process.env.CONSOLE_LOGS === "true") {
-      console.error("Evaluate failed:", error);
+      console.error("❌ Evaluate failed:", error);
     }
     await page.reload({ waitUntil: "networkidle0" });
     if (process.env.CONSOLE_LOGS === "true") {
@@ -35,6 +35,6 @@ export async function getGPerformance(page) {
     }
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("GPerformance execution time");
+    console.timeEnd("⏱️ GPerformance execution time");
   }
 }

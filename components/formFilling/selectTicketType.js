@@ -3,7 +3,7 @@ export async function selectTicketType(page) {
     console.time("⏱️ Výběr typu lístku");
   }
 
-  const maxTime = 2000;
+  const maxTime = 5000;
   const interval = 10;
   const start = performance.now();
 
@@ -12,7 +12,7 @@ export async function selectTicketType(page) {
   try {
     // Čekej než se elementy objeví
     await page
-      .waitForSelector('label[for="pickupTypeOption"]', { timeout: maxTime })
+      .waitForSelector('label[for="pickupTypeOption"]', { timeout: 5000 })
       .catch((err) =>
         console.error(
           "❌ Element 'label[for='pickupTypeOption']' v selectTicketType.js nebyl nalezen",

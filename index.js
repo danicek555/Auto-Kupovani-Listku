@@ -17,6 +17,7 @@ const TICKET_URL =
   process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
 
 async function runBot() {
+  console.time("🔁 Doba spuštění botu");
   const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
 
   //await handleCookies(page);
@@ -51,11 +52,13 @@ async function runBot() {
   await acceptTerms(page);
   await choosePayment(page);
   if (process.env.SUBMIT_PAYMENT === "true") {
+    console.log(" Zapnuto submit payment");
     await submitPayment(page);
     await confirmEmailModal(page);
   } else {
     console.log("🔴 Není zapnuto submit payment");
   }
+  console.timeEnd("🔁 Doba spuštění botu");
 }
 
 runBot().catch(console.error);

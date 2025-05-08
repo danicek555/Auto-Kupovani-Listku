@@ -4,8 +4,8 @@ export async function selectInsurance(page) {
   }
 
   const selector = "#optionsRadiosPoistenie2";
-  const maxTime = 2000;
-  const interval = 50;
+  const maxTime = 5000;
+  const interval = 10;
   const start = Date.now();
 
   let clicked = false;
@@ -24,10 +24,10 @@ export async function selectInsurance(page) {
       // Pokud kontext zanikl (např. navigace), počkáme a zkusíme znovu
       if (e.message.includes("Execution context was destroyed")) {
         console.warn(
-          "⚠️ Stránka byla přesměrována během výběru pojištění. Zkouším znovu..."
+          "❌ Stránka byla přesměrována během výběru pojištění. Zkouším znovu..."
         );
       } else {
-        console.warn("⚠️ Jiná chyba při výběru pojištění:", e.message);
+        console.warn("❌ Jiná chyba při výběru pojištění:", e.message);
       }
     }
 
@@ -38,7 +38,7 @@ export async function selectInsurance(page) {
 
   if (!clicked) {
     console.warn(
-      "❌ Pojištění 'ne' se neobjevilo nebo se nepodařilo zakliknout."
+      "❌ Pojištění 'ne' se neobjevilo nebo se nepodařilo zakliknout v selectInsurance.js"
     );
   }
 

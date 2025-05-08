@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config(); // ⬅️ aktivuje .env
 export async function seatClick(page) {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("seatClick execution time");
+    console.time("⏱️ seatClick execution time");
   }
 
   let m_all;
@@ -33,7 +33,7 @@ export async function seatClick(page) {
         const record = m_all[key];
         if (record[10] === 0 && count < maxCount) {
           OnSeat_click(m_all[key]); // klikne na sedadlo
-          logs.push(`Clicked: OnSeat_click(m_all['${key}'])`);
+          logs.push(`✅ Clicked: OnSeat_click(m_all['${key}'])`);
           count++;
         }
       });
@@ -61,6 +61,6 @@ export async function seatClick(page) {
       );
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("seatClick execution time");
+    console.timeEnd("⏱️ seatClick execution time");
   }
 }

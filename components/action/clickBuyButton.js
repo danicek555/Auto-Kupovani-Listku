@@ -3,10 +3,6 @@ export async function clickBuyButton(page) {
     console.time("⏱️ Kliknutí na tlačítko 'Koupit'");
   }
 
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.log("🔁 Začínám rychlý polling tlačítka 'Koupit'...");
-  }
-
   const maxTime = 2000; // max čekání (ms)
   const interval = 10; // interval mezi pokusy (ms)
   const start = Date.now();
@@ -18,7 +14,7 @@ export async function clickBuyButton(page) {
       const btn = document.querySelector("a.btn.btn-buy.flex-c");
       if (!btn) {
         console.error(
-          "Element 'a.btn.btn-buy.flex-c' v clickBuyButton.js nebyl nalezen"
+          "❌ Element 'a.btn.btn-buy.flex-c' v clickBuyButton.js nebyl nalezen"
         );
         return false;
       }

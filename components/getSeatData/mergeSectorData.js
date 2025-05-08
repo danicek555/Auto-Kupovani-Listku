@@ -2,7 +2,7 @@ import fs from "fs";
 
 export async function mergeSectorData() {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("mergeSectorData execution time");
+    console.time("⏱️ mergeSectorData execution time");
   }
 
   try {
@@ -34,6 +34,6 @@ export async function mergeSectorData() {
     console.error("❌ Chyba při zpracování:", err);
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("mergeSectorData execution time");
+    console.timeEnd("⏱️ mergeSectorData execution time");
   }
 }

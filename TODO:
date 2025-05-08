@@ -1,9 +1,11 @@
 //TODO: Sektory, informace o listkach, opakovani celeho programu, jaky je maximalni pocet requestu na ticket portal at to nepretizim?,
 //? co captcha a recaptcha? Co to dela a potrebuju to do meho programu? Jak ticket portal blokuje boty?
 //? Co dalsiho musim opatrit aby kod byl safe?
-//TODO: optimalizace celeho kodu aby byl RYCHLEJŠÍ!!!
-//DOKONCIT BOTA
 
-//udelat vsude CONSOLELOGS a EXECUTIONTIME
 //udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
-//dodelat vsude screenshots - hlavne je zase naprogramovat vsude
+//FUNGUJE SELECT INSURANCE
+//pozor nenechavejte misty mezi sedadly!
+//co kdyz me to presmeruje uplne na jinou stranku?
+//jak vyresit ty dve sekundy v select seats?
+
+//! KDYZ UZ JSEM NAKOUPIL 6 LISTKU Z JEDNOHO EMAILU NEMUZU NAKOUPIT DALSI DO PUL HODINY!
