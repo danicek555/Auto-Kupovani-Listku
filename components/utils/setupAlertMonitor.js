@@ -1,67 +1,57 @@
-let alertMonitorRunning = false; // <-- globální proměnná v Puppeteer (ne ve stránce)
-
-export async function setupAlertMonitor(page) {
-  if (process.env.ALERT_MONITOR !== "true") return;
-
-  if (alertMonitorRunning) return; // už běží, nespouštěj znovu
-  alertMonitorRunning = true;
-
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.log("🔴 Alert monitor je zapnutý.");
-  }
-
-  try {
-    // exposeFunction volat jen 1× (jinak chyba)
-    if (!page._alertExposed) {
-      await page.exposeFunction("onAlertDetected", (alertText) => {
-        console.log("🔴 Detekován alert:", alertText);
-      });
-      page._alertExposed = true;
+async function setupAlertMonitor(page) {
+  await page.evaluate(() => {
+    if (window.__alertMonitorIntervalId) {
+      clearInterval(window.__alertMonitorIntervalId);
     }
 
-    await page.evaluate(() => {
-      let lastAlert = null;
-      const start = Date.now();
+    window.__alertMonitorIntervalId = setInterval(() => {
+      let foundAlert = false;
 
-      const interval = setInterval(() => {
-        if (Date.now() - start > 30000) {
-          console.log("⏱️ Alert monitor skončil po 30s.");
-          clearInterval(interval);
-          return;
+      // 1. Hledej notifikační alerty (data-notify)
+      const notifyAlerts = Array.from(
+        document.querySelectorAll('[data-notify="container"]')
+      );
+      for (const el of notifyAlerts) {
+        const style = window.getComputedStyle(el);
+        const visible =
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          style.opacity !== "0";
+        const message = el
+          .querySelector('[data-notify="message"]')
+          ?.textContent?.trim();
+
+        if (visible && message) {
+          console.log(`[ALERT] Detekován notify alert: "${message}"`);
+          foundAlert = true;
+          break;
         }
+      }
 
-        const alerts = Array.from(
-          document.querySelectorAll(".alert.alert-danger")
-        );
-        for (const alert of alerts) {
-          const isVisible =
-            window.getComputedStyle(alert).display !== "none" &&
-            alert.offsetParent !== null;
+      // 2. Hledej standardní Bootstrap-like alerty
+      const standardAlerts = Array.from(
+        document.querySelectorAll("div.alert.alert-danger")
+      );
+      for (const el of standardAlerts) {
+        const style = window.getComputedStyle(el);
+        const visible =
+          style.display !== "none" &&
+          style.visibility !== "hidden" &&
+          style.opacity !== "0";
+        const message = el.textContent?.trim();
 
-          if (isVisible) {
-            const specific = alert.querySelector('span[data-notify="message"]');
-            const text = (
-              specific?.innerText ||
-              alert.textContent.replace(/×/g, "").replace(/\s+/g, " ")
-            ).trim();
-
-            if (text && text !== lastAlert) {
-              lastAlert = text;
-              window.onAlertDetected(text);
-            }
-
-            console.log(`🔍 Detekován viditelný alert: ${text}`);
-            return;
-          }
+        if (visible && message) {
+          console.log(`⚠️⚠️⚠️[ALERT] Detekován standardní alert: "${message}"`);
+          foundAlert = true;
+          break;
         }
+      }
 
-        console.log("🔍 Žádný viditelný alert nalezen.");
-      }, 1000);
-    });
-  } catch (error) {
-    if (!error.message.includes("already exists")) {
-      throw error;
-    }
-  }
+      if (!foundAlert) {
+        console.log("[ALERT] Žádný alert nebyl detekován.");
+      }
+    }, 250); // rychlejší kontrola
+  });
 }
+
 export default setupAlertMonitor;

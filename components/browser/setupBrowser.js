@@ -69,19 +69,15 @@ export async function setupBrowser(url) {
   }
 
   const page = await browser.newPage();
-
-  let lastUrl = null;
-
-  page.on("framenavigated", async (frame) => {
-    if (frame !== page.mainFrame()) return; // 👈 ignoruj navigace iframe
-
-    const url = frame.url();
-    if (url === lastUrl) return;
-    lastUrl = url;
-
-    console.log("🔁 Stránka byla přesměrována – znovu spouštím alert monitor.");
-    await setupAlertMonitor(page);
-  });
+  if (process.env.ALERT_MONITOR === "true") {
+    // Zachytávej alerty z konzole
+    page.on("console", (msg) => {
+      const text = msg.text();
+      if (text.startsWith("[ALERT]")) {
+        console.log(text);
+      }
+    });
+  }
 
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Nastavení blokace zdrojů");
@@ -116,12 +112,28 @@ export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Načtení stránky");
   }
+  if (process.env.ALERT_MONITOR === "true") {
+    page.on("framenavigated", async () => {
+      try {
+        await setupAlertMonitor(page);
+      } catch (err) {
+        console.error(
+          "❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor",
+          err.message
+        );
+      }
+    });
+  }
+
   await page
     .goto(url, { waitUntil: "domcontentloaded", timeout: 10000 })
     .catch((err) =>
       console.error("❌ Timeout nebo jiná chyba v setupBrowser.js", err.message)
     );
 
+  if (process.env.ALERT_MONITOR === "true") {
+    await setupAlertMonitor(page);
+  }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Načtení stránky");
   }

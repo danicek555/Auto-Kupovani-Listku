@@ -8,20 +8,30 @@ export async function selectInsurance(page) {
   const interval = 10;
   const start = Date.now();
 
+  let before;
   let clicked = false;
 
   while (!clicked && Date.now() - start < maxTime) {
     try {
       const exists = await page.$(selector);
       if (exists) {
-        await page.click(selector);
-        clicked = true;
-        if (process.env.CONSOLE_LOGS === "true") {
-          console.log("✅ Pojištění 'ne' bylo zvoleno.");
+        before = await page.$eval(selector, (el) => el.checked);
+        await page.evaluate((sel) => {
+          const el = document.querySelector(sel);
+          if (el) el.click();
+        }, selector);
+
+        const isChecked = await page.$eval(selector, (el) => el.checked);
+        if (isChecked) {
+          clicked = true;
+          if (process.env.CONSOLE_LOGS === "true") {
+            console.log("✅ Pojištění 'ne' bylo zvoleno.");
+          }
+        } else {
+          console.warn("❌ Kliknutí na pojištění nevedlo ke změně hodnoty.");
         }
       }
     } catch (e) {
-      // Pokud kontext zanikl (např. navigace), počkáme a zkusíme znovu
       if (e.message.includes("Execution context was destroyed")) {
         console.warn(
           "❌ Stránka byla přesměrována během výběru pojištění. Zkouším znovu..."
@@ -45,4 +55,7 @@ export async function selectInsurance(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Výběr pojištění");
   }
+
+  const after = await page.$eval(selector, (el) => el.checked);
+  console.log(`✅ Stav checkboxu před: ${before}, po: ${after}`);
 }
