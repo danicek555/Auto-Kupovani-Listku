@@ -48,7 +48,7 @@ async function setupAlertMonitor(page) {
       }
 
       if (!foundAlert) {
-        console.log("[ALERT] Žádný alert nebyl detekován.");
+        //console.log("[ALERT] Žádný alert nebyl detekován.");
       }
     }, 250); // rychlejší kontrola
   });
