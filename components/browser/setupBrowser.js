@@ -31,8 +31,7 @@
 import puppeteer from "puppeteer";
 import fs from "fs-extra";
 import setupAlertMonitor from "../utils/setupAlertMonitor.js";
-
-await fs.remove("./tmp");
+import { sleep } from "../utils/sleep.js";
 
 export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
@@ -71,10 +70,14 @@ export async function setupBrowser(url) {
   const page = await browser.newPage();
   if (process.env.ALERT_MONITOR === "true") {
     // Zachytávej alerty z konzole
-    page.on("console", (msg) => {
+    page.on("console", async (msg) => {
       const text = msg.text();
-      if (text.startsWith("[ALERT]")) {
+      if (text.startsWith("⚠️⚠️⚠️[ALERT]")) {
         console.log(text);
+      } else {
+        if (process.env.BROWSER_CONSOLE_LOGS === "true") {
+          console.log("🧠 Browser console log: ", text);
+        }
       }
     });
   }

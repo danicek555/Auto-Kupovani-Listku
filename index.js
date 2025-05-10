@@ -57,12 +57,24 @@ async function runBot() {
   await acceptTerms(page);
   await choosePayment(page);
   if (process.env.SUBMIT_PAYMENT === "true") {
-    console.log(" Zapnuto submit payment");
+    console.log(
+      "✅ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js"
+    );
     await submitPayment(page);
     await confirmEmailModal(page);
   } else {
     console.log("🔴 Není zapnuto submit payment");
   }
+  const pocetListku = process.env.TICKET_COUNT;
+  let sklonovaniSlovicka = "listků";
+  if (pocetListku === 1) {
+    sklonovaniSlovicka = "listek";
+  } else if (pocetListku > 1 && pocetListku < 5) {
+    sklonovaniSlovicka = "listky";
+  } else {
+    sklonovaniSlovicka = "listků";
+  }
+  console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
   console.timeEnd("🔁 Doba spuštění botu");
 }
 

@@ -34,7 +34,7 @@ export async function selectInsurance(page) {
     } catch (e) {
       if (e.message.includes("Execution context was destroyed")) {
         console.warn(
-          "❌ Stránka byla přesměrována během výběru pojištění. Zkouším znovu..."
+          "❌ Stránka byla přesměrována během výběru pojištění v selectInsurance.js. Zkouším znovu..."
         );
       } else {
         console.warn("❌ Jiná chyba při výběru pojištění:", e.message);
@@ -57,5 +57,7 @@ export async function selectInsurance(page) {
   }
 
   const after = await page.$eval(selector, (el) => el.checked);
-  console.log(`✅ Stav checkboxu před: ${before}, po: ${after}`);
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.log(`✅ Stav checkboxu pojištění před: ${before}, po: ${after}`);
+  }
 }

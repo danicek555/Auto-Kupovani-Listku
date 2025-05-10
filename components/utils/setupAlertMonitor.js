@@ -22,7 +22,7 @@ async function setupAlertMonitor(page) {
           ?.textContent?.trim();
 
         if (visible && message) {
-          console.log(`[ALERT] Detekován notify alert: "${message}"`);
+          console.log(`⚠️⚠️⚠️[ALERT] Detekován notify alert: "${message}"`);
           foundAlert = true;
           break;
         }

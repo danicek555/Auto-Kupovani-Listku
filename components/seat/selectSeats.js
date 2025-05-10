@@ -6,7 +6,7 @@ import { mergeData } from "../getSeatData/mergeData.js";
 import { mergeSectorData } from "../getSeatData/mergeSectorData.js";
 import { appendPricesFromPriceCategories } from "../getSeatData/appendPricesFromPriceCategories.js";
 import { getGPerformance } from "../getSeatData/getGPerformance.js";
-import { seatClick } from "../getSeatData/seatClick.js";
+import { seatClick } from "../seat/seatClick.js";
 export async function selectSeats(page) {
   if (process.env.CONSOLE_LOG === "true") {
     console.log("Čekám na načtení canvasu...");
@@ -35,7 +35,7 @@ export async function selectSeats(page) {
     );
 
   const canvas = await page.$("#canvas");
-  await sleep(2000); // místo sleep()
+  //await sleep(2000); // místo sleep()
 
   if (process.env.SCREENSHOTS === "true") {
     await page
