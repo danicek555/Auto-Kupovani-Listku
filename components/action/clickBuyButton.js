@@ -3,28 +3,44 @@ export async function clickBuyButton(page) {
     console.time("⏱️ Kliknutí na tlačítko 'Koupit'");
   }
 
-  const maxTime = 2000; // max čekání (ms)
-  const interval = 10; // interval mezi pokusy (ms)
+  const maxTime = 2 * 60 * 1000; // 2 minuty
+  const interval = 50;
   const start = Date.now();
 
   let clicked = false;
 
   while (Date.now() - start < maxTime) {
-    clicked = await page.evaluate(() => {
+    const result = await page.evaluate(() => {
       const btn = document.querySelector("a.btn.btn-buy.flex-c");
+
       if (!btn) {
-        console.error(
-          "❌ Element 'a.btn.btn-buy.flex-c' v clickBuyButton.js nebyl nalezen"
-        );
-        return false;
+        return { found: false, disabled: null };
       }
-      if (btn) {
-        btn.click();
-        return true;
-      }
+
+      const isDisabled = btn
+        .closest(".ticket-cover")
+        ?.classList.contains("disabled");
+
+      return { found: true, disabled: isDisabled };
     });
 
-    if (clicked) {
+    if (!result.found) {
+      console.log("❌ Tlačítko `Koupit` nebylo nalezeno v clickeBuyButton.js");
+    } else if (result.disabled) {
+      console.log(
+        "🔁 Tlačítko `Koupit` je neaktivní v clickeBuyButton.js. Zkouším znovu..."
+      );
+    } else {
+      // Klikni, ale kliknutí udělej v evaluate, jinak Puppeteer vyhodí chybu
+      await page.evaluate(() => {
+        const btn = document.querySelector("a.btn.btn-buy.flex-c");
+        btn?.click();
+      });
+      if (process.env.CONSOLE_LOGS === "true") {
+        console.log(
+          "✅ Kliknutí na tlačítko koupit se povedlo v clickeBuyButton.js"
+        );
+      }
       if (process.env.EXECUTION_TIME === "true") {
         console.timeEnd("⏱️ Kliknutí na tlačítko 'Koupit'");
       }
@@ -34,8 +50,8 @@ export async function clickBuyButton(page) {
     await new Promise((r) => setTimeout(r, interval));
   }
 
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.warn(`❌ Tlačítko Buy Button se neobjevilo.`);
-  }
+  console.warn(
+    "❌ Tlačítko `Koupit` nebylo aktivní během 2 minut v clickeBuyButton.js"
+  );
   return false;
 }

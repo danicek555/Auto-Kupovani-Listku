@@ -44,7 +44,7 @@ export async function setupBrowser(url) {
   const browser = await puppeteer.launch({
     headless: process.env.BROWSER_HEADLESS === "true" ? false : true, // změň na false pokud chceš okno, pokud bez na "new" nebo na True, ale lepší je na "new" - tedka mi to treba nejde
     defaultViewport: null,
-    userDataDir: "./tmp", // čistý profil
+    //userDataDir: "./tmp", // ukládání cookie do tmp
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",

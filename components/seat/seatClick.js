@@ -24,25 +24,81 @@ export async function seatClick(page) {
 
   const maxCount = parseInt(process.env.TICKET_COUNT) || 3; // fallback když není v .env
 
-  const clickedLogs = await page.evaluate(
-    (m_all, maxCount) => {
-      let count = 0;
-      const logs = [];
+  let clickedLogs = [];
 
-      Object.keys(m_all).forEach((key) => {
-        const record = m_all[key];
-        if (record[10] === 0 && count < maxCount) {
-          OnSeat_click(m_all[key]); // klikne na sedadlo
-          logs.push(`✅ Clicked: OnSeat_click(m_all['${key}'])`);
-          count++;
-        }
+  if (process.env.SCREENSHOTS === "true") {
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("🔍 Clicking seats with screenshots");
+    }
+    // Slower version with screenshots
+    const seatsData = await page.evaluate(
+      (m_all, maxCount) => {
+        let count = 0;
+        const seatsToClick = [];
+
+        Object.keys(m_all).forEach((key) => {
+          const record = m_all[key];
+          if (record[10] === 0 && count < maxCount) {
+            seatsToClick.push(key);
+            count++;
+          }
+        });
+
+        return seatsToClick;
+      },
+      m_all,
+      maxCount
+    );
+
+    for (let i = 0; i < seatsData.length; i++) {
+      const key = seatsData[i];
+
+      await page.screenshot({
+        path: `./public/seat/before/seat_click${i}.png`,
+        fullPage: true,
       });
 
-      return logs;
-    },
-    m_all,
-    maxCount
-  );
+      await page.evaluate(
+        (key, m_all) => {
+          OnSeat_click(m_all[key]);
+        },
+        key,
+        m_all
+      );
+
+      clickedLogs.push(`✅ Clicked: OnSeat_click(m_all['${key}'])`);
+
+      await page.screenshot({
+        path: `./public/seat/after/seat_click${i}.png`,
+        fullPage: true,
+      });
+      console.log(`✅ Screenshot saved: seat_click${i}.png`);
+    }
+  } else {
+    // Faster version without screenshots
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("🔍 Clicking seats without screenshots");
+    }
+    clickedLogs = await page.evaluate(
+      (m_all, maxCount) => {
+        let count = 0;
+        const logs = [];
+
+        Object.keys(m_all).forEach((key) => {
+          const record = m_all[key];
+          if (record[10] === 0 && count < maxCount) {
+            OnSeat_click(m_all[key]);
+            logs.push(`✅ Clicked: OnSeat_click(m_all['${key}'])`);
+            count++;
+          }
+        });
+
+        return logs;
+      },
+      m_all,
+      maxCount
+    );
+  }
 
   if (process.env.CONSOLE_LOGS === "true") {
     console.log(clickedLogs.join("\n")); // výpis kliknutých ID
@@ -63,4 +119,6 @@ export async function seatClick(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ seatClick execution time");
   }
+
+  return clickedLogs;
 }

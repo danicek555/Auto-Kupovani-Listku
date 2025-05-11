@@ -92,6 +92,7 @@ export async function selectSeats(page) {
   await mergeData();
   await mergeSectorData();
   await appendPricesFromPriceCategories();
+  //await sleep(2000);
   await seatClick(page);
 
   // console.log("Detekuji volná místa");

@@ -2,7 +2,7 @@ import fs from "fs";
 
 export async function appendPricesFromPriceCategories() {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("appendPricesFromPriceCategories execution time");
+    console.time("⏱️ appendPricesFromPriceCategories execution time");
   }
 
   try {
@@ -42,6 +42,6 @@ export async function appendPricesFromPriceCategories() {
     console.error("❌ Chyba při zpracování cen:", err);
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("appendPricesFromPriceCategories execution time");
+    console.timeEnd("⏱️ appendPricesFromPriceCategories execution time");
   }
 }

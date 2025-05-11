@@ -13,7 +13,11 @@ export async function selectInsurance(page) {
 
   while (!clicked && Date.now() - start < maxTime) {
     try {
-      const exists = await page.$(selector);
+      const exists = await page.$(selector).catch((err) => {
+        console.warn(
+          "❌ Pojištění 'ne' se neobjevilo v selectInsurance.js: " + err.message
+        );
+      });
       if (exists) {
         before = await page.$eval(selector, (el) => el.checked);
         await page.evaluate((sel) => {
@@ -56,8 +60,14 @@ export async function selectInsurance(page) {
     console.timeEnd("⏱️ Výběr pojištění");
   }
 
-  const after = await page.$eval(selector, (el) => el.checked);
   if (process.env.CONSOLE_LOGS === "true") {
-    console.log(`✅ Stav checkboxu pojištění před: ${before}, po: ${after}`);
+    try {
+      const after = await page.$eval(selector, (el) => el.checked);
+      console.log(`✅ Stav checkboxu pojištění před: ${before}, po: ${after}`);
+    } catch (error) {
+      console.warn(
+        "❌ Nelze ověřit finální stav pojištění - element nebyl nalezen"
+      );
+    }
   }
 }
