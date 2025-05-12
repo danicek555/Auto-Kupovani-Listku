@@ -14,6 +14,7 @@ export async function seatClick(page) {
       "utf-8"
     );
     m_all = JSON.parse(fileContent);
+    console.log("jsem tu");
   } catch (err) {
     console.error(
       "❌ Chyba při čtení nebo parsování souboru 'merged_data_with_prices.json' v seatClick.js:",
@@ -74,36 +75,7 @@ export async function seatClick(page) {
       });
       console.log(`✅ Screenshot saved: seat_click${i}.png`);
     }
-  } else {
-    // Faster version without screenshots
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.log("🔍 Clicking seats without screenshots");
-    }
-    clickedLogs = await page.evaluate(
-      (m_all, maxCount) => {
-        let count = 0;
-        const logs = [];
 
-        Object.keys(m_all).forEach((key) => {
-          const record = m_all[key];
-          if (record[10] === 0 && count < maxCount) {
-            OnSeat_click(m_all[key]);
-            logs.push(`✅ Clicked: OnSeat_click(m_all['${key}'])`);
-            count++;
-          }
-        });
-
-        return logs;
-      },
-      m_all,
-      maxCount
-    );
-  }
-
-  if (process.env.CONSOLE_LOGS === "true") {
-    console.log(clickedLogs.join("\n")); // výpis kliknutých ID
-  }
-  if (process.env.SCREENSHOTS === "true") {
     await page
       .screenshot({
         path: "./public/screenshots/3_seats_selected.png",
@@ -115,7 +87,52 @@ export async function seatClick(page) {
           err.message
         )
       );
+  } else {
+    // Faster version without screenshots
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("🔍 Clicking seats without screenshots");
+    }
+    const hasFunction = await page.evaluate(
+      () => typeof OnSeat_click === "function"
+    );
+    console.log("OnSeat_click dostupná?", hasFunction);
+
+    console.log("jsem tu 2");
+    clickedLogs = await page.evaluate(
+      (m_all, maxCount) => {
+        let count = 0;
+        const logs = [];
+
+        Object.keys(m_all).forEach((key) => {
+          const record = m_all[key];
+
+          if (record[10] === 0 && count < maxCount) {
+            try {
+              if (typeof OnSeat_click !== "function")
+                throw new Error("OnSeat_click není dostupná");
+              OnSeat_click(m_all[key]);
+              logs.push(`Clicked: OnSeat_click(m_all['${key}'])`);
+              console.log("Clicked: OnSeat_click(m_all['${key}'])");
+              count++;
+            } catch (err) {
+              console.error("❌ Chyba při klikání na místo:", err.message);
+              logs.push(`❌ Chyba při klikání na místo: ${err.message}`);
+              console.log("Chyba při klikání na místo:", err.message);
+            }
+          }
+        });
+
+        return logs;
+      },
+      m_all,
+      maxCount
+    );
   }
+  console.log("jsem tu 3");
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.log(clickedLogs.join("\n")); // výpis kliknutých ID
+  }
+
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ seatClick execution time");
   }

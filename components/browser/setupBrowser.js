@@ -81,7 +81,18 @@ export async function setupBrowser(url) {
       }
     });
   }
-
+  if (process.env.CONSOLE_LOGS === "true") {
+    page.on("console", async (msg) => {
+      const text = msg.text();
+      if (text.startsWith("C")) {
+        console.log(text);
+      } else {
+        if (process.env.BROWSER_CONSOLE_LOGS === "true") {
+          console.log("🧠 Browser console log 2: " + text);
+        }
+      }
+    });
+  }
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Nastavení blokace zdrojů");
   }

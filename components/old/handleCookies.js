@@ -1,4 +1,4 @@
-import { sleep } from "./sleep.js";
+import { sleep } from "../utils/sleep.js";
 
 export async function handleCookies(page) {
   const cookieButton = await page.$("#didomi-notice-agree-button");

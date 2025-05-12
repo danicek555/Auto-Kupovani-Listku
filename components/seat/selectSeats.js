@@ -85,6 +85,7 @@ export async function selectSeats(page) {
 
   // await clickOnSection(page, "999");
   // await clickPlusButtonFiveTimes(page);
+  await sleep(2000);
   await getMAll(page);
   await getM(page);
   await getSAll(page);

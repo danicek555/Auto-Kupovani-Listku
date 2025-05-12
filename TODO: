@@ -3,8 +3,7 @@
 //? Co dalsiho musim opatrit aby kod byl safe?
 
 //udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
-//co screenshoty kdyz vybiram sedadla? Vymazat folder u sector screenshots
-//udelat pooling tlacitka koupit kdyz jeste neni aktivni
 //pridani kde chci sedet, sektor, sezeni/stani, cena, 
+//NEFUNGUJE ONSEATCLCIK BEZ SCREENSHOTU
 
 //! KDYZ UZ JSEM NAKOUPIL 6 LISTKU Z JEDNOHO EMAILU NEMUZU NAKOUPIT DALSI DO PUL HODINY!
