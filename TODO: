@@ -5,6 +5,7 @@
 //udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
 //pridani kde chci sedet, sektor, sezeni/stani, cena, 
 //NEFUNGUJE ONSEATCLCIK BEZ SCREENSHOTU
+//mit nejakej chytas chyby pokud by se nacetli spatne data u SALL a getGPerformance
 
 //! KDYZ UZ JSEM NAKOUPIL 6 LISTKU Z JEDNOHO EMAILU NEMUZU NAKOUPIT DALSI DO PUL HODINY!
 Chybný vstup:

@@ -116,6 +116,7 @@ export async function selectSeats(page) {
     await seatClickFast(page);
     return;
   } else {
+    await getM(page);
     await getMAll(page);
     await getSAll(page);
     await getGPerformance(page);
