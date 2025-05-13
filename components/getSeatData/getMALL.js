@@ -30,7 +30,9 @@ export async function getMAll(page) {
         await fs.writeFile("public/data/m_all_data.json", JSON.stringify(data));
 
         if (process.env.CONSOLE_LOGS === "true") {
-          console.log(`✅ Data uložena (pokus ${attempt}) do m_all_data.json`);
+          console.log(
+            `✅ Data uložena (pokus ${attempt}) do m_all_data.json v getMALL.js`
+          );
         }
 
         if (process.env.EXECUTION_TIME === "true") {

@@ -18,7 +18,9 @@ export async function getM(page) {
 
     fs.writeFileSync("public/data/m_data.json", JSON.stringify(data));
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log("✅ Data byla úspěšně uložena do souboru m_data.json");
+      console.log(
+        "✅ Data byla úspěšně uložena do souboru m_data.json v getM.js"
+      );
     }
   } catch (error) {
     if (process.env.CONSOLE_LOGS === "true") {

@@ -18,15 +18,13 @@ export async function getSAll(page) {
 
     fs.writeFileSync("public/data/s_all_data.json", JSON.stringify(data));
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log("✅ Data byla úspěšně uložena do souboru s_all_data.json");
+      console.log(
+        "✅ Data byla úspěšně uložena do souboru s_all_data.json v getSALL.js"
+      );
     }
   } catch (error) {
     if (process.env.CONSOLE_LOGS === "true") {
-      console.error("❌ Evaluate failed:", error);
-    }
-    await page.reload({ waitUntil: "networkidle0" });
-    if (process.env.CONSOLE_LOGS === "true") {
-      console.log("Stránka byla znovu načtena.");
+      console.error("❌ Evaluate failed v getSALL.js:", error.message);
     }
   }
   if (process.env.EXECUTION_TIME === "true") {

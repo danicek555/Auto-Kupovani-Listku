@@ -29,7 +29,7 @@ export async function seatClick(page) {
 
   if (process.env.SCREENSHOTS === "true") {
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log("🔍 Clicking seats with screenshots v seatClick.js");
+      console.log("⏻ Clicking seats with screenshots v seatClick.js");
     }
     // Slower version with screenshots
     const seatsData = await page.evaluate(
@@ -81,7 +81,7 @@ export async function seatClick(page) {
       }
     }
     if (process.env.EXECUTION_TIME === "true") {
-      console.time("⏱️ Screenshot 3_seats_selected.png");
+      console.time("⏱️ Screenshot 3_seats_selected.png v seatClick.js");
     }
     await page
       .screenshot({
@@ -95,12 +95,12 @@ export async function seatClick(page) {
         )
       );
     if (process.env.EXECUTION_TIME === "true") {
-      console.timeEnd("⏱️ Screenshot 3_seats_selected.png");
+      console.timeEnd("⏱️ Screenshot 3_seats_selected.png v seatClick.js");
     }
   } else {
     // Faster version without screenshots
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log("🔍 Clicking seats without screenshots v seatClick.js");
+      console.log("⏻ Clicking seats without screenshots v seatClick.js");
     }
     const hasFunction = await page.evaluate(
       () => typeof OnSeat_click === "function"

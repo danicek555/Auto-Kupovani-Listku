@@ -62,7 +62,7 @@ export async function confirmEmailModal(page) {
     if (process.env.SCREENSHOTS === "true") {
       if (process.env.EXECUTION_TIME === "true") {
         console.time(
-          "⏱️ Vytvoření screenshotu 6_Stranka s potvrzenim emailu.png"
+          "⏱️ Vytvoření screenshotu 6_Stranka s potvrzenim emailu.png v confirmEmailModal.js"
         );
       }
       try {
@@ -80,7 +80,7 @@ export async function confirmEmailModal(page) {
       }
       if (process.env.EXECUTION_TIME === "true") {
         console.timeEnd(
-          "⏱️ Vytvoření screenshotu 6_Stranka s potvrzenim emailu.png"
+          "⏱️ Vytvoření screenshotu 6_Stranka s potvrzenim emailu.png v confirmEmailModal.js"
         );
       }
     }

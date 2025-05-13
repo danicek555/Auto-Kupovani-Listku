@@ -147,7 +147,7 @@ export async function setupBrowser(url) {
   }
 
   await page
-    .goto(url, { waitUntil: "domcontentloaded", timeout: 10000 })
+    .goto(url, { waitUntil: "domcontentloaded", timeout: 20000 })
     .catch((err) =>
       console.error("❌ Timeout nebo jiná chyba v setupBrowser.js", err.message)
     );
@@ -173,14 +173,14 @@ export async function setupBrowser(url) {
 
   if (process.env.SCREENSHOTS === "true") {
     if (process.env.EXECUTION_TIME === "true") {
-      console.time("⏱️ Vytvoření screenshotu 0_site.png");
+      console.time("⏱️ Vytvoření screenshotu 0_site.png v setupBrowser.js");
     }
     await page.screenshot({
       path: "./public/screenshots/0_site.png",
       fullPage: false,
     });
     if (process.env.EXECUTION_TIME === "true") {
-      console.timeEnd("⏱️ Vytvoření screenshotu 0_site.png");
+      console.timeEnd("⏱️ Vytvoření screenshotu 0_site.png v setupBrowser.js");
     }
   }
 

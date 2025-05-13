@@ -2,9 +2,9 @@ import { sleep } from "../utils/sleep.js";
 import { getMAll } from "../getSeatData/getMALL.js";
 import { getM } from "../getSeatData/getM.js";
 import { getSAll } from "../getSeatData/getSALL.js";
-import { mergeData } from "../getSeatData/mergeData.js";
-import { mergeSectorData } from "../getSeatData/mergeSectorData.js";
-import { appendPricesFromPriceCategories } from "../getSeatData/appendPricesFromPriceCategories.js";
+import { mergeMAndMALL } from "../getSeatData/mergeMAndMALL.js";
+import { mergeMAndMALLAndSALL } from "../getSeatData/mergeMAndMALLAndSALL.js";
+import { mergeMAndMALLAndSALLAndGPerformance } from "../getSeatData/mergeMAndMALLAndSALLAndGPerformance.js";
 import { getGPerformance } from "../getSeatData/getGPerformance.js";
 import { seatClick } from "../seat/seatClick.js";
 export async function selectSeats(page) {
@@ -15,7 +15,7 @@ export async function selectSeats(page) {
     console.log("Čekám na načtení canvasu... v selectSeats.js");
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("⏱️ Načtení canvasu... v selectSeats.js");
+    console.time("⏱️ Načtení canvasu...");
   }
   await page
     .waitForSelector("#canvas", { visible: true, timeout: 5000 })
@@ -44,7 +44,7 @@ export async function selectSeats(page) {
   const canvas = await page.$("#canvas");
   //await sleep(2000); // místo sleep()
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("⏱️ Načtení canvasu... v selectSeats.js");
+    console.timeEnd("⏱️ Načtení canvasu...");
   }
 
   if (process.env.SCREENSHOTS === "true") {
@@ -113,9 +113,9 @@ export async function selectSeats(page) {
   await getM(page);
   await getSAll(page);
   await getGPerformance(page);
-  await mergeData();
-  await mergeSectorData();
-  await appendPricesFromPriceCategories();
+  await mergeMAndMALL();
+  await mergeMAndMALLAndSALL();
+  await mergeMAndMALLAndSALLAndGPerformance();
   //await sleep(2000);
   await seatClick(page);
 
