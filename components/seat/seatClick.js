@@ -10,14 +10,15 @@ export async function seatClick(page) {
   let mergedData;
   try {
     const fileContent = fs.readFileSync(
-      "public/data/merged_data_with_prices.json",
+      "public/data/merged_m_all_and_m_with_s_all_and_g_performance.json",
       "utf-8"
     );
+
     mergedData = JSON.parse(fileContent);
     //console.log("jsem tu");
   } catch (err) {
     console.error(
-      "❌ Chyba při čtení nebo parsování souboru 'merged_data_with_prices.json' v seatClick.js:",
+      "❌ Chyba při čtení nebo parsování souboru 'merged_m_all_and_m_with_s_all_and_g_performance.json' v seatClick.js:",
       err.message
     );
     return; // Exit the function if we can't get the data

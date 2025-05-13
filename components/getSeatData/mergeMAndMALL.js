@@ -42,7 +42,10 @@ export async function mergeMAndMALL() {
       );
     }
   } catch (error) {
-    console.error("❌ Chyba při spojování dat v mergeData.js:", error.message);
+    console.error(
+      "❌ Chyba při spojování dat v mergeMAndMALL.js:",
+      error.message
+    );
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ mergeMAndMAll execution time");

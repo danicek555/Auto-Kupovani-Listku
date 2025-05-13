@@ -31,7 +31,10 @@ export async function mergeMAndMALLAndSALL() {
       );
     }
   } catch (err) {
-    console.error("❌ Chyba při zpracování v mergeSectorData.js:", err.message);
+    console.error(
+      "❌ Chyba při zpracování v mergeMAndMALLAndSALL.js:",
+      err.message
+    );
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ mergeMAndMALLAndSALL execution time");
