@@ -2,7 +2,7 @@ import fs from "fs";
 import dotenv from "dotenv";
 
 dotenv.config(); // ⬅️ aktivuje .env
-export async function seatClick(page) {
+export async function seatClickSlow(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ seatClick execution time");
   }
@@ -76,7 +76,9 @@ export async function seatClick(page) {
         path: `./public/seat/after/seat_click${i}.png`,
         fullPage: true,
       });
-      console.log(`✅ Screenshot saved: seat_click${i}.png`);
+      if (process.env.CONSOLE_LOGS === "true") {
+        console.log(`✅ Screenshot saved: seat_click${i}.png`);
+      }
       if (process.env.EXECUTION_TIME === "true") {
         console.timeEnd(`⏱️ Screenshot ${i}`);
       }
