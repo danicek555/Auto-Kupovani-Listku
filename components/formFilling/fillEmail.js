@@ -47,10 +47,13 @@ export async function fillEmail(page) {
     );
 
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log(`✅ Vyplněn e-mail: ${email}`);
+      console.log(`✅ Vyplněn e-mail: ${email} v fillEmail.js`);
     }
   } catch (error) {
-    console.warn("❌ E-mail se nepodařilo vyplnit:", error.message);
+    console.warn(
+      "❌ E-mail se nepodařilo vyplnit v fillEmail.js:",
+      error.message
+    );
   }
 
   if (process.env.EXECUTION_TIME === "true")

@@ -1,6 +1,6 @@
 export async function selectInsurance(page) {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("⏱️ Výběr pojištění");
+    console.time("⏱️ Výběr pojištění v selectInsurance.js");
   }
 
   const selector = "#optionsRadiosPoistenie2";
@@ -29,10 +29,12 @@ export async function selectInsurance(page) {
         if (isChecked) {
           clicked = true;
           if (process.env.CONSOLE_LOGS === "true") {
-            console.log("✅ Pojištění 'ne' bylo zvoleno.");
+            console.log("✅ Pojištění 'ne' bylo zvoleno v selectInsurance.js");
           }
         } else {
-          console.warn("❌ Kliknutí na pojištění nevedlo ke změně hodnoty.");
+          console.warn(
+            "❌ Kliknutí na pojištění nevedlo ke změně hodnoty v selectInsurance.js"
+          );
         }
       }
     } catch (e) {
@@ -41,7 +43,10 @@ export async function selectInsurance(page) {
           "❌ Stránka byla přesměrována během výběru pojištění v selectInsurance.js. Zkouším znovu..."
         );
       } else {
-        console.warn("❌ Jiná chyba při výběru pojištění:", e.message);
+        console.warn(
+          "❌ Jiná chyba při výběru pojištění v selectInsurance.js:",
+          e.message
+        );
       }
     }
 
@@ -56,18 +61,19 @@ export async function selectInsurance(page) {
     );
   }
 
-  if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("⏱️ Výběr pojištění");
-  }
-
   if (process.env.CONSOLE_LOGS === "true") {
     try {
       const after = await page.$eval(selector, (el) => el.checked);
-      console.log(`✅ Stav checkboxu pojištění před: ${before}, po: ${after}`);
+      console.log(
+        `✅ Stav checkboxu pojištění před: ${before}, po: ${after} v selectInsurance.js`
+      );
     } catch (error) {
       console.warn(
-        "❌ Nelze ověřit finální stav pojištění - element nebyl nalezen"
+        "❌ Nelze ověřit finální stav pojištění - element nebyl nalezen v selectInsurance.js"
       );
     }
+  }
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("⏱️ Výběr pojištění");
   }
 }

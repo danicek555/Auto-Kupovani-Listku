@@ -38,7 +38,7 @@ export async function clickBuyButton(page) {
       });
       if (process.env.CONSOLE_LOGS === "true") {
         console.log(
-          "✅ Kliknutí na tlačítko koupit se povedlo v clickeBuyButton.js"
+          "✅ Kliknutí na tlačítko koupit se povedlo v clickBuyButton.js"
         );
       }
       if (process.env.EXECUTION_TIME === "true") {

@@ -67,6 +67,9 @@ export async function setupBrowser(url) {
     console.timeEnd("⏱️ Spuštění prohlížeče");
   }
 
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("⏱️ Zapnutí browser console logů");
+  }
   const page = await browser.newPage();
   if (process.env.ALERT_MONITOR === "true") {
     // Zachytávej alerty z konzole
@@ -81,18 +84,22 @@ export async function setupBrowser(url) {
       }
     });
   }
-  if (process.env.CONSOLE_LOGS === "true") {
-    page.on("console", async (msg) => {
-      const text = msg.text();
-      if (text.startsWith("C")) {
-        console.log(text);
-      } else {
-        if (process.env.BROWSER_CONSOLE_LOGS === "true") {
-          console.log("🧠 Browser console log 2: " + text);
-        }
-      }
-    });
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("⏱️ Zapnutí browser console logů");
   }
+  // if (process.env.CONSOLE_LOGS === "true") {
+  //   page.on("console", async (msg) => {
+  //     const text = msg.text();
+  //     if (text.startsWith("C")) {
+  //       console.log(text);
+  //     } else {
+  //       if (process.env.BROWSER_CONSOLE_LOGS === "true") {
+  //         console.log("🧠 Browser console log 2: " + text);
+  //       }
+  //     }
+  //   });
+  // }
+
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Nastavení blokace zdrojů");
   }
@@ -165,10 +172,16 @@ export async function setupBrowser(url) {
   }
 
   if (process.env.SCREENSHOTS === "true") {
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time("⏱️ Vytvoření screenshotu 0_site.png");
+    }
     await page.screenshot({
       path: "./public/screenshots/0_site.png",
       fullPage: false,
     });
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd("⏱️ Vytvoření screenshotu 0_site.png");
+    }
   }
 
   if (process.env.EXECUTION_TIME === "true") {

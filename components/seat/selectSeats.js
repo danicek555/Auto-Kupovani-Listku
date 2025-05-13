@@ -8,8 +8,14 @@ import { appendPricesFromPriceCategories } from "../getSeatData/appendPricesFrom
 import { getGPerformance } from "../getSeatData/getGPerformance.js";
 import { seatClick } from "../seat/seatClick.js";
 export async function selectSeats(page) {
-  if (process.env.CONSOLE_LOG === "true") {
-    console.log("Čekám na načtení canvasu...");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("⏱️ selectSeats.js");
+  }
+  if (process.env.CONSOLE_LOGS === "true") {
+    console.log("Čekám na načtení canvasu... v selectSeats.js");
+  }
+  if (process.env.EXECUTION_TIME === "true") {
+    console.time("⏱️ Načtení canvasu... v selectSeats.js");
   }
   await page
     .waitForSelector("#canvas", { visible: true, timeout: 5000 })
@@ -19,6 +25,7 @@ export async function selectSeats(page) {
         err.message
       )
     );
+
   await page
     .waitForFunction(
       () => {
@@ -36,8 +43,16 @@ export async function selectSeats(page) {
 
   const canvas = await page.$("#canvas");
   //await sleep(2000); // místo sleep()
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("⏱️ Načtení canvasu... v selectSeats.js");
+  }
 
   if (process.env.SCREENSHOTS === "true") {
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time(
+        "⏱️ Vytvoření screenshotu 1_site_with_seats.png v selectSeats.js"
+      );
+    }
     await page
       .screenshot({
         path: "./public/screenshots/1_site_with_seats.png",
@@ -49,6 +64,15 @@ export async function selectSeats(page) {
           err.message
         )
       );
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd(
+        "⏱️ Vytvoření screenshotu 1_site_with_seats.png v selectSeats.js"
+      );
+    }
+
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time("⏱️ Vytvoření screenshotu 2_canvas.png v selectSeats.js");
+    }
     await canvas
       .screenshot({ path: "./public/screenshots/2_canvas.png" })
       .catch((err) =>
@@ -57,10 +81,9 @@ export async function selectSeats(page) {
           err.message
         )
       );
-  }
-
-  if (process.env.CONSOLE_LOG === "true") {
-    console.log("Načetla se mapa, musel jsem čekat 2 sekundy");
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd("⏱️ Vytvoření screenshotu 2_canvas.png v selectSeats.js");
+    }
   }
 
   // await extractNumbersFromImage("./public/screenshots/4_canvas.png")
@@ -85,7 +108,7 @@ export async function selectSeats(page) {
 
   // await clickOnSection(page, "999");
   // await clickPlusButtonFiveTimes(page);
-  await sleep(2000);
+  //await sleep(2000);
   await getMAll(page);
   await getM(page);
   await getSAll(page);
@@ -127,4 +150,7 @@ export async function selectSeats(page) {
   //   timeout: 5000,
   // });
   // await page.click("#hladisko-basket-btn");
+  if (process.env.EXECUTION_TIME === "true") {
+    console.timeEnd("⏱️ selectSeats.js");
+  }
 }

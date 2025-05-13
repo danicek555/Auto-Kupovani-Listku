@@ -21,7 +21,7 @@ export async function submitPayment(page) {
         console.timeEnd("⏱️ Kliknutí na tlačítko 'Zaplatit'");
       }
       if (process.env.CONSOLE_LOGS === "true") {
-        console.log("✅ Kliknuto na tlačítko 'Zaplatit'.");
+        console.log("✅ Kliknuto na tlačítko 'Zaplatit' v submitPayment.js");
       }
       break;
     }
@@ -36,6 +36,11 @@ export async function submitPayment(page) {
   }
 
   if (process.env.SCREENSHOTS === "true") {
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time(
+        "⏱️ Vytvoření screenshotu 5_Vyplnena stranka na zaplaceni.png"
+      );
+    }
     try {
       await page.screenshot({
         path: "./public/screenshots/5_Vyplnena stranka na zaplaceni.png",
@@ -45,6 +50,11 @@ export async function submitPayment(page) {
       if (process.env.CONSOLE_LOGS === "true") {
         console.error("❌ Screenshot selhal v submitPayment.js:", err.message);
       }
+    }
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd(
+        "⏱️ Vytvoření screenshotu 5_Vyplnena stranka na zaplaceni.png"
+      );
     }
   }
 

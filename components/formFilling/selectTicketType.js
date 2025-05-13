@@ -38,7 +38,7 @@ export async function selectTicketType(page) {
 
         await labels[0].click(); // eTicket
         if (process.env.CONSOLE_LOGS === "true") {
-          console.log("✅ Kliknuto na eTicket.");
+          console.log("✅ Kliknuto na eTicket v selectTicketType.js");
         }
 
         if (process.env.EXECUTION_TIME === "true") {

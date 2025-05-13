@@ -1,6 +1,8 @@
 export async function clickBasketButton(page) {
   if (process.env.CONSOLE_LOGS === "true") {
-    console.log("🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'...");
+    console.log(
+      "🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js"
+    );
   }
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
@@ -30,7 +32,9 @@ export async function clickBasketButton(page) {
 
     if (clicked) {
       if (process.env.CONSOLE_LOGS === "true") {
-        console.log("✅ Kliknutí na 'Pokračovat do košíku' proběhlo.");
+        console.log(
+          "✅ Kliknutí na 'Pokračovat do košíku' proběhlo v clickBasketButton.js"
+        );
       }
       if (process.env.EXECUTION_TIME === "true") {
         console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
@@ -41,7 +45,9 @@ export async function clickBasketButton(page) {
     await page.waitForTimeout(interval);
   }
 
-  console.warn(`❌ Tlačítko se neobjevilo do ${maxTime} ms.`);
+  console.warn(
+    `❌ Tlačítko 'Pokračovat do košíku' se neobjevilo do ${maxTime} ms. v clickBasketButton.js`
+  );
 
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");

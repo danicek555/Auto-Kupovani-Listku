@@ -21,7 +21,15 @@ async function runBot() {
   console.time("🔁 Doba spuštění botu");
   const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
 
-  await setupAlertMonitor(page);
+  if (process.env.ALERT_MONITOR === "true") {
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time("⏱️ Zapnutí alert monitoru");
+    }
+    await setupAlertMonitor(page);
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd("⏱️ Zapnutí alert monitoru");
+    }
+  }
 
   //await handleCookies(page);
 

@@ -27,7 +27,9 @@ export async function confirmEmailModal(page) {
     }
 
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log("✅ Stránka s potvrzením emailu načtena.");
+      console.log(
+        "✅ Stránka s potvrzením emailu načtena v confirmEmailModal.js"
+      );
     }
 
     // Pooling na tlačítko
@@ -48,16 +50,21 @@ export async function confirmEmailModal(page) {
 
     if (clicked) {
       if (process.env.CONSOLE_LOGS === "true") {
-        console.log("✅ Kliknuto na 'Ano, potvrdit'.");
+        console.log("✅ Kliknuto na 'Ano, potvrdit' v confirmEmailModal.js");
       }
     } else {
       throw new Error(
-        "Tlačítko 'Ano, potvrdit' nebylo nalezeno nebo se nepodařilo kliknout."
+        "Tlačítko 'Ano, potvrdit' nebylo nalezeno nebo se nepodařilo kliknout v confirmEmailModal.js"
       );
     }
 
     // Screenshot (volitelný)
     if (process.env.SCREENSHOTS === "true") {
+      if (process.env.EXECUTION_TIME === "true") {
+        console.time(
+          "⏱️ Vytvoření screenshotu 6_Stranka s potvrzenim emailu.png"
+        );
+      }
       try {
         await page.screenshot({
           path: "./public/screenshots/6_Stranka s potvrzenim emailu.png",
@@ -70,6 +77,11 @@ export async function confirmEmailModal(page) {
             err.message
           );
         }
+      }
+      if (process.env.EXECUTION_TIME === "true") {
+        console.timeEnd(
+          "⏱️ Vytvoření screenshotu 6_Stranka s potvrzenim emailu.png"
+        );
       }
     }
 

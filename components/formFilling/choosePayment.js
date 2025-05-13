@@ -10,7 +10,9 @@ export async function choosePayment(page) {
         if (element) {
           await page.click(selector);
           if (process.env.CONSOLE_LOGS === "true") {
-            console.log("✅ Zvolena platba kartou / Google Pay / Apple Pay.");
+            console.log(
+              "✅ Zvolena platba kartou / Google Pay / Apple Pay v choosePayment.js"
+            );
           }
           return true;
         }
@@ -41,6 +43,9 @@ export async function choosePayment(page) {
       console.timeEnd("⏱️ Doba pollingu 'Zvolit platbu'");
     }
   } catch (error) {
-    console.warn("❌ Nepodařilo se zvolit platbu v choosePayment.js:", error);
+    console.warn(
+      "❌ Nepodařilo se zvolit platbu v choosePayment.js:",
+      error.message
+    );
   }
 }
