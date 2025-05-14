@@ -260,52 +260,67 @@ export async function seatClickSlow(page) {
 
     const { clickedLogs, totalSeats, reasonStats } = result;
     console.log("DEBUG: reasonStats", reasonStats);
-
+    // 🔸 Nic se nevybralo vůbec
     if (clickedLogs.length === 0) {
-      console.warn("⚠️ Nebylo vybráno žádné místo. Důvody:");
+      console.warn("⚠️ Nebylo vybráno žádné místo.");
+    }
+    // 🔸 Výběr byl částečný
+    const clickedCount = clickedLogs.filter((line) =>
+      line.startsWith("✅ Clicked:")
+    ).length;
 
-      if (reasonStats.available === 0) {
-        console.warn("⛔ Není žádné volné místo.");
-      } else {
-        if (process.env.SEKTOR === "true" && reasonStats.totalInSector === 0) {
-          console.warn(
-            `❌ Sektor ${process.env.SEKTOR_NUMBER} neexistuje v datech.`
-          );
-        } else if (
-          process.env.SEKTOR === "true" &&
-          reasonStats.availableInSector === 0
-        ) {
-          console.warn(
-            `❌ V sektoru ${process.env.SEKTOR_NUMBER} nejsou žádná volná místa.`
-          );
-        }
-        if (reasonStats.togetherNotFound) {
-          console.warn(
-            "❌ Nebylo možné najít skupinu sousedních sedadel ve stejné řadě."
-          );
-        }
+    if (clickedCount > 0 && clickedCount < maxCount) {
+      console.warn(
+        `⚠️ Podařilo se vybrat pouze ${clickedCount} z požadovaných ${maxCount} míst.`
+      );
+    }
+    // 🔸 Vždy vypiš když uživatel chtěl víc, než bylo možné
+    if (reasonStats.available < maxCount) {
+      console.warn(
+        `⚠️ K dispozici je jen ${reasonStats.available} volných míst – méně než požadovaných ${maxCount}.`
+      );
+    }
 
-        if (
-          process.env.PRICE === "true" &&
-          reasonStats.available > 0 &&
-          clickedLogs.length === 0
-        ) {
-          console.warn(
-            `❌ Žádná volná místa s cenou do ${process.env.PRICE_MAX} Kč.`
-          );
-        }
+    // 🔸 Vždy vypiš pokud sektor vůbec neexistuje
+    if (process.env.SEKTOR === "true" && reasonStats.totalInSector === 0) {
+      console.warn(
+        `❌ Sektor ${process.env.SEKTOR_NUMBER} neexistuje v datech.`
+      );
+    }
 
-        if (
-          process.env.SEKTOR === "true" &&
-          process.env.PRICE === "true" &&
-          reasonStats.filteredBySector + reasonStats.filteredByPrice >=
-            reasonStats.available
-        ) {
-          console.warn(
-            `❌ Žádná volná místa splňující kombinaci sektor + cena.`
-          );
-        }
-      }
+    // 🔸 I když nějaká místa jsou, může být sektor prázdný
+    if (process.env.SEKTOR === "true" && reasonStats.availableInSector === 0) {
+      console.warn(
+        `❌ V sektoru ${process.env.SEKTOR_NUMBER} nejsou žádná volná místa.`
+      );
+    }
+    if (
+      process.env.PRICE === "true" &&
+      reasonStats.available > 0 &&
+      clickedLogs.length === 0
+    ) {
+      console.warn(
+        `❌ Žádná volná místa s cenou do ${process.env.PRICE_MAX} Kč.`
+      );
+    }
+    // 🔸 TOGETHER failure – i když se kliklo třeba na 2 místa
+    if (reasonStats.togetherNotFound) {
+      console.warn(
+        "❌ Nebylo možné najít skupinu sousedních sedadel ve stejné řadě."
+      );
+    }
+
+    // 🔸 Cena nesedí
+
+    // 🔸 Kombinace cena + sektor selhala
+    if (
+      process.env.SEKTOR === "true" &&
+      process.env.PRICE === "true" &&
+      clickedLogs.length === 0 &&
+      reasonStats.filteredBySector + reasonStats.filteredByPrice >=
+        reasonStats.available
+    ) {
+      console.warn(`❌ Žádná volná místa splňující kombinaci sektor + cena.`);
     }
 
     if (process.env.CONSOLE_LOGS === "true") {
