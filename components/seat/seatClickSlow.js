@@ -122,16 +122,18 @@ export async function seatClickSlow(page) {
         useSectorFilter,
         allowedSector,
         usePriceFilter,
-        maxPrice
+        maxPrice,
+        useTogether
       ) => {
-        let count = 0;
-        const logs = [];
-        let filteredBySector = 0;
-        let filteredByPrice = 0;
         let total = 0;
         let available = 0;
+        let filteredBySector = 0;
+        let filteredByPrice = 0;
         let totalInSector = 0;
         let availableInSector = 0;
+        const logs = [];
+        const candidateSeats = [];
+        let togetherNotFound = false;
 
         Object.keys(mergedData).forEach((key) => {
           const record = mergedData[key];
@@ -161,24 +163,76 @@ export async function seatClickSlow(page) {
             if (isAvailable) availableInSector++;
           }
 
-          if (
-            isAvailable &&
-            isCorrectSector &&
-            isCorrectPrice &&
-            count < maxCount
-          ) {
-            try {
-              if (typeof OnSeat_click !== "function")
-                throw new Error("OnSeat_click není dostupná");
+          if (isAvailable && isCorrectSector && isCorrectPrice) {
+            candidateSeats.push(record);
+          }
+        });
 
-              OnSeat_click(record);
-              logs.push(
-                `✅ Clicked: OnSeat_click(mergedData['${key}']) (sektor: ${record[11]}, cena: ${record[12]})`
+        let selectedSeats = [];
+
+        if (useTogether)
+          if (candidateSeats.length < maxCount) {
+            togetherNotFound = true;
+          } else {
+            const byRow = {};
+            candidateSeats.forEach((seat) => {
+              const row = String(seat[2]).trim();
+              if (!byRow[row]) byRow[row] = [];
+              byRow[row].push(seat);
+            });
+
+            for (const row in byRow) {
+              const sorted = byRow[row].sort(
+                (a, b) => Number(a[1].trim()) - Number(b[1].trim())
               );
-              count++;
-            } catch (err) {
-              logs.push(`❌ Chyba při klikání na místo: ${err.message}`);
+
+              for (let i = 0; i <= sorted.length - maxCount; i++) {
+                const group = sorted.slice(i, i + maxCount);
+
+                const isConsecutive =
+                  group.length === maxCount &&
+                  group.every((seat, idx) => {
+                    if (idx === 0) return true;
+                    const prevSeat = group[idx - 1];
+                    return (
+                      prevSeat &&
+                      Number(seat[1].trim()) === Number(prevSeat[1].trim()) + 1
+                    );
+                  });
+
+                if (isConsecutive) {
+                  selectedSeats = group;
+                  break;
+                }
+              }
+              if (selectedSeats.length > 0) break;
             }
+
+            if (selectedSeats.length === 0) {
+              togetherNotFound = true;
+            }
+          }
+        else {
+          selectedSeats = candidateSeats.slice(0, maxCount);
+
+          if (selectedSeats.length === 0) {
+            logs.push(`❌ Nebylo nalezeno žádné vhodné místo.`);
+          }
+        }
+
+        selectedSeats.forEach((record) => {
+          try {
+            if (typeof OnSeat_click !== "function")
+              throw new Error("OnSeat_click není dostupná");
+
+            OnSeat_click(record);
+            logs.push(
+              `✅ Clicked: OnSeat_click(${record[1].trim()} / řada ${
+                record[2]
+              }) (sektor: ${record[11]}, cena: ${record[12]}) `
+            );
+          } catch (err) {
+            logs.push(`❌ Chyba při klikání na místo: ${err.message}`);
           }
         });
 
@@ -191,16 +245,19 @@ export async function seatClickSlow(page) {
             filteredByPrice,
             totalInSector,
             availableInSector,
+            togetherNotFound,
           },
         };
       },
       mergedData,
       maxCount,
       process.env.SEKTOR === "true",
-      String(process.env.SEKTOR_NUMBER), // ✅ jasně definovaný sektor jako string
+      String(process.env.SEKTOR_NUMBER),
       process.env.PRICE === "true",
-      Number(process.env.PRICE_MAX) // ✅ cena jako číslo, i když 0
+      Number(process.env.PRICE_MAX),
+      process.env.TOGETHER === "true"
     );
+
     const { clickedLogs, totalSeats, reasonStats } = result;
     console.log("DEBUG: reasonStats", reasonStats);
 
@@ -220,6 +277,11 @@ export async function seatClickSlow(page) {
         ) {
           console.warn(
             `❌ V sektoru ${process.env.SEKTOR_NUMBER} nejsou žádná volná místa.`
+          );
+        }
+        if (reasonStats.togetherNotFound) {
+          console.warn(
+            "❌ Nebylo možné najít skupinu sousedních sedadel ve stejné řadě."
           );
         }
 
