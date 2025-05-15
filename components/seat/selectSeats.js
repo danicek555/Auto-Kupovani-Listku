@@ -12,41 +12,6 @@ export async function selectSeats(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ selectSeats.js");
   }
-  // if (process.env.CONSOLE_LOGS === "true") {
-  //   console.log("Čekám na načtení canvasu... v selectSeats.js");
-  // }
-  // if (process.env.EXECUTION_TIME === "true") {
-  //   console.time("⏱️ Načtení canvasu...");
-  // }
-  // await page
-  //   .waitForSelector("#canvas", { visible: true, timeout: 5000 })
-  //   .catch((err) =>
-  //     console.error(
-  //       "❌ Element 'canvas' v selectSeats.js nebyl nalezen",
-  //       err.message
-  //     )
-  //   );
-
-  // await page
-  //   .waitForFunction(
-  //     () => {
-  //       const canvas = document.querySelector("#canvas");
-  //       return canvas && canvas.width > 0 && canvas.height > 0;
-  //     },
-  //     { timeout: 5000 }
-  //   )
-  //   .catch((err) =>
-  //     console.error(
-  //       "❌ Element 'canvas' v selectSeats.js nebyl nalezen",
-  //       err.message
-  //     )
-  //   );
-
-  // const canvas = await page.$("#canvas");
-  // //await sleep(2000); // místo sleep()
-  // if (process.env.EXECUTION_TIME === "true") {
-  //   console.timeEnd("⏱️ Načtení canvasu...");
-  // }
 
   if (process.env.SCREENSHOTS === "true") {
     if (process.env.EXECUTION_TIME === "true") {
@@ -70,7 +35,41 @@ export async function selectSeats(page) {
         "⏱️ Vytvoření screenshotu 1_site_with_seats.png v selectSeats.js"
       );
     }
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log("Čekám na načtení canvasu... v selectSeats.js");
+    }
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time("⏱️ Načtení canvasu...");
+    }
+    await page
+      .waitForSelector("#canvas", { visible: true, timeout: 5000 })
+      .catch((err) =>
+        console.error(
+          "❌ Element 'canvas' v selectSeats.js nebyl nalezen",
+          err.message
+        )
+      );
 
+    await page
+      .waitForFunction(
+        () => {
+          const canvas = document.querySelector("#canvas");
+          return canvas && canvas.width > 0 && canvas.height > 0;
+        },
+        { timeout: 5000 }
+      )
+      .catch((err) =>
+        console.error(
+          "❌ Element 'canvas' v selectSeats.js nebyl nalezen",
+          err.message
+        )
+      );
+
+    const canvas = await page.$("#canvas");
+    //await sleep(2000); // místo sleep()
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd("⏱️ Načtení canvasu...");
+    }
     if (process.env.EXECUTION_TIME === "true") {
       console.time("⏱️ Vytvoření screenshotu 2_canvas.png v selectSeats.js");
     }

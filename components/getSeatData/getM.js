@@ -42,13 +42,13 @@ export async function getM(page) {
     console.time("⏱️ m execution time");
   }
 
-  const maxAttempts = 10;
+  const maxAttempts = 100;
   const waitBetween = 50; // ms
   let data = null;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     console.time("cekam na m");
-    await page.waitForFunction('typeof m !== "undefined"');
+    await page.waitForFunction('typeof m !== "undefined"', { timeout: 10000 });
     console.timeEnd("cekam na m");
 
     try {

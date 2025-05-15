@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config(); // ⬅️ aktivuje .env
 export async function seatClickSlow(page) {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("⏱️ seatClick execution time");
+    console.time("⏱️ seatClickSlowexecution time");
   }
 
   let mergedData;
@@ -329,7 +329,7 @@ export async function seatClickSlow(page) {
 
     console.log("kliknul jse mtu");
     if (process.env.EXECUTION_TIME === "true") {
-      console.timeEnd("⏱️ seatClick execution time");
+      console.timeEnd("⏱️ seatClickSlow execution time");
     }
 
     return clickedLogs;

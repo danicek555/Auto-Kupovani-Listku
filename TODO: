@@ -3,8 +3,7 @@
 //? Co dalsiho musim opatrit aby kod byl safe?
 
 //udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
-//pridani kde chci sedet, sektor, sezeni/stani, cena, 
-//NEFUNGUJE ONSEATCLCIK BEZ SCREENSHOTU
+
 //mit nejakej chytas chyby pokud by se nacetli spatne data u SALL a getGPerformance
 
 //! KDYZ UZ JSEM NAKOUPIL 6 LISTKU Z JEDNOHO EMAILU NEMUZU NAKOUPIT DALSI DO PUL HODINY!
@@ -50,3 +49,5 @@ Clicked: OnSeat_click(mergedData['-2131544088'])
 danielmitka@Daniels-MacBook-Air AutoKupovaniListku % 
 
 OPRAVIT 0 CHECKBOXU ZASKRTNUTO
+SMAZAT SLOW SCREENSHOTY, OPTIMALIZOVAT SLOW CLICK DO RUZNYCH SLOZEK
+PRIDAT SCREENSHOTY DO SLOW CLICKU
