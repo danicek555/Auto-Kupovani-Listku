@@ -57,6 +57,48 @@ export async function seatClickFast(page) {
   if (process.env.CONSOLE_LOGS === "true") {
     console.log(clickedLogs.join("\n"));
   }
+  if (process.env.SCREENSHOTS === "true") {
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time(
+        "⏱️ Vytvoření screenshotu 3_seats_selected.png v seatClickSlow.js"
+      );
+    }
+    await page
+      .screenshot({
+        path: `./public/screenshots/3_seats_selected.png`,
+        fullPage: true,
+      })
+      .catch((err) =>
+        console.error(
+          "❌ Screenshot 3_seats_selected.png selhal v seatClickSlow.js",
+          err.message
+        )
+      );
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd(
+        "⏱️ Vytvoření screenshotu 3_seats_selected.png v seatClickSlow.js"
+      );
+    }
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time(
+        "⏱️ Vytvoření screenshotu 4_seats_selected_canvas.png v seatClickSlow.js"
+      );
+      const canvas = await page.$("#canvas");
+      await canvas
+        .screenshot({
+          path: "./public/screenshots/4_seats_selected_canvas.png",
+        })
+        .catch((err) =>
+          console.error(
+            "❌ Screenshot 4_seats_selected_canvas.png selhal v seatClickSlow.js",
+            err.message
+          )
+        );
+      console.timeEnd(
+        "⏱️ Vytvoření screenshotu 4_seats_selected_canvas.png v seatClickSlow.js"
+      );
+    }
+  }
 
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ seatClickFAST execution time");

@@ -47,12 +47,18 @@ export async function getM(page) {
   let data = null;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    console.time("cekam na m");
+    if (process.env.EXECUTION_TIME === "true") {
+      console.time("⏱️ cekam na m");
+    }
     await page.waitForFunction('typeof m !== "undefined"', { timeout: 10000 });
-    console.timeEnd("cekam na m");
+    if (process.env.EXECUTION_TIME === "true") {
+      console.timeEnd("⏱️ cekam na m");
+    }
 
     try {
-      console.time("evaluate m");
+      if (process.env.EXECUTION_TIME === "true") {
+        console.time("⏱️ evaluate m");
+      }
       data = await page.evaluate(() => {
         const obj = {};
         Object.keys(window.m).forEach((key) => {
@@ -60,7 +66,9 @@ export async function getM(page) {
         });
         return obj;
       });
-      console.timeEnd("evaluate m");
+      if (process.env.EXECUTION_TIME === "true") {
+        console.timeEnd("⏱️ evaluate m");
+      }
       const keys = Object.keys(data);
       const hasValidKeys = keys.some(
         (k) => k.startsWith("-") || parseInt(k) < 0
