@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config(); // ⬅️ aktivuje .env
 export async function seatClickSlow(page) {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("⏱️ seatClickSlowexecution time");
+    console.time("⏱️ seatClickSlow execution time");
   }
 
   let mergedData;
@@ -170,19 +170,23 @@ export async function seatClickSlow(page) {
 
         let selectedSeats = [];
 
-        if (useTogether)
+        if (useTogether) {
           if (candidateSeats.length < maxCount) {
             togetherNotFound = true;
           } else {
-            const byRow = {};
+            const bySectorAndRow = {};
+
             candidateSeats.forEach((seat) => {
+              const sector = String(seat[11]).trim();
               const row = String(seat[2]).trim();
-              if (!byRow[row]) byRow[row] = [];
-              byRow[row].push(seat);
+              const key = `${sector}-${row}`;
+
+              if (!bySectorAndRow[key]) bySectorAndRow[key] = [];
+              bySectorAndRow[key].push(seat);
             });
 
-            for (const row in byRow) {
-              const sorted = byRow[row].sort(
+            for (const key in bySectorAndRow) {
+              const sorted = bySectorAndRow[key].sort(
                 (a, b) => Number(a[1].trim()) - Number(b[1].trim())
               );
 
@@ -212,7 +216,7 @@ export async function seatClickSlow(page) {
               togetherNotFound = true;
             }
           }
-        else {
+        } else {
           selectedSeats = candidateSeats.slice(0, maxCount);
 
           if (selectedSeats.length === 0) {

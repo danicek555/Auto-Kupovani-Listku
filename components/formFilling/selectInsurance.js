@@ -1,6 +1,6 @@
 export async function selectInsurance(page) {
   if (process.env.EXECUTION_TIME === "true") {
-    console.time("⏱️ Výběr pojištění v selectInsurance.js");
+    console.time("⏱️ Výběr pojištění execution time");
   }
 
   const selector = "#optionsRadiosPoistenie2";
@@ -74,6 +74,6 @@ export async function selectInsurance(page) {
     }
   }
   if (process.env.EXECUTION_TIME === "true") {
-    console.timeEnd("⏱️ Výběr pojištění");
+    console.timeEnd("⏱️ Výběr pojištění execution time");
   }
 }
