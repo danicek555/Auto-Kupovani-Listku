@@ -19,6 +19,7 @@ export async function selectSeats(page) {
         "⏱️ Vytvoření screenshotu 1_site_with_seats.png v selectSeats.js"
       );
     }
+
     await page
       .screenshot({
         path: "./public/screenshots/1_site_with_seats.png",
