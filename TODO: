@@ -1,53 +1,9 @@
-//TODO: Sektory, informace o listkach, opakovani celeho programu, jaky je maximalni pocet requestu na ticket portal at to nepretizim?,
+//TODO: jaky je maximalni pocet requestu na ticket portal at to nepretizim?,
 //? co captcha a recaptcha? Co to dela a potrebuju to do meho programu? Jak ticket portal blokuje boty?
 //? Co dalsiho musim opatrit aby kod byl safe?
+//? udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
+//Zachytavat chyby z Alert Monitoru a podle toho co napise tak udelat to co je potreba
 
-//udelat novy file na nacteni payment stranky a oddelit to od selectInsurance file
 
-//mit nejakej chytas chyby pokud by se nacetli spatne data u SALL a getGPerformance
 
 //! KDYZ UZ JSEM NAKOUPIL 6 LISTKU Z JEDNOHO EMAILU NEMUZU NAKOUPIT DALSI DO PUL HODINY!
-Chybný vstup:
-danielmitka@Daniels-MacBook-Air AutoKupovaniListku % node index.js 
-✅ Kliknutí na tlačítko koupit se povedlo v clickBuyButton.js
-Čekám na načtení canvasu... v selectSeats.js
-✅ Data uložena (pokus 1) do m_all_data.json
-✅ Data byla úspěšně uložena do souboru m_data.json
-✅ Data byla úspěšně uložena do souboru s_all_data.json
-✅ Data byla úspěšně uložena do souboru g_performance_data.json
-✅ m_all a m data byla úspěšně spojena a uložena do merged_data.json
-✅ s_all byly přidány na konec každého záznamu → merged_data_with_sector_labels.json
-✅ g.performance.PriceCategories byly přidány na konec každého záznamu → merged_data_with_prices.json
-🔍 Clicking seats without screenshots v seatClick.js
-OnSeat_click dostupná? true v seatClick.js
-Clicked: OnSeat_click(mergedData['-2131544092'])
-Clicked: OnSeat_click(mergedData['-2131544091'])
-Clicked: OnSeat_click(mergedData['-2131544090'])
-Clicked: OnSeat_click(mergedData['-2131544089'])
-Clicked: OnSeat_click(mergedData['-2131544088'])
-🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'...
-✅ Kliknutí na 'Pokračovat do košíku' proběhlo.
-⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
-⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
-❌ Pojištění 'ne' se neobjevilo v selectInsurance.js: Execution context was destroyed, most likely because of a navigation.
-❌ Pojištění 'ne' se neobjevilo nebo se nepodařilo zakliknout v selectInsurance.js
-❌ Nelze ověřit finální stav pojištění - element nebyl nalezen v selectInsurance.js
-❌ Element 'label[for='pickupTypeOption']' v selectTicketType.js nebyl nalezen Waiting for selector `label[for="pickupTypeOption"]` failed: Waiting failed: 5000ms exceeded
-❌ Element 'email_pickup_7' v fillEmail.js nebyl nalezen: Waiting for selector `#email_pickup_7` failed: Waiting failed: 5000ms exceeded
-❌ E-mail se nepodařilo vyplnit v fillEmail.js: Error: failed to find element matching selector "#email_pickup_7"
-✅ Zaškrtnuto 0 checkboxů v acceptTerms.js
-❌ Nepodařilo se zvolit platbu v choosePayment.js: Error: Timeout
-    at Timeout._onTimeout (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/AutoKupovaniListku/components/formFilling/choosePayment.js:34:29)
-    at listOnTimeout (node:internal/timers:594:17)
-    at process.processTimers (node:internal/timers:529:7)
-✅ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js
-❌ Tlačítko 'Zaplatit' se neobjevilo nebo se nepodařilo kliknout v submitPayment.js
-❌ Chyba v confirmEmailModal.js: URL s 'Basket#modalEmailOK' se neobjevila včas v confirmEmailModal.js
-🎉 Bot nakoupil 5 listků
-🔁 Doba spuštění botu: 32.756s
-^C%                                                                                                                                                                       
-danielmitka@Daniels-MacBook-Air AutoKupovaniListku % 
-
-OPRAVIT 0 CHECKBOXU ZASKRTNUTO
-
-

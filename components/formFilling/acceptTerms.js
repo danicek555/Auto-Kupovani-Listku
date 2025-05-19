@@ -17,7 +17,13 @@ export async function acceptTerms(page) {
       }
     );
     if (process.env.CONSOLE_LOGS === "true") {
-      console.log(`✅ Zaškrtnuto ${clickedCount} checkboxů v acceptTerms.js`);
+      if (clickedCount > 0) {
+        console.log(`✅ Zaškrtnuto ${clickedCount} checkboxů v acceptTerms.js`);
+      } else {
+        console.log(
+          "❌ Nepodařilo se zaškrtnout žádný checkbox v acceptTerms.js"
+        );
+      }
     }
   } catch (error) {
     console.warn(
