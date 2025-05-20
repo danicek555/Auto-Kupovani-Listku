@@ -38,7 +38,7 @@ export async function submitPayment(page) {
   if (process.env.SCREENSHOTS === "true") {
     if (process.env.EXECUTION_TIME === "true") {
       console.time(
-        "⏱️ Vytvoření screenshotu 5_Vyplnena stranka na zaplaceni.png"
+        "⏱️ Vytvoření screenshotu 5_Vyplnena stranka na zaplaceni.png v submitPayment.js"
       );
     }
     try {
@@ -53,7 +53,7 @@ export async function submitPayment(page) {
     }
     if (process.env.EXECUTION_TIME === "true") {
       console.timeEnd(
-        "⏱️ Vytvoření screenshotu 5_Vyplnena stranka na zaplaceni.png"
+        "⏱️ Vytvoření screenshotu 5_Vyplnena stranka na zaplaceni.png v submitPayment.js"
       );
     }
   }

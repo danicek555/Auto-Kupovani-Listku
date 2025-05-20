@@ -23,15 +23,19 @@ export async function clickBuyButton(page) {
 
       return { found: true, disabled: isDisabled };
     });
+    const isWebDriver = await page.evaluate(() => navigator.webdriver);
+    console.log("🧪 navigator.webdriver =", isWebDriver);
 
+    console.log("jsem tu");
     if (!result.found) {
       console.log("❌ Tlačítko `Koupit` nebylo nalezeno v clickeBuyButton.js");
     } else if (result.disabled) {
       console.log(
-        "🔁 Tlačítko `Koupit` je neaktivní v clickeBuyButton.js. Zkouším znovu..."
+        "🔁 Tlačítko `Koupit` je neaktivní v clickBuyButton.js. Zkouším znovu..."
       );
     } else {
       // Klikni, ale kliknutí udělej v evaluate, jinak Puppeteer vyhodí chybu
+      console.log("kliknu");
       await page.evaluate(() => {
         const btn = document.querySelector("a.btn.btn-buy.flex-c");
         btn?.click();
@@ -41,6 +45,7 @@ export async function clickBuyButton(page) {
           "✅ Kliknutí na tlačítko koupit se povedlo v clickBuyButton.js"
         );
       }
+      console.log("klikl");
       if (process.env.EXECUTION_TIME === "true") {
         console.timeEnd("⏱️ Kliknutí na tlačítko 'Koupit'");
       }

@@ -1,5 +1,5 @@
 import drawDot from "./drawDot.js";
-import { sleep } from "../utils/sleep.js";
+import { sleep } from "../../utils/sleep.js";
 
 export async function clickOnCluster(page, canvas, cluster, image) {
   const avgX = Math.round(
