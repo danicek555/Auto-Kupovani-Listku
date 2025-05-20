@@ -56,3 +56,4 @@ s_all vsechny sektory
 
 //   "135878210":[id miesta: 135878210,sedadlo: "3 ", řada:"1 ",sektor: 465,X pozice: 325, y pozice: 122, id sektor: 180,140115019,
 //   [350,147,300,147,300,97,350,97],2],
+fje
