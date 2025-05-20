@@ -28,10 +28,16 @@
 
 //   return { browser, page };
 // }
-import puppeteer from "puppeteer";
+
 import fs from "fs-extra";
 import setupAlertMonitor from "../utils/setupAlertMonitor.js";
 import { sleep } from "../utils/sleep.js";
+import puppeteer from "puppeteer-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
+import getRecaptchaSitekey from "../utils/getRecaptchaSiteKey.js";
+import solveRecaptcha from "../utils/solveRecaptcha.js";
+import { startRecaptchaWatcher } from "../utils/recaptchaWatcher.js";
+puppeteer.use(StealthPlugin());
 
 export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
@@ -151,7 +157,11 @@ export async function setupBrowser(url) {
     .catch((err) =>
       console.error("❌ Timeout nebo jiná chyba v setupBrowser.js", err.message)
     );
-
+  if (process.env.RECAPTCHA === "true") {
+    console.log("jsem pred captchou");
+    // 1. Získej sitekey automaticky
+    const stopRecaptchaWatcher = await startRecaptchaWatcher(page, url);
+  }
   if (process.env.ALERT_MONITOR === "true") {
     await setupAlertMonitor(page);
   }
@@ -187,7 +197,10 @@ export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Celkový čas setupu");
   }
-
+  page.on("framenavigated", (frame) => {
+    console.log("📦 Navigace na URL:", frame.url());
+  });
+  console.log("zapl jsem se ");
   return { browser, page };
 }
 
