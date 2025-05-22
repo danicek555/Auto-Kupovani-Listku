@@ -1,8 +1,14 @@
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 
 const API_KEY = process.env.CAPTCHA_API_KEY;
 
 export async function solveRecaptcha(sitekey, pageurl) {
+  console.log("🧩 API_KEY:", API_KEY);
+  console.log("🔐 Posílám CAPTCHA požadavek...");
+
+  // Odeslání požadavku k vyřešení CAPTCHA
   const res = await axios.get("http://2captcha.com/in.php", {
     params: {
       key: API_KEY,
@@ -15,14 +21,18 @@ export async function solveRecaptcha(sitekey, pageurl) {
 
   if (res.data.status !== 1) {
     throw new Error(
-      "Nepodařilo se odeslat CAPTCHA požadavek: " + res.data.request
+      "❌ Nepodařilo se odeslat CAPTCHA požadavek: " + res.data.request
     );
   }
 
   const requestId = res.data.request;
+  console.log("✅ CAPTCHA zadána, čekám na token... ID:", requestId);
 
-  for (let i = 0; i < 24; i++) {
-    await new Promise((r) => setTimeout(r, 5000));
+  // Polling na výsledek
+  for (let i = 0; i < 3; i++) {
+    console.log(`⏳ Pokus ${i + 1}/24 – čekám 5s...`);
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+
     const result = await axios.get("http://2captcha.com/res.php", {
       params: {
         key: API_KEY,
@@ -33,14 +43,16 @@ export async function solveRecaptcha(sitekey, pageurl) {
     });
 
     if (result.data.status === 1) {
+      console.log("✅ Token úspěšně získán!");
       return result.data.request;
     }
 
     if (result.data.request !== "CAPCHA_NOT_READY") {
-      throw new Error("Chyba při řešení CAPTCHA: " + result.data.request);
+      throw new Error("❌ Chyba při řešení CAPTCHA: " + result.data.request);
     }
   }
 
-  throw new Error("Vypršel čas čekání na CAPTCHA.");
+  throw new Error("⏰ Vypršel čas čekání na vyřešení CAPTCHA.");
 }
+
 export default solveRecaptcha;

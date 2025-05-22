@@ -13,6 +13,7 @@ import { submitPayment } from "./components/action/submitPayment.js";
 import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
 import { clickBasketButton } from "./components/navigation/clickBasketButton.js";
 import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
+
 dotenv.config();
 const TICKET_URL =
   process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");

@@ -1,6 +1,6 @@
 import { solveRecaptcha } from "./solveRecaptcha.js";
 
-export async function startRecaptchaWatcher(page, pageUrl, intervalMs = 1000) {
+export async function startRecaptchaWatcher(page, pageUrl, intervalMs = 50) {
   let alreadySolved = false;
 
   const check = async () => {
@@ -17,7 +17,7 @@ export async function startRecaptchaWatcher(page, pageUrl, intervalMs = 1000) {
       console.log("🧩 Detekována reCAPTCHA s sitekey:", sitekey);
 
       const token = await solveRecaptcha(sitekey, pageUrl);
-      console.log("✅ Token získán z 2captcha");
+      console.log("✅ Token získán z 2captcha:", token);
 
       await page.evaluate((token) => {
         let textarea = document.getElementById("g-recaptcha-response");

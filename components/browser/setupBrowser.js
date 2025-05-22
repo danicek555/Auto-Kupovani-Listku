@@ -34,12 +34,14 @@ import setupAlertMonitor from "../utils/setupAlertMonitor.js";
 import { sleep } from "../utils/sleep.js";
 import puppeteer from "puppeteer-extra";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
+//import puppeteer from "puppeteer";
 import getRecaptchaSitekey from "../utils/getRecaptchaSiteKey.js";
 import solveRecaptcha from "../utils/solveRecaptcha.js";
 import { startRecaptchaWatcher } from "../utils/recaptchaWatcher.js";
-puppeteer.use(StealthPlugin());
+//import { sleep } from "../utils/sleep.js";
 
 export async function setupBrowser(url) {
+  puppeteer.use(StealthPlugin());
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Celkový čas setupu");
   }
@@ -55,20 +57,26 @@ export async function setupBrowser(url) {
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
-      "--disable-accelerated-2d-canvas",
-      "--no-first-run",
-      "--no-zygote",
       "--disable-gpu",
-      "--disable-background-networking",
-      "--disable-default-apps",
-      "--disable-extensions",
-      "--disable-sync",
-      "--disable-translate",
-      "--metrics-recording-only",
-      "--mute-audio",
-      "--single-process",
+      "--disable-features=IsolateOrigins,site-per-process",
+      "--window-size=1920,1080",
     ],
   });
+  // "--no-sandbox",
+  // "--disable-setuid-sandbox",
+  // "--disable-dev-shm-usage",
+  // "--disable-accelerated-2d-canvas",
+  // "--no-first-run",
+  // "--no-zygote",
+  // "--disable-gpu",
+  // "--disable-background-networking",
+  // "--disable-default-apps",
+  // "--disable-extensions",
+  // "--disable-sync",
+  // "--disable-translate",
+  // "--metrics-recording-only",
+  // "--mute-audio",
+  // "--single-process",
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Spuštění prohlížeče");
   }
@@ -153,14 +161,43 @@ export async function setupBrowser(url) {
   }
 
   await page
-    .goto(url, { waitUntil: "domcontentloaded", timeout: 20000 })
+    .goto(url, { waitUntil: "load", timeout: 200000 }) //domcontentloaded
     .catch((err) =>
       console.error("❌ Timeout nebo jiná chyba v setupBrowser.js", err.message)
     );
+  //wait page.waitForTimeout(1000); // malá pauza před další emulací
+  // Získání všech iframe
+  await sleep(2000); // počkej 2s na stabilizaci DOMu
+  page.on("close", () => {
+    console.warn("⚠️ Stránka byla zavřena (page.close event)");
+  });
+  page.on("error", (err) => {
+    console.error("❌ Chyba stránky:", err.message);
+  });
+
+  let scripts = [];
+  try {
+    scripts = await page.$$eval("script[src]", (scripts) =>
+      scripts.map((s) => s.src)
+    );
+    console.log("Script sources:", scripts);
+  } catch (err) {
+    console.error("❌ Chyba při čtení script[src]:", err.message);
+  }
+  console.log("Script sources:", scripts);
+  page.on("framenavigated", (frame) => {
+    console.log("🔁 Navigace – frame URL:", frame.url());
+  });
+
   if (process.env.RECAPTCHA === "true") {
     console.log("jsem pred captchou");
     // 1. Získej sitekey automaticky
-    const stopRecaptchaWatcher = await startRecaptchaWatcher(page, url);
+    // console.log("čekám na reCAPTCHA element...");
+    // await page.waitForSelector(".g-recaptcha", { timeout: 10000 });
+    // console.log("Div s reCAPTCHA je přítomen.");
+
+    await startRecaptchaWatcher(page, url);
+    // // počkej na reCAPTCHA iframe
   }
   if (process.env.ALERT_MONITOR === "true") {
     await setupAlertMonitor(page);
@@ -197,9 +234,7 @@ export async function setupBrowser(url) {
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Celkový čas setupu");
   }
-  page.on("framenavigated", (frame) => {
-    console.log("📦 Navigace na URL:", frame.url());
-  });
+
   console.log("zapl jsem se ");
   return { browser, page };
 }
