@@ -13,6 +13,9 @@ import { submitPayment } from "./components/action/submitPayment.js";
 import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
 import { clickBasketButton } from "./components/navigation/clickBasketButton.js";
 import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
+import formFilling from "./components/formFilling/formFilling.js";
+import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
+import alertChecker from "./components/utils/alertChecker.js";
 
 dotenv.config();
 const TICKET_URL =
@@ -27,6 +30,7 @@ async function runBot() {
       console.time("⏱️ Zapnutí alert monitoru");
     }
     await setupAlertMonitor(page);
+    await alertChecker(page);
     if (process.env.EXECUTION_TIME === "true") {
       console.timeEnd("⏱️ Zapnutí alert monitoru");
     }
@@ -51,39 +55,15 @@ async function runBot() {
   // await closePopups(page);
 
   await clickBuyButton(page);
-  await selectSeats(page);
+  await clickBasketAndSelectSeats(page);
+  // await selectSeats(page);
 
-  //* STRANKA NA ZAPLACENI
-  await clickBasketButton(page);
+  // //* STRANKA NA ZAPLACENI
+  // await clickBasketButton(page);
   //await waitForPaymentPage(page);
   //await setupAlertMonitor(page);
 
-  await selectInsurance(page);
-  await selectTicketType(page);
-
-  await fillEmail(page);
-
-  await acceptTerms(page);
-  await choosePayment(page);
-  if (process.env.SUBMIT_PAYMENT === "true") {
-    console.log(
-      "⏻ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js"
-    );
-    await submitPayment(page);
-    await confirmEmailModal(page);
-    const pocetListku = process.env.TICKET_COUNT;
-    let sklonovaniSlovicka = "listků";
-    if (pocetListku === 1) {
-      sklonovaniSlovicka = "listek";
-    } else if (pocetListku > 1 && pocetListku < 5) {
-      sklonovaniSlovicka = "listky";
-    } else {
-      sklonovaniSlovicka = "listků";
-    }
-    console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
-  } else {
-    console.log("⏻ Není zapnuto submit payment");
-  }
+  await formFilling(page);
   console.timeEnd("🔁 Doba spuštění botu");
 }
 
