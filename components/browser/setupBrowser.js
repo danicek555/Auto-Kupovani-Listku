@@ -174,48 +174,50 @@ export async function setupBrowser(url) {
   page.on("error", (err) => {
     console.error("❌ Chyba stránky:", err.message);
   });
-
-  let scripts = [];
-  try {
-    scripts = await page.$$eval("script[src]", (scripts) =>
-      scripts.map((s) => s.src)
-    );
-    console.log("Script sources:", scripts);
-  } catch (err) {
-    console.error("❌ Chyba při čtení script[src]:", err.message);
+  if (process.env.BROWSER_SCRIPTS === "true") {
+    let scripts = [];
+    try {
+      scripts = await page.$$eval("script[src]", (scripts) =>
+        scripts.map((s) => s.src)
+      );
+      console.log("Script sources:", scripts);
+    } catch (err) {
+      console.error("❌ Chyba při čtení script[src]:", err.message);
+    }
   }
   // console.log("Script sources:", scripts);
+  if (process.env.RECAPTCHA === "true") {
+    global.captchaActive = false;
 
-  global.captchaActive = false;
+    page.on("framenavigated", async (frame) => {
+      if (
+        frame.url().includes("recaptcha/api2/anchor") &&
+        !global.captchaActive
+      ) {
+        global.captchaActive = true;
+        console.log("🧩 Znovu detekována reCAPTCHA! Spouštím řešení...");
 
-  page.on("framenavigated", async (frame) => {
-    if (
-      frame.url().includes("recaptcha/api2/anchor") &&
-      !global.captchaActive
-    ) {
-      global.captchaActive = true;
-      console.log("🧩 Znovu detekována reCAPTCHA! Spouštím řešení...");
+        try {
+          await startRecaptchaWatcher(page, page.url());
 
-      try {
-        await startRecaptchaWatcher(page, page.url());
+          // Čekej, než bude token vložený
+          await page.waitForFunction(
+            () => {
+              const el = document.getElementById("g-recaptcha-response");
+              return el && el.value && el.value.length > 0;
+            },
+            { timeout: 60000 }
+          );
 
-        // Čekej, než bude token vložený
-        await page.waitForFunction(
-          () => {
-            const el = document.getElementById("g-recaptcha-response");
-            return el && el.value && el.value.length > 0;
-          },
-          { timeout: 60000 }
-        );
-
-        console.log("✅ CAPTCHA vyřešena. Pokračuji.");
-      } catch (err) {
-        console.error("❌ Chyba při řešení CAPTCHA:", err.message);
-      } finally {
-        global.captchaActive = false;
+          console.log("✅ CAPTCHA vyřešena. Pokračuji.");
+        } catch (err) {
+          console.error("❌ Chyba při řešení CAPTCHA:", err.message);
+        } finally {
+          global.captchaActive = false;
+        }
       }
-    }
-  });
+    });
+  }
   if (process.env.RECAPTCHA === "true") {
     console.log("jsem pred captchou");
     await startRecaptchaWatcher(page, page.url());

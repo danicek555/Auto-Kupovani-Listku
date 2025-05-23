@@ -41,6 +41,17 @@ function alertChecker(page) {
       }
       retrying = false;
     }
+    // 🟨 Chyba ve formuláři – nevybrána možnost
+    if (text.includes("Prosím, vyberte jednu z možností") && !retrying) {
+      retrying = true;
+      console.log("🔁 Alert: chybí výběr možnosti – opakuji formFilling...");
+      try {
+        await formFilling(page);
+      } catch (err) {
+        console.error("❌ Chyba při opakování formFilling:", err.message);
+      }
+      retrying = false;
+    }
   });
 }
 

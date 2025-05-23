@@ -9,13 +9,10 @@ export async function clickBasketButton(page) {
     console.time("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
   }
 
-  const maxTime = 2000;
   const interval = 10;
-  const start = performance.now();
-  const maxAttempts = 3;
-  let attempts = 0;
+  const maxAttempts = 20;
 
-  while (performance.now() - start < maxTime && attempts < maxAttempts) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     const clicked = await page.evaluate(() => {
       const btn = document.querySelector("#hladisko-basket-btn");
       if (!btn) {
@@ -29,17 +26,16 @@ export async function clickBasketButton(page) {
     });
 
     if (clicked) {
-      attempts++;
       if (process.env.CONSOLE_LOGS === "true") {
         console.log(
-          `✅ Pokus #${attempts}: Kliknutí provedeno, čekám na /Basket...`
+          `✅ Pokus #${attempt}: Kliknutí provedeno, čekám na /Basket...`
         );
       }
 
       try {
         await page.waitForFunction(
           () => location.pathname.includes("/Basket"),
-          { timeout: 5000 }
+          { timeout: 1000 }
         );
 
         if (process.env.CONSOLE_LOGS === "true") {
@@ -50,7 +46,7 @@ export async function clickBasketButton(page) {
           console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
         }
 
-        return performance.now() - start;
+        return attempt; // můžeš i return true, nebo nějaký jiný výstup
       } catch (e) {
         if (process.env.CONSOLE_LOGS === "true") {
           console.warn("⚠️ URL se nezměnila, zkouším znovu...");
@@ -58,11 +54,11 @@ export async function clickBasketButton(page) {
       }
     }
 
-    await page.waitForTimeout(interval);
+    await new Promise((resolve) => setTimeout(resolve, interval));
   }
 
   console.warn(
-    `❌ Nepodařilo se kliknout na tlačítko nebo přesměrovat na /Basket po ${attempts} pokusech / ${maxTime} ms.`
+    `❌ Nepodařilo se kliknout na tlačítko nebo přesměrovat na /Basket po ${maxAttempts} pokusech.`
   );
 
   if (process.env.EXECUTION_TIME === "true") {
@@ -71,3 +67,4 @@ export async function clickBasketButton(page) {
 
   return null;
 }
+export default clickBasketButton;

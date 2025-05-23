@@ -7,31 +7,9 @@
 
 
 //! KDYZ UZ JSEM NAKOUPIL 6 LISTKU Z JEDNOHO EMAILU NEMUZU NAKOUPIT DALSI DO PUL HODINY!
-1. ⏱️ seatClickFAST execution time: 370.662ms
-🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
-✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
-🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
-🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
-⚠️⚠️⚠️[ALERT] Detekován notify alert: "Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
-⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
-⚠️⚠️⚠️[ALERT] Detekován notify alert: "Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
-⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
-🧠 Browser
-ukazalo se to asi po kliknuti na koupit?
-
-⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
-⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
-musim zachytit tenhle error a znovu spustit seatClick
 
 
 ✅ Clicked: OnSeat_click(1 / řada 10) (sektor: 101, cena: null) 
 ✅ Clicked: OnSeat_click(2 / řada 10) (sektor: 101, cena: null) 
 cena nemuze byt null
 
-TypeError: page.waitForTimeout is not a function
-    at clickBasketButton (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/AutoKupovaniListku/components/navigation/clickBasketButton.js:61:16)
-    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/AutoKupovaniListku/index.js:57:3)
-🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
-
-⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
-zachytit tenhle erro a znovu zapnout formfilling
