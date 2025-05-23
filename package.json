@@ -21,7 +21,8 @@
     "jimp": "^1.6.0",
     "proxy-agent": "^6.5.0",
     "puppeteer": "^24.3.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "tesseract.js": "^6.0.0"
-
   }
 }

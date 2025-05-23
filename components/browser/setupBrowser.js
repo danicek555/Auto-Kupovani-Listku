@@ -28,12 +28,20 @@
 
 //   return { browser, page };
 // }
-import puppeteer from "puppeteer";
+
 import fs from "fs-extra";
 import setupAlertMonitor from "../utils/setupAlertMonitor.js";
 import { sleep } from "../utils/sleep.js";
+import puppeteer from "puppeteer-extra";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
+//import puppeteer from "puppeteer";
+import getRecaptchaSitekey from "../utils/getRecaptchaSiteKey.js";
+import solveRecaptcha from "../utils/solveRecaptcha.js";
+import { startRecaptchaWatcher } from "../utils/recaptchaWatcher.js";
+//import { sleep } from "../utils/sleep.js";
 
 export async function setupBrowser(url) {
+  puppeteer.use(StealthPlugin());
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Celkový čas setupu");
   }
@@ -49,20 +57,26 @@ export async function setupBrowser(url) {
       "--no-sandbox",
       "--disable-setuid-sandbox",
       "--disable-dev-shm-usage",
-      "--disable-accelerated-2d-canvas",
-      "--no-first-run",
-      "--no-zygote",
       "--disable-gpu",
-      "--disable-background-networking",
-      "--disable-default-apps",
-      "--disable-extensions",
-      "--disable-sync",
-      "--disable-translate",
-      "--metrics-recording-only",
-      "--mute-audio",
-      "--single-process",
+      "--disable-features=IsolateOrigins,site-per-process",
+      "--window-size=1920,1080",
     ],
   });
+  // "--no-sandbox",
+  // "--disable-setuid-sandbox",
+  // "--disable-dev-shm-usage",
+  // "--disable-accelerated-2d-canvas",
+  // "--no-first-run",
+  // "--no-zygote",
+  // "--disable-gpu",
+  // "--disable-background-networking",
+  // "--disable-default-apps",
+  // "--disable-extensions",
+  // "--disable-sync",
+  // "--disable-translate",
+  // "--metrics-recording-only",
+  // "--mute-audio",
+  // "--single-process",
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Spuštění prohlížeče");
   }
@@ -147,10 +161,75 @@ export async function setupBrowser(url) {
   }
 
   await page
-    .goto(url, { waitUntil: "domcontentloaded", timeout: 20000 })
+    .goto(url, { waitUntil: "load", timeout: 200000 }) //domcontentloaded
     .catch((err) =>
       console.error("❌ Timeout nebo jiná chyba v setupBrowser.js", err.message)
     );
+  //wait page.waitForTimeout(1000); // malá pauza před další emulací
+  // Získání všech iframe
+  //await sleep(2000); // počkej 2s na stabilizaci DOMu
+  page.on("close", () => {
+    console.warn("⚠️ Stránka byla zavřena (page.close event)");
+  });
+  page.on("error", (err) => {
+    console.error("❌ Chyba stránky:", err.message);
+  });
+
+  let scripts = [];
+  try {
+    scripts = await page.$$eval("script[src]", (scripts) =>
+      scripts.map((s) => s.src)
+    );
+    console.log("Script sources:", scripts);
+  } catch (err) {
+    console.error("❌ Chyba při čtení script[src]:", err.message);
+  }
+  // console.log("Script sources:", scripts);
+
+  global.captchaActive = false;
+
+  page.on("framenavigated", async (frame) => {
+    if (
+      frame.url().includes("recaptcha/api2/anchor") &&
+      !global.captchaActive
+    ) {
+      global.captchaActive = true;
+      console.log("🧩 Znovu detekována reCAPTCHA! Spouštím řešení...");
+
+      try {
+        await startRecaptchaWatcher(page, page.url());
+
+        // Čekej, než bude token vložený
+        await page.waitForFunction(
+          () => {
+            const el = document.getElementById("g-recaptcha-response");
+            return el && el.value && el.value.length > 0;
+          },
+          { timeout: 60000 }
+        );
+
+        console.log("✅ CAPTCHA vyřešena. Pokračuji.");
+      } catch (err) {
+        console.error("❌ Chyba při řešení CAPTCHA:", err.message);
+      } finally {
+        global.captchaActive = false;
+      }
+    }
+  });
+  if (process.env.RECAPTCHA === "true") {
+    console.log("jsem pred captchou");
+    await startRecaptchaWatcher(page, page.url());
+
+    await page.waitForFunction(
+      () => {
+        const el = document.getElementById("g-recaptcha-response");
+        return el && el.value && el.value.length > 0;
+      },
+      { timeout: 60000 }
+    );
+
+    console.log("✅ CAPTCHA před startem vyřešena.");
+  }
 
   if (process.env.ALERT_MONITOR === "true") {
     await setupAlertMonitor(page);
@@ -188,6 +267,7 @@ export async function setupBrowser(url) {
     console.timeEnd("⏱️ Celkový čas setupu");
   }
 
+  console.log("zapl jsem se ");
   return { browser, page };
 }
 

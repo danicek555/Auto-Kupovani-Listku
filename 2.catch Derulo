@@ -1,0 +1,340 @@
+🕒 Prodej ještě nezačal – stav: Připravujeme do prodeje.
+🌀 Pokus 732 | Čas od startu: 145342 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: {
+  found: false,
+  disabled: true,
+  type: 'info',
+  statusText: 'Připravujeme do prodeje.'
+}
+🕒 Prodej ještě nezačal – stav: Připravujeme do prodeje.
+🌀 Pokus 733 | Čas od startu: 145542 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 2:25.608 (m:ss.mmm)
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏱️ Vytvoření screenshotu 1_site_with_seats.png v selectSeats.js: 6.604s
+Čekám na načtení canvasu... v selectSeats.js
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏱️ Načtení canvasu...: 318.773ms
+⏱️ Vytvoření screenshotu 2_canvas.png v selectSeats.js: 421.91ms
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏱️ cekam na m: 1.365s
+⏱️ evaluate m: 314.201ms
+✅ Data uložena (pokus 1) do m_data.json v getM.js
+⏱️ m execution time: 1.732s
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 771.057ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 36.726ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 34.329ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 1.317s
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 3.942s
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 3.922s
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1325,
+  filteredBySector: 0,
+  filteredByPrice: 0,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(1 / řada 10) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(2 / řada 10) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(3 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(4 / řada 10) (sektor: 101, cena: 1990) 
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⏱️ Vytvoření screenshotu 3_seats_selected.png v seatClickSlow.js: 8.659s
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⏱️ Vytvoření screenshotu 4_seats_selected_canvas.png v seatClickSlow.js: 477.448ms
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 12.283s
+⏱️ selectSeats.js: 31.401s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Veškeré skripty jsou chráněny Autorským zákonem.
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  reklama v2
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  [DOM] Found 2 elements with non-unique id #AktivaciaUctu: (More info: https://goo.gl/9p2vKq) %o %o
+🧠 Browser console log:  [DOM] Found 3 elements with non-unique id #form-1: (More info: https://goo.gl/9p2vKq) %o %o %o
+🧠 Browser console log:  [DOM] Found 4 elements with non-unique id #newpwd_password: (More info: https://goo.gl/9p2vKq) %o %o %o %o
+🧠 Browser console log:  [DOM] Found 2 elements with non-unique id #search-input: (More info: https://goo.gl/9p2vKq) %o %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  35
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened.
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79693400704
+⏳ Pokus 1/24 – čekám 5s...
+⚠️ URL se nezměnila, zkouším znovu...
+TypeError: page.waitForTimeout is not a function
+    at clickBasketButton (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/2AutoKupovaniListku%20copy/components/navigation/clickBasketButton.js:61:16)
+    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/2AutoKupovaniListku%20copy/index.js:57:3)
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  [Coworkers.ai Chatbot] ewConfig.url: deprecated domain - please change url and urlPrefix to new domain *.bot.coworkers.ai
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  [Coworkers.ai Chatbot] Connected to server, waiting for connection ready message
+🧠 Browser console log:  [Coworkers.ai Chatbot] Connection to server is ready JSHandle@object
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 2/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 3/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 4/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 5/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 6/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 7/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 8/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 9/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 10/24 – čekám 5s...
+⏳ Pokus 11/24 – čekám 5s...
+⏳ Pokus 12/24 – čekám 5s...
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA6kGMmzyYIJYYT7XSUuKJSIGlXyM7TM0xneGdzEdcltmrWNdQNIu3RVqOvKcNG0ZfSYOwg0JIMxcup2rrM9Fz7eImTflvisPMHJnVCNNe4UFFqXRhw28uvE98cSKtoCIlV3_tr3_z1kw75Zg__362gw1rLaIxtY1Hqos1AG9cGCHuQEBXzVXEl1_lXyvoXGHoUoOr8L65c1syjVMvBY__NdJOEiX0RzrwSlQI7W4pEg3ZK_24r9LXWHVI0tRc8NKUMxTfHFlX6UDCrzzljKI2-BDFGYcbdhkiR_95U8jqpEJXB0uZkrGacDxdPpwJ6TzpMPvX2A7Ipka-nu__D1IgL4dAq8DK2RA6qnbO8gbvgdBTL2Zk7r_H2MrmsCzYQuBGA5m_kqpCuS4WddTa1yi1yGYQEMbjoriOYp4g-2vUTlbCYf45I2bflDvDO4SEYOpaGDfUmsJ_XiKXTh5rpz8tH3ZoEFDVeAb3iMHmTwZWNQvMRNf83jWvz4sbf5fQt53bjYhFk9CWOXunlqpxY8AMN3DWpYNwrjG-r2Fewx6H6uCCG3V4ySV6m5xDvsd-hIM4kkyqZzDsWFj2luDPyR01oqmxch57M8Ze5oq8xBmOXfzwzVeauX0eTBJ3iJwDVE9hJkn3TNRnCRS2w6OpxpVyU9hRhATZGw7cURazv9pH_TL9RDRyR0DcGa6jlEtGcFkiTntHD2Rxdumr7cD0TjlCYgYOAb1oTQAKDpt7d_qInJRYbPHS8NF63yGJoh4IRBaGojwFei2XujAORe5YPC555453KXAdly7_3OaU3tKFoENB7YScsg0sC9tsPMqnWmWdJOqGeZV3JMgcSrtr_QMCAqjF2aMvMA38y_VNWyWSoDPZaNHfPV4NMgsKUL9mykAKmm2L_DnrINst5jc53JI10jd1W9VUhPacPw_vcUNOEMj1lfWair_FM2E_jUqd3bbBe0IlaiShXJe3Ow5HsEO6g1dgvRIpSHVCEtAKeLjWNGsew7TDQFR58_6Xdp7N4BMWUxBIVvlKs1TYWN5Q8Ipy51eW1AzQ
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+^C%                                                                                                                
+danielmitka@Daniels-MacBook-Air 2AutoKupovaniListku copy % 

@@ -1,7 +1,9 @@
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function selectTicketType(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Výběr typu lístku");
   }
+  await waitForCaptchaToFinish();
 
   const maxTime = 5000;
   const interval = 10;

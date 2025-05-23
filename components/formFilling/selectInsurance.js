@@ -1,53 +1,56 @@
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function selectInsurance(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Výběr pojištění execution time");
   }
+  await waitForCaptchaToFinish();
 
   const selector = "#optionsRadiosPoistenie2";
-  const maxTime = 5000;
-  const interval = 10;
+  const maxTime = 1000;
+  const interval = 100;
   const start = Date.now();
 
-  let before;
   let clicked = false;
+  let currentFrame = page.mainFrame();
+
+  page.on("framenavigated", (frame) => {
+    if (frame === page.mainFrame()) {
+      console.log("🔁 Navigace zjištěna, aktualizuji frame");
+      currentFrame = frame;
+    }
+  });
 
   while (!clicked && Date.now() - start < maxTime) {
     try {
-      const exists = await page.$(selector).catch((err) => {
-        console.warn(
-          "❌ Pojištění 'ne' se neobjevilo v selectInsurance.js: " + err.message
-        );
-      });
+      if (currentFrame.isDetached()) {
+        console.warn("⚠️ Frame je odpojený – čekám na nový...");
+        await page
+          .waitForNavigation({ waitUntil: "domcontentloaded", timeout: 10000 })
+          .catch(() => {});
+        currentFrame = page.mainFrame();
+        continue;
+      }
+
+      const exists = await currentFrame.$(selector);
       if (exists) {
-        before = await page.$eval(selector, (el) => el.checked);
-        await page.evaluate((sel) => {
+        await currentFrame.evaluate((sel) => {
           const el = document.querySelector(sel);
-          if (el) el.click();
+          if (el && !el.checked) el.click();
         }, selector);
 
-        const isChecked = await page.$eval(selector, (el) => el.checked);
+        const isChecked = await currentFrame.$eval(
+          selector,
+          (el) => el.checked
+        );
         if (isChecked) {
           clicked = true;
-          if (process.env.CONSOLE_LOGS === "true") {
-            console.log("✅ Pojištění 'ne' bylo zvoleno v selectInsurance.js");
-          }
+          console.log("✅ Pojištění 'ne' bylo zvoleno");
         } else {
-          console.warn(
-            "❌ Kliknutí na pojištění nevedlo ke změně hodnoty v selectInsurance.js"
-          );
+          console.warn("❌ Kliknutí nevedlo ke změně hodnoty");
         }
       }
     } catch (e) {
-      if (e.message.includes("Execution context was destroyed")) {
-        console.warn(
-          "❌ Stránka byla přesměrována během výběru pojištění v selectInsurance.js. Zkouším znovu..."
-        );
-      } else {
-        console.warn(
-          "❌ Jiná chyba při výběru pojištění v selectInsurance.js:",
-          e.message
-        );
-      }
+      console.warn("❌ Chyba při výběru pojištění:", e.message);
     }
 
     if (!clicked) {
@@ -56,23 +59,9 @@ export async function selectInsurance(page) {
   }
 
   if (!clicked) {
-    console.warn(
-      "❌ Pojištění 'ne' se neobjevilo nebo se nepodařilo zakliknout v selectInsurance.js"
-    );
+    console.warn("❌ Nepodařilo se zvolit pojištění včas");
   }
 
-  if (process.env.CONSOLE_LOGS === "true") {
-    try {
-      const after = await page.$eval(selector, (el) => el.checked);
-      console.log(
-        `✅ Stav checkboxu pojištění před: ${before}, po: ${after} v selectInsurance.js`
-      );
-    } catch (error) {
-      console.warn(
-        "❌ Nelze ověřit finální stav pojištění - element nebyl nalezen v selectInsurance.js"
-      );
-    }
-  }
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Výběr pojištění execution time");
   }

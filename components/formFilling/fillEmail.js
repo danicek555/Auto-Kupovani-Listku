@@ -18,10 +18,13 @@
 //     console.timeEnd("⏱️ Vyplňování emailu");
 //   }
 // }
+
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function fillEmail(page) {
   if (process.env.EXECUTION_TIME === "true")
     console.time("⏱️ Vyplňování emailu");
   const email = process.env.CONTACT_EMAIL || "danmitka@gmail.com";
+  await waitForCaptchaToFinish();
 
   try {
     await page
