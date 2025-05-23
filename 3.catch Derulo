@@ -1,0 +1,244 @@
+🕒 Prodej ještě nezačal – stav: Připravujeme do prodeje.
+🌀 Pokus 701 | Čas od startu: 143024 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: {
+  found: false,
+  disabled: true,
+  type: 'info',
+  statusText: 'Připravujeme do prodeje.'
+}
+🕒 Prodej ještě nezačal – stav: Připravujeme do prodeje.
+🌀 Pokus 702 | Čas od startu: 143224 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 2:23.343 (m:ss.mmm)
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 1: m ještě není dostupné
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+(node:65170) Warning: Label '⏱️ cekam na m' already exists for console.time()
+(Use `node --trace-warnings ...` to show where the warning was created)
+⏱️ cekam na m: 8.444s
+⏱️ evaluate m: 240.687ms
+✅ Data uložena (pokus 2) do m_data.json v getM.js
+⏱️ m execution time: 8.749s
+⏻ Clicking FAST seats without screenshots v seatClickFast.js
+Clicked ID: -2130050548
+Clicked ID: -2130050547
+⏱️ seatClickFAST execution time: 372.296ms
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Nepodařilo se přidat místa do košíku. Představení ještě není v prodeji."
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Veškeré skripty jsou chráněny Autorským zákonem.
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⚠️ URL se nezměnila, zkouším znovu...
+TypeError: page.waitForTimeout is not a function
+    at clickBasketButton (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/3AutoKupovaniListku%20copy/components/navigation/clickBasketButton.js:61:16)
+    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/3AutoKupovaniListku%20copy/index.js:57:3)
+🧠 Browser console log:  reklama v2
+🧠 Browser console log:  [DOM] Found 2 elements with non-unique id #AktivaciaUctu: (More info: https://goo.gl/9p2vKq) %o %o
+🧠 Browser console log:  [DOM] Found 3 elements with non-unique id #form-1: (More info: https://goo.gl/9p2vKq) %o %o %o
+🧠 Browser console log:  [DOM] Found 4 elements with non-unique id #newpwd_password: (More info: https://goo.gl/9p2vKq) %o %o %o %o
+🧠 Browser console log:  [DOM] Found 2 elements with non-unique id #search-input: (More info: https://goo.gl/9p2vKq) %o %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  35
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+✅ CAPTCHA zadána, čekám na token... ID: 79693399377
+⏳ Pokus 1/24 – čekám 5s...
+🧠 Browser console log:  Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened.
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  [Coworkers.ai Chatbot] ewConfig.url: deprecated domain - please change url and urlPrefix to new domain *.bot.coworkers.ai
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  [Coworkers.ai Chatbot] Connected to server, waiting for connection ready message
+⏳ Pokus 2/24 – čekám 5s...
+🧠 Browser console log:  [Coworkers.ai Chatbot] Connection to server is ready JSHandle@object
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 3/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 4/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 5/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 6/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+⏳ Pokus 7/24 – čekám 5s...
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA6KGDaxEr_XbpMheLacKpiRGSi2sSuAPOD5i-wzmCHDprp2Fi0sc_J_bke5MIQ_mGuIsGVWMZaKZyhNREc5vGbI9oZgdp4qmsGFXOTkFLf1n2pbp_pzJRUcAbsHeMj9PwB-HZng4IfRGZANDmCyGTFW2AkooACAv7tWxkxC6cgpboFyaPhemHVJ9XCkT0DYDaSJY22W9oma6RKfZSAT1GDEP28xJlJrPCZSkk3nYPCxCi3mV2pnuxg4yij-x3lMP3yFRWpqR5zZ---U7KtjMxHlhFXAEa5iz31Bdnxm2nK8ylJw7_aXuhIHHrosxuf5I2o_tuaHtHCIblnPrcK4Yt_DwWFWtlPdE0RnH645DfFhBSljjxsbWNWI0qeHVHcBSe4r6S9a2ed-97whEztmsDikYrVbtByW1seEUCyQJQJceHEeyj3x9l8x3dAlOiljkZyxdO5wIqhMIETYxnycg9b3Iv0lckwPTaHl8B6VGpejox_mxfOH1MfHqLDlmWhz0xi4urGKmBmxDsIsbk6iQO9OjAF98kJgkARS9geJI-iieWD8fFs0TzqPyMAxeTKmWcZw_05vrRSGnafurH3md-zBACcFWxMEIiCU1S6L3XbYbFn0mlLfSxbKCahwcnhQit5tqH8DXBV0LQyDuYJ7nPKWFjrKk72Xw-qd8drZTIzloOcgWLsymgtCh9JyydGM6BwJXlv8X38NxEAe3p26e4XLgwmynpZIJIfSZfyKvP0ae0K_FVFpIFKQpmqCq6xyzb7l6W7lYSMd_y8gWjnD5MCNebHBk65WLZzsUKGzruVouOEkIZJf7xZOrE2JTs00NKnUbrmjrCCDsjjHzDi5SHGVFabY8kMT7f6n0jJ6NIDouMWEkC4lBG73v8oAlALzm9b_IRXUmOl9lYhyLRITAZjGlhf6leLt5Toludwtyf4rSJu5A6UNPJQfthwDw9RJ3tiYo_tDcn5z-xB8DYTmidPH6zyR-gPqGUgrpCN05VeL2hcpNabUC2EJDCn1lOaJBkPhar3VmWo98LXjDbRBgzQ6BjGaCRKbt_gxkUAbBRoQEgykNe4
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+🧠 Browser console log:  Failed to load resource: net::ERR_FAILED
+^C%                                                                                                                
+danielmitka@Daniels-MacBook-Air 3AutoKupovaniListku copy % 

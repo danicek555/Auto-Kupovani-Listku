@@ -184,13 +184,16 @@ export async function setupBrowser(url) {
   } catch (err) {
     console.error("❌ Chyba při čtení script[src]:", err.message);
   }
-  console.log("Script sources:", scripts);
+  // console.log("Script sources:", scripts);
 
-  let captchaActive = false;
+  global.captchaActive = false;
 
   page.on("framenavigated", async (frame) => {
-    if (frame.url().includes("recaptcha/api2/anchor") && !captchaActive) {
-      captchaActive = true;
+    if (
+      frame.url().includes("recaptcha/api2/anchor") &&
+      !global.captchaActive
+    ) {
+      global.captchaActive = true;
       console.log("🧩 Znovu detekována reCAPTCHA! Spouštím řešení...");
 
       try {
@@ -209,7 +212,7 @@ export async function setupBrowser(url) {
       } catch (err) {
         console.error("❌ Chyba při řešení CAPTCHA:", err.message);
       } finally {
-        captchaActive = false;
+        global.captchaActive = false;
       }
     }
   });

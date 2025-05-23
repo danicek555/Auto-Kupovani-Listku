@@ -142,14 +142,10 @@ export async function clickBuyButton(page) {
     console.time("⏱️ Kliknutí na tlačítko 'Koupit'");
   }
 
-  const maxTime = 2 * 60 * 1000;
-  const interval = 1000;
+  const maxTime = 10 * 60 * 1000;
+  const interval = 150 + Math.floor(Math.random() * 100); // 150–250ms
   const start = Date.now();
   let attempt = 0;
-
-  // // console.log("⏳ Čekám 2 sekundy na načtení stránky...");
-  // // await sleep(2000);
-  // console.log("✅ Počáteční čekání dokončeno");
 
   while (Date.now() - start < maxTime) {
     attempt++;
@@ -166,48 +162,60 @@ export async function clickBuyButton(page) {
       const url = page.url();
       console.log(`🌐 Aktuální URL: ${url}`);
 
-      const found = await page.$("a.btn.btn-buy.flex-c");
-
-      if (!found) {
-        console.log("❌ Tlačítko `Koupit` nebylo nalezeno. Zkouším znovu...");
-        await sleep(interval);
-        continue;
-      }
-
       const result = await page.evaluate(() => {
-        const btn = document.querySelector("a.btn.btn-buy.flex-c");
-        if (!btn) return { found: false, disabled: null };
+        const buyBtn = document.querySelector("a.btn.btn-buy.flex-c");
+        const infoBtn = document.querySelector("button.btn-default.centerer");
 
-        const isDisabled = btn
-          .closest(".ticket-cover")
-          ?.classList.contains("disabled");
+        if (buyBtn) {
+          const isDisabled = buyBtn
+            .closest(".ticket-cover")
+            ?.classList.contains("disabled");
+          return { found: true, disabled: isDisabled, type: "buy" };
+        } else if (infoBtn) {
+          const text = infoBtn.getAttribute("data-content") || "";
+          return {
+            found: false,
+            disabled: true,
+            type: "info",
+            statusText: text,
+          };
+        }
 
-        return { found: true, disabled: isDisabled };
+        return { found: false, disabled: null, type: "none" };
       });
 
       console.log("📋 Výsledek kontroly tlačítka:", result);
 
-      if (result.disabled) {
-        console.log(
-          "🔁 Tlačítko `Koupit` je neaktivní. Čekám a zkouším znovu..."
-        );
-      } else {
-        console.log("✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...");
+      if (result.type === "buy") {
+        if (result.disabled) {
+          console.log(
+            "🔁 Tlačítko `Koupit` je neaktivní. Čekám a zkouším znovu..."
+          );
+          await sleep(interval);
+          continue;
+        } else {
+          console.log("✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...");
 
-        await page.evaluate(() => {
-          const btn = document.querySelector("a.btn.btn-buy.flex-c");
-          btn?.click();
-        });
+          await page.evaluate(() => {
+            const btn = document.querySelector("a.btn.btn-buy.flex-c");
+            btn?.click();
+          });
 
-        // console.log("⏳ Čekám 3 sekundy na redirect...");
-        // await sleep(3000);
+          console.log("✅ Kliknutí proběhlo");
+          if (process.env.EXECUTION_TIME === "true") {
+            console.timeEnd("⏱️ Kliknutí na tlačítko 'Koupit'");
+          }
 
-        console.log("✅ Kliknutí proběhlo");
-        if (process.env.EXECUTION_TIME === "true") {
-          console.timeEnd("⏱️ Kliknutí na tlačítko 'Koupit'");
+          return true;
         }
-
-        return true;
+      } else if (result.type === "info") {
+        console.log(`🕒 Prodej ještě nezačal – stav: ${result.statusText}`);
+        await sleep(interval);
+        continue;
+      } else {
+        console.log("❌ Žádné relevantní tlačítko zatím není na stránce.");
+        await sleep(interval);
+        continue;
       }
     } catch (err) {
       const msg = err?.message || String(err);
@@ -227,6 +235,6 @@ export async function clickBuyButton(page) {
     await sleep(interval);
   }
 
-  console.warn("❌ Tlačítko `Koupit` nebylo aktivní během 2 minut.");
+  console.warn("❌ Tlačítko `Koupit` nebylo aktivní během limitu.");
   return false;
 }

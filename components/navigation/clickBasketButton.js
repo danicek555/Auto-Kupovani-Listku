@@ -4,18 +4,19 @@ export async function clickBasketButton(page) {
       "🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js"
     );
   }
+
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
   }
 
-  const maxTime = 2000; // maximální doba čekání (ms)
-  const interval = 10; // interval mezi pokusy (ms)
-
-  let clicked = false;
+  const maxTime = 2000;
+  const interval = 10;
   const start = performance.now();
+  const maxAttempts = 3;
+  let attempts = 0;
 
-  while (performance.now() - start < maxTime) {
-    clicked = await page.evaluate(() => {
+  while (performance.now() - start < maxTime && attempts < maxAttempts) {
+    const clicked = await page.evaluate(() => {
       const btn = document.querySelector("#hladisko-basket-btn");
       if (!btn) {
         console.error(
@@ -23,34 +24,50 @@ export async function clickBasketButton(page) {
         );
         return false;
       }
-      if (btn) {
-        btn.click();
-        return true;
-      }
-      return false;
+      btn.click();
+      return true;
     });
 
     if (clicked) {
+      attempts++;
       if (process.env.CONSOLE_LOGS === "true") {
         console.log(
-          "✅ Kliknutí na 'Pokračovat do košíku' proběhlo v clickBasketButton.js"
+          `✅ Pokus #${attempts}: Kliknutí provedeno, čekám na /Basket...`
         );
       }
-      if (process.env.EXECUTION_TIME === "true") {
-        console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
+
+      try {
+        await page.waitForFunction(
+          () => location.pathname.includes("/Basket"),
+          { timeout: 5000 }
+        );
+
+        if (process.env.CONSOLE_LOGS === "true") {
+          console.log("✅ Detekováno přesměrování na /Basket.");
+        }
+
+        if (process.env.EXECUTION_TIME === "true") {
+          console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
+        }
+
+        return performance.now() - start;
+      } catch (e) {
+        if (process.env.CONSOLE_LOGS === "true") {
+          console.warn("⚠️ URL se nezměnila, zkouším znovu...");
+        }
       }
-      return performance.now() - start;
     }
 
     await page.waitForTimeout(interval);
   }
 
   console.warn(
-    `❌ Tlačítko 'Pokračovat do košíku' se neobjevilo do ${maxTime} ms. v clickBasketButton.js`
+    `❌ Nepodařilo se kliknout na tlačítko nebo přesměrovat na /Basket po ${attempts} pokusech / ${maxTime} ms.`
   );
 
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
   }
+
   return null;
 }

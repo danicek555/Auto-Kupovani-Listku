@@ -1,0 +1,162 @@
+🕒 Prodej ještě nezačal – stav: Připravujeme do prodeje.
+🌀 Pokus 563 | Čas od startu: 137668 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: {
+  found: false,
+  disabled: true,
+  type: 'info',
+  statusText: 'Připravujeme do prodeje.'
+}
+🕒 Prodej ještě nezačal – stav: Připravujeme do prodeje.
+🌀 Pokus 564 | Čas od startu: 138058 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 2:20.033 (m:ss.mmm)
+⏱️ cekam na m: 2.560s
+⏱️ evaluate m: 611.676ms
+✅ Data uložena (pokus 1) do m_data.json v getM.js
+⏱️ m execution time: 3.439s
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 805.634ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 34.34ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 34.916ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 1.958s
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 577.873ms
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 546.694ms
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1325,
+  filteredBySector: 0,
+  filteredByPrice: 0,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(1 / řada 10) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(2 / řada 10) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(3 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(4 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(5 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(6 / řada 10) (sektor: 101, cena: 1990) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 4.271s
+⏱️ selectSeats.js: 11.697s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+🧠 Browser console log:  Veškeré skripty jsou chráněny Autorským zákonem.
+🧠 Browser console log:  reklama v2
+🧠 Browser console log:  [DOM] Found 2 elements with non-unique id #AktivaciaUctu: (More info: https://goo.gl/9p2vKq) %o %o
+🧠 Browser console log:  [DOM] Found 2 elements with non-unique id #search-input: (More info: https://goo.gl/9p2vKq) %o %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+🧠 Browser console log:  [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o
+⚠️ URL se nezměnila, zkouším znovu...
+TypeError: page.waitForTimeout is not a function
+    at clickBasketButton (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/4AutoKupovaniListku%20copy/components/navigation/clickBasketButton.js:61:16)
+    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/4AutoKupovaniListku%20copy/index.js:57:3)
+🧠 Browser console log:  Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened.
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79693399420
+⏳ Pokus 1/24 – čekám 5s...
+🧠 Browser console log:  [Coworkers.ai Chatbot] ewConfig.url: deprecated domain - please change url and urlPrefix to new domain *.bot.coworkers.ai
+🧠 Browser console log:  [Coworkers.ai Chatbot] Connected to server, waiting for connection ready message
+🧠 Browser console log:  [Coworkers.ai Chatbot] Connection to server is ready JSHandle@object
+⏳ Pokus 2/24 – čekám 5s...
+⏳ Pokus 3/24 – čekám 5s...
+⏳ Pokus 4/24 – čekám 5s...
+⏳ Pokus 5/24 – čekám 5s...
+⏳ Pokus 6/24 – čekám 5s...
+⏳ Pokus 7/24 – čekám 5s...
+⏳ Pokus 8/24 – čekám 5s...
+⏳ Pokus 9/24 – čekám 5s...
+⏳ Pokus 10/24 – čekám 5s...
+⏳ Pokus 11/24 – čekám 5s...
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA4NdRRlzmK4kb0MdnJbRJE5tYpIdCOV33Q9sDkLUnO2xA7mf8Pk2DSuUziRU3jsmRfxmyutTJa6I6m90SZphsRLx4Ue-ZgwQIAVAZ_pR2932LN8mSHK1zWzYOXl2W544KIsWLHmPkFIqzg283lCWrTAXhDZDkUMdhlf2ClE-C7G2U0Zzeuo34KgeYDgA8HoBKCdf6CiTMVR4h-hcm-XT18Avb_F_R1VziGoadsZUW-LDOxZS-r5SRXOLtxMA5T7ZMyvKTTZ72bSIQFfCUHEy-QS9ruMGFg3DshFHDX8vX1CFtjKf2twyC2GqxLLTBDjghTayzw7UQkltZGu0CNwydZZEwQ8WInz8wwNJlXVcZGwD1Z9isdRwj7MiRA9ZDdloA_W8J4rX7GjvM-_Nvu5tdjAWMUkWji8Ow8y0XnU5Vuoqvb-ZuxTkIC9Z0vAmP3R9nKgsPgUH1g_kCT3R7aDuYOn5Rx51QI9J9oXfiQs-KudBdWf36SXxN4iXv2326UNvcBBpFiOlwq7nGL3xq6sX1P0SWWz5c6D3qJ8V74D3WjmoCJCN7UZpHcpVraNoTDwpyUYn_VfVfXngowRqVCqbsr0vZgG30mo5j-ap8I4twSqJ-tTlMot0NvILA7_ByhKZzb0DW0XuYFSs2OmV2gi_kNo_DYDrvoKIlGa7YrFAsFxgrud26uqgaF-Jw85XtwEkPbzV-B1TfqDpQp9VzO2tsyXotGwwnlm6AgbBeRRknzS9bOybc4fI37h9EyQVpL_f_tn8SEfy9HiWAhucae-CEK_L0Jew6gFA6xWJgkfOR16-QnG4YK3cmfzzTsu-n80UabmVvYSOcEKZYzC3k0G_1L6wuUyAeNUBCAYQ8IGe-JHKJbLQsW8sKK6iTeBvgmyS_3TmFAtM15OWDN3nn7ya1jaRznUiGUjNHN9fv9XRJO_ZuOl1mU-Bfh_ipXS55CVp0ifAfUp
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosím, vyberte jednu z možností"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosím, vyberte jednu z možností"
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+🧠 Browser console log:  Failed to load resource: the server responded with a status of 405 ()
+🧠 Browser console log:  Each dictionary in the list "icons" should contain a non-empty UTF8 string field "sizes".
+🧠 Browser console log:  Each dictionary in the list "icons" should contain a non-empty UTF8 string field "type".
+🧠 Browser console log:  Each dictionary in the list "icons" should contain a non-empty UTF8 string field "sizes".
+🧠 Browser console log:  Each dictionary in the list "icons" should contain a non-empty UTF8 string field "type".
+^C%                                                                                                                
+danielmitka@Daniels-MacBook-Air 4AutoKupovaniListku copy % 

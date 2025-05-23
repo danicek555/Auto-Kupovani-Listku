@@ -1,5 +1,8 @@
 export async function waitForCaptchaToFinish() {
-  if (!global.captchaActive) return;
+  if (!global.captchaActive) {
+    console.log("🔁 reCAPTCHA není aktivní. Pokračuji...");
+    return;
+  }
 
   console.log("🛑 Čekám na vyřešení reCAPTCHA...");
   await new Promise((resolve) => {
