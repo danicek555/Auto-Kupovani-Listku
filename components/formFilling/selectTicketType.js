@@ -62,3 +62,4 @@ export async function selectTicketType(page) {
     console.timeEnd("⏱️ Výběr typu lístku");
   }
 }
+export default selectTicketType;

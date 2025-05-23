@@ -95,3 +95,4 @@ export async function confirmEmailModal(page) {
     return false;
   }
 }
+export default confirmEmailModal;

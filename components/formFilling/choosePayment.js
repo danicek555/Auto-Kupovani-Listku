@@ -51,3 +51,4 @@ export async function choosePayment(page) {
     );
   }
 }
+export default choosePayment;

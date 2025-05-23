@@ -62,3 +62,4 @@ export async function fillEmail(page) {
   if (process.env.EXECUTION_TIME === "true")
     console.timeEnd("⏱️ Vyplňování emailu");
 }
+export default fillEmail;

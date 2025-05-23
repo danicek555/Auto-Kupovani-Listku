@@ -3,8 +3,8 @@ import selectTicketType from "./selectTicketType.js";
 import fillEmail from "./fillEmail.js";
 import acceptTerms from "./acceptTerms.js";
 import choosePayment from "./choosePayment.js";
-import submitPayment from "./submitPayment.js";
-import confirmEmailModal from "./confirmEmailModal.js";
+import submitPayment from "../action/submitPayment.js";
+import confirmEmailModal from "../action/confirmEmailModal.js";
 
 async function formFilling(page) {
   await selectInsurance(page);

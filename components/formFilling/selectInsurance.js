@@ -66,3 +66,4 @@ export async function selectInsurance(page) {
     console.timeEnd("⏱️ Výběr pojištění execution time");
   }
 }
+export default selectInsurance;

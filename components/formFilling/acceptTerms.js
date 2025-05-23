@@ -38,3 +38,4 @@ export async function acceptTerms(page) {
     console.timeEnd("⏱️ Zaškrtnutí checkboxů");
   }
 }
+export default acceptTerms;

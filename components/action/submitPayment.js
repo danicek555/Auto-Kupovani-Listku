@@ -60,3 +60,4 @@ export async function submitPayment(page) {
 
   return clicked;
 }
+export default submitPayment;

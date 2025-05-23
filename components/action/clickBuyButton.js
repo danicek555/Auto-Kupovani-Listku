@@ -238,3 +238,4 @@ export async function clickBuyButton(page) {
   console.warn("❌ Tlačítko `Koupit` nebylo aktivní během limitu.");
   return false;
 }
+export default clickBuyButton;

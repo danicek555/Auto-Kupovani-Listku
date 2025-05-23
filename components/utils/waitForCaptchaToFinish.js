@@ -11,7 +11,7 @@ export async function waitForCaptchaToFinish() {
         clearInterval(check);
         resolve();
       }
-    }, 1000);
+    }, 100);
   });
 }
 export default waitForCaptchaToFinish;

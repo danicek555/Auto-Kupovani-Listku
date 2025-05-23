@@ -30,7 +30,7 @@ async function runBot() {
       console.time("⏱️ Zapnutí alert monitoru");
     }
     await setupAlertMonitor(page);
-    await alertChecker(page);
+    alertChecker(page);
     if (process.env.EXECUTION_TIME === "true") {
       console.timeEnd("⏱️ Zapnutí alert monitoru");
     }
