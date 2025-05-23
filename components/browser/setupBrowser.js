@@ -167,7 +167,7 @@ export async function setupBrowser(url) {
     );
   //wait page.waitForTimeout(1000); // malá pauza před další emulací
   // Získání všech iframe
-  await sleep(2000); // počkej 2s na stabilizaci DOMu
+  //await sleep(2000); // počkej 2s na stabilizaci DOMu
   page.on("close", () => {
     console.warn("⚠️ Stránka byla zavřena (page.close event)");
   });
@@ -185,20 +185,49 @@ export async function setupBrowser(url) {
     console.error("❌ Chyba při čtení script[src]:", err.message);
   }
   console.log("Script sources:", scripts);
-  page.on("framenavigated", (frame) => {
-    console.log("🔁 Navigace – frame URL:", frame.url());
-  });
 
+  let captchaActive = false;
+
+  page.on("framenavigated", async (frame) => {
+    if (frame.url().includes("recaptcha/api2/anchor") && !captchaActive) {
+      captchaActive = true;
+      console.log("🧩 Znovu detekována reCAPTCHA! Spouštím řešení...");
+
+      try {
+        await startRecaptchaWatcher(page, page.url());
+
+        // Čekej, než bude token vložený
+        await page.waitForFunction(
+          () => {
+            const el = document.getElementById("g-recaptcha-response");
+            return el && el.value && el.value.length > 0;
+          },
+          { timeout: 60000 }
+        );
+
+        console.log("✅ CAPTCHA vyřešena. Pokračuji.");
+      } catch (err) {
+        console.error("❌ Chyba při řešení CAPTCHA:", err.message);
+      } finally {
+        captchaActive = false;
+      }
+    }
+  });
   if (process.env.RECAPTCHA === "true") {
     console.log("jsem pred captchou");
-    // 1. Získej sitekey automaticky
-    // console.log("čekám na reCAPTCHA element...");
-    // await page.waitForSelector(".g-recaptcha", { timeout: 10000 });
-    // console.log("Div s reCAPTCHA je přítomen.");
+    await startRecaptchaWatcher(page, page.url());
 
-    await startRecaptchaWatcher(page, url);
-    // // počkej na reCAPTCHA iframe
+    await page.waitForFunction(
+      () => {
+        const el = document.getElementById("g-recaptcha-response");
+        return el && el.value && el.value.length > 0;
+      },
+      { timeout: 60000 }
+    );
+
+    console.log("✅ CAPTCHA před startem vyřešena.");
   }
+
   if (process.env.ALERT_MONITOR === "true") {
     await setupAlertMonitor(page);
   }

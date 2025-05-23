@@ -147,9 +147,9 @@ export async function clickBuyButton(page) {
   const start = Date.now();
   let attempt = 0;
 
-  console.log("⏳ Čekám 2 sekundy na načtení stránky...");
-  await sleep(2000);
-  console.log("✅ Počáteční čekání dokončeno");
+  // // console.log("⏳ Čekám 2 sekundy na načtení stránky...");
+  // // await sleep(2000);
+  // console.log("✅ Počáteční čekání dokončeno");
 
   while (Date.now() - start < maxTime) {
     attempt++;
@@ -192,15 +192,15 @@ export async function clickBuyButton(page) {
           "🔁 Tlačítko `Koupit` je neaktivní. Čekám a zkouším znovu..."
         );
       } else {
-        console.log("🟢 Tlačítko nalezeno a aktivní. Klikám...");
+        console.log("✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...");
 
         await page.evaluate(() => {
           const btn = document.querySelector("a.btn.btn-buy.flex-c");
           btn?.click();
         });
 
-        console.log("⏳ Čekám 3 sekundy na redirect...");
-        await sleep(3000);
+        // console.log("⏳ Čekám 3 sekundy na redirect...");
+        // await sleep(3000);
 
         console.log("✅ Kliknutí proběhlo");
         if (process.env.EXECUTION_TIME === "true") {

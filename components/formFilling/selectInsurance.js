@@ -1,7 +1,9 @@
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function selectInsurance(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Výběr pojištění execution time");
   }
+  await waitForCaptchaToFinish();
 
   const selector = "#optionsRadiosPoistenie2";
   const maxTime = 1000;

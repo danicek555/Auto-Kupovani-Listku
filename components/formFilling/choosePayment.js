@@ -1,7 +1,9 @@
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function choosePayment(page) {
   const selector = "#template_payOption_17";
   const timeout = 5000;
   const pollInterval = 50;
+  await waitForCaptchaToFinish();
 
   const waitForAndClick = async () => {
     while (true) {

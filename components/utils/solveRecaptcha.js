@@ -28,10 +28,14 @@ export async function solveRecaptcha(sitekey, pageurl) {
   const requestId = res.data.request;
   console.log("✅ CAPTCHA zadána, čekám na token... ID:", requestId);
 
-  // Polling na výsledek
-  for (let i = 0; i < 3; i++) {
-    console.log(`⏳ Pokus ${i + 1}/24 – čekám 5s...`);
-    await new Promise((resolve) => setTimeout(resolve, 5000));
+  const maxRetries = 24;
+  const delayMs = 5000;
+
+  for (let i = 0; i < maxRetries; i++) {
+    console.log(
+      `⏳ Pokus ${i + 1}/${maxRetries} – čekám ${delayMs / 1000}s...`
+    );
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
 
     const result = await axios.get("http://2captcha.com/res.php", {
       params: {

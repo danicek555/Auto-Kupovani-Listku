@@ -1,7 +1,10 @@
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function acceptTerms(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Zaškrtnutí checkboxů");
   }
+  await waitForCaptchaToFinish();
+
   try {
     const clickedCount = await page.$$eval(
       '.terms-accept input[type="checkbox"]',
