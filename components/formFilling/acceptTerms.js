@@ -1,12 +1,14 @@
 import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+
 export async function acceptTerms(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Zaškrtnutí checkboxů");
   }
+
   await waitForCaptchaToFinish();
 
   try {
-    const clickedCount = await page.$$eval(
+    const { totalCheckboxes, clickedCount } = await page.$$eval(
       '.terms-accept input[type="checkbox"]',
       (checkboxes) => {
         let count = 0;
@@ -16,16 +18,19 @@ export async function acceptTerms(page) {
             count++;
           }
         }
-        return count;
+        return { totalCheckboxes: checkboxes.length, clickedCount: count };
       }
     );
+
     if (process.env.CONSOLE_LOGS === "true") {
       if (clickedCount > 0) {
         console.log(`✅ Zaškrtnuto ${clickedCount} checkboxů v acceptTerms.js`);
-      } else {
+      } else if (totalCheckboxes > 0 && clickedCount === 0) {
         console.log(
-          "❌ Nepodařilo se zaškrtnout žádný checkbox v acceptTerms.js"
+          `✅ Všechny checkboxy (${totalCheckboxes}) už byly zaskrtnuté v acceptTerms.js`
         );
+      } else {
+        console.log("❌ Nebyly nalezeny žádné checkboxy v acceptTerms.js");
       }
     }
   } catch (error) {
@@ -34,8 +39,10 @@ export async function acceptTerms(page) {
       error.message
     );
   }
+
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ Zaškrtnutí checkboxů");
   }
 }
+
 export default acceptTerms;

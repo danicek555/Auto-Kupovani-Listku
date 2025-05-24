@@ -52,6 +52,19 @@ function alertChecker(page) {
       }
       retrying = false;
     }
+    if (text.includes("Prosím upravte počet míst v košíku") && !retrying) {
+      retrying = true;
+      process.env.CONTACT_EMAIL = process.env.SECOND_CONTACT_EMAIL;
+      console.log(
+        "🔁 Alert: Maximum lístků na email – měním email a opakuji formFilling..."
+      );
+      try {
+        await formFilling(page);
+      } catch (err) {
+        console.error("❌ Chyba při opakování formFilling:", err.message);
+      }
+      retrying = false;
+    }
   });
 }
 

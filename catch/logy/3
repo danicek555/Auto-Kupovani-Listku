@@ -1,0 +1,970 @@
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 306.47ms
+🛑 Čekám na vyřešení reCAPTCHA...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+^C%                                                                                                                                         
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % node index.js 
+⏱️ Spuštění prohlížeče: 1.979s
+⏱️ Zapnutí browser console logů: 236.007ms
+⏱️ Nastavení blokace zdrojů: 0.007ms
+⏱️ Nastavení user agentu: 2.074ms
+jsem pred captchou
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79702334459
+⏳ Pokus 1/24 – čekám 5s...
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA5vJctz_B2vsiEVZl6toeGScBd5znWEi8snpe6CcKN1cEFLh4L4oB7rNTdN1mjRg7JPmTAnj-kP1WhgI1i2NCSxgR-PQ2qMTZPBgu3AIKimyz1XzoJmJ-wyjnp3d6lRzDCA_MahTsAblDsAisTzaeM1eDlSy303CVrntsfkKK25t92vgw9a53W_eHFe80Lw31ZeK1odlo7d5iqJeyhbc8GdHghN4_Wf_89bk317LFR0Os3EawhXLVEywcnULTiLnoYz5rifnNrodtBsbaB40DWaaKUP6MxPMiXJ2_c4Pk4pyQV5PsFoAoPpm04mUDNxu9n6v2AGyPHAgmjMThc2X6x5cEtpBvoLf7AObi26SvVpMd_wxDBsMzEGUsJJo7w-DthGGyawJCXWH8LQ2jE9mx7TDbSOXcqZLXIGL7g-0F_x6Mtq5Ugc3FD0BxawpyAmxyQzcFfcor5cUjIwMsJI5r_CpxaRgzFArl4EYHQpfHOEghFa4VHzOQ2kt-32nbFRSLZkBet-NCW1kI3vs51eJka5pkQljtPrnDI6ZC-W5y71zVk3b7caiY9h8EoJlu4qXRLX-NUPPCQlWisevuCpQDxETCxwh7ct6KOWFjHg-ZQy7vWKjzqg2tsQXG1nTwO9wNYZJSBbvq35jyrRF9ZRzvmrS-BH9LbVS4OwFxNEkKhg8WA-h29cZiW0DlRmoTHRtIpUAicAq-PN4kvl7FZwwOTWvdHVC5FQNfDnE_cKxBZ9sdEY2WDt9uFs-8VZ_zHlmeme1nabEp9zlw1Hd7Tv-EQ5Y-6DyJj9rU8x03yx6M5-RwVNRHvRNXL974wQFpLgx9oFqM42SQiiaMZothPUjOynobx7EnW0HILV4rCm-h9uY7r-iGtWsjPFeOAyYXZj3mJm3LAUYha1sa0t9kdzi1BqfRMdHoSX9UGG9okz7vwHpVzXPnuTyS3qVY3NZ3Rtd32qlpYdD6klQ6WFSh1OUn0UagzZqU9xp6hf_RQrI3JoRyyu_ms9lTdiKa0RH97v5YB1Enk2cZjMYfegItmOLuLF5PjX6HPooKtNDvWEJEh2NgysjsxDlXvQZtf9RIdW2GEPk4WhSxJbwUaaMUtYUqHycQ_asg
+✅ Token vložen do stránky
+✅ CAPTCHA před startem vyřešena.
+⏱️ Načtení stránky: 8.350s
+⏱️ Nastavení viewportu: 17.287ms
+⏱️ Celkový čas setupu: 10.586s
+zapl jsem se 
+🔁 Alert checker spuštěn
+⏱️ Zapnutí alert monitoru: 5.571ms
+🌀 Pokus 1 | Čas od startu: 0 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 34.432ms
+⏱️ cekam na m: 1.204s
+⏱️ evaluate m: 21.212ms
+⚠️ Pokus 1: Vadná data. Zkouším znovu...
+⏱️ cekam na m: 5.628ms
+⏱️ evaluate m: 47.735ms
+✅ Data uložena (pokus 2) do m_data.json v getM.js
+⏱️ m execution time: 6.298s
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 179.729ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 2.64ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 5.705ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 88.418ms
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 99.48ms
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 100.285ms
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1122,
+  filteredBySector: 0,
+  filteredByPrice: 16762,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(6 / řada 22) (sektor: 122, cena: 1990) 
+✅ Clicked: OnSeat_click(7 / řada 22) (sektor: 122, cena: 1990) 
+✅ Clicked: OnSeat_click(8 / řada 22) (sektor: 122, cena: 1990) 
+✅ Clicked: OnSeat_click(9 / řada 22) (sektor: 122, cena: 1990) 
+✅ Clicked: OnSeat_click(10 / řada 22) (sektor: 122, cena: 1990) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 293.944ms
+⏱️ selectSeats.js: 7.070s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+✅ Detekováno přesměrování na /Basket.
+⏱️ Doba kliknutí na 'Pokračovat do košíku': 3.862s
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 509.397ms
+🔁 reCAPTCHA není aktivní. Pokračuji...
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79702335738
+⏳ Pokus 1/24 – čekám 5s...
+✅ Kliknuto na eTicket v selectTicketType.js
+⏱️ Výběr typu lístku: 659.523ms
+🛑 Čekám na vyřešení reCAPTCHA...
+⏳ Pokus 2/24 – čekám 5s...
+⏳ Pokus 3/24 – čekám 5s...
+⏳ Pokus 4/24 – čekám 5s...
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA4Ya1G54lfOzH6sDfL0SMVrg_3ujuXcZpEEwPv0KNKWnHQcrDwQxIj-hvqkDRliRkR5aiTuh-nJ4RK19pmIOX0EIYKyIFKx8Lc76kF_n8DFPy_4k-21o0tLapFLoQbs0n9yWe47u-461P_f8srXaDeV-h652BJvdyezxryv5li2z996pTHB54tqn1lP9Fh-shLHBb8C_tokPt9y7DnMvsJT_3hc9kTGRVd8ykQr5xOrwXfKbg4PiszSVotcjOee6M8vhmqcEKtHPigPBZDRMYDTvhfEi0lqnhMizGnEp-LpeOwRZ7yd0ooRYdK7pEWjQoTPb0I4efxwGcm_3kKZoywAwV4mN3xTAykyYrUBMDsrYyncRKFRlaJRiQ2dyDeZ5mvblrkrRPCc3CKoM8CrSoXpvCBl3K8S_BKRpaEq3aj2NRGRd5LT0W7NZMTcppsH785jjLn6eUkKqLT6Q7WkGK_QRgPsMRu5cnYs7RchCijWa6gzNLi6rPA0rI566-VLY_MZ7Vtt2MhWNE094d9wsC8tXd0SCPXmOiNUGDzD982vAVghQYIxLv-dtO6HQDitEektBhNyAjH8SU3rNlqhzmOKFi_Gmxibu7vPPtdh_jZdid_2Lp-acNbm-exB42e6rsi0Cgm3l8nnvXbvIK36-9EmiB7BO5crbm3S0k8Qi274bkqHd6N_aAopetA8fEicxIc0oVJ6Cpj3e1-ZHaGnt-1EH7dmXJfbtw2jo3oDBN9TfjAj3y_LIbLnuV_kwpYKHN8n-jSyXgd1akNuixCUIT9az9z5mpfSr3hThNf1BRHbKbutK8igtPSruaYFTbASDJQTqkbhlYKq24OgL_sKtpki2jMiEcSa9FANlLj_0Ksl8kqc4VJ7k3LLVPvIMpncmBQ0JSosDY2-3Lm2nM8SiHfn1Ayd0vNSJnlI6T_DesNrVkXnZZfpITOFOz_c_LoISAPmnfMCin34b1ELyeXvAR3v196rOA
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+✅ Vyplněn e-mail: listecky007@gmail.com v fillEmail.js
+⏱️ Vyplňování emailu: 20.129s
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Zaškrtnuto 4 checkboxů v acceptTerms.js
+⏱️ Zaškrtnutí checkboxů: 35.353ms
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Zvolena platba kartou / Google Pay / Apple Pay v choosePayment.js
+⏱️ Doba pollingu 'Zvolit platbu': 15.802ms
+⏻ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js
+🔁 Navigace zjištěna, aktualizuji frame
+⏱️ Kliknutí na tlačítko 'Zaplatit': 239.285ms
+✅ Kliknuto na tlačítko 'Zaplatit' v submitPayment.js
+🔁 Čekám na tlačítko 'Ano, potvrdit' v confirmEmailModal.js
+✅ Kliknuto na 'Ano, potvrdit' v confirmEmailModal.js
+⏱️ Klikání na tlačítko 'Ano, potvrdit': 526.365ms
+🎉 Bot nakoupil 5 listků
+🔁 Doba spuštění botu: 43.681s
+🔁 Navigace zjištěna, aktualizuji frame
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+🔁 Alert: Maximum lístků na email – měním email a opakuji formFilling...
+🔁 reCAPTCHA není aktivní. Pokračuji...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79702337508
+⏳ Pokus 1/24 – čekám 5s...
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 485.302ms
+🛑 Čekám na vyřešení reCAPTCHA...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⏳ Pokus 2/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA7C14B-ZJ1ERFHxhMuJISgm0vqEAdQGilZPZypOsc55KplQZgXEcbbCz9K8TIyuS9hdZfIKfQBKFnNG3UapzKNPJS70YeUInReYLlQ0pbTPalrYUsK_tKO5M4kiYKYM6QJ1fHzCmaNLEHOaYvLUXLLMP07_Sw5rN1D2QyM851AhlW_E0AdE-6jF30iN2FUyCel_rgIDQYglxNFP3kc0AhqG42Bd2gFlvSWwve6gyyy_O-6nvxC-4lPVBbeS8HTuvsjpSCfx-ujPZSoxfs9nXZAUelCK6-CX_rVXBa8F9KJl7Ws5am_7q5E81NhAsKYHqlg-HHRsOjgv5TjtylO0pgP77zxPJ_KTn5U5I5jyOJF7GDt33dSNTSLEytNw462TGutaHuPQjbO2UcGTv04rMpErpIT15ydCXRcDOLWFMlKGnlMvQJdx8jcig7FXDd05WAhZyoa0LPMSNY07j79v-2-53_lnKudnusRx3H4dJ5K9GuP630CvUJ5bGXMSIlW7m0FGIm3311y9fBvvvuS22xb5ZqUgN7MAnK0rybOHs7kbqekstuCjUVDTc5dID2GKa-MEPghamMv1vWJ8klfp-0R-l68k1FWNxkBKORYWzSOrs5a3fHVE2RzW-ZK7J-gmW2JAhspS4mWsD1XfX9ml1L42vojF9ui6uaflheaMhyJYmJhF1Nx3DPsPT4f1sk2S4umaRz29DVPuVrbXRWNA3-rjVBgr2hNK2Gb-2RJafn1yrE_moAs3D4MCM1YnPHv25HmxbWd6Ap0UUDO9FF6m35V0GxVzSMx8TlkwMF9EYmeEKbpSBwh9uDpoHD9sNPIoaKwcmxIpi_zKZ_1SBFCjzX3iLUk5G6AIb6PTrZl1woWgoA3FH7dTFtcSxmMiTyUDqIwXFW7C7GfaR2moGqOtlf55opAfL4fdzKXR9x_wtnrxv-M2jyGiPx8aD5wZvx_bIkNsTu2Z83hyrvHN4eMbS2WP7D4q0Q
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+✅ Kliknuto na eTicket v selectTicketType.js
+⏱️ Výběr typu lístku: 10.246s
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Vyplněn e-mail: danmitka@gmail.com v fillEmail.js
+⏱️ Vyplňování emailu: 5.733ms
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Zaškrtnuto 4 checkboxů v acceptTerms.js
+⏱️ Zaškrtnutí checkboxů: 34.466ms
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Zvolena platba kartou / Google Pay / Apple Pay v choosePayment.js
+⏱️ Doba pollingu 'Zvolit platbu': 19.662ms
+⏻ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js
+🔁 Navigace zjištěna, aktualizuji frame
+🔁 Navigace zjištěna, aktualizuji frame
+⏱️ Kliknutí na tlačítko 'Zaplatit': 190.456ms
+✅ Kliknuto na tlačítko 'Zaplatit' v submitPayment.js
+🔁 Čekám na tlačítko 'Ano, potvrdit' v confirmEmailModal.js
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 4. Prosím upravte počet míst v košíku."
+🔁 Navigace zjištěna, aktualizuji frame
+🔁 Navigace zjištěna, aktualizuji frame
+✅ Kliknuto na 'Ano, potvrdit' v confirmEmailModal.js
+⏱️ Klikání na tlačítko 'Ano, potvrdit': 882.073ms
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+🔁 Alert: Maximum lístků na email – měním email a opakuji formFilling...
+🔁 reCAPTCHA není aktivní. Pokračuji...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79702338426
+⏳ Pokus 1/24 – čekám 5s...
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 232.873ms
+🛑 Čekám na vyřešení reCAPTCHA...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 2/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 3/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 4/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 5/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 6/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 7/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 8/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 9/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 10/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 11/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 12/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 13/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⏳ Pokus 14/24 – čekám 5s...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA543zXQrvqVs_0V0XUBQsARfj1XY7CpvSJFwG_snrB-ZJMwblmjl6wlJRUs3ya6MqLLNXZHH0ltRZyakn7VjpI6jQtHON2ntt-MmSaFEyXoNFUE1CnmF254TFKHhIb3WiyXcaVXFlVeut87a646GxBIKb0ghjHtOITJVupnT8oCisbIJcqE-MlgPcgk7u1IHgX8KJyJtdM2RmELgFnr74TSzfH5-qEycOggP7cM-IccTTGoZRmAadgTWUDxu3msNxkY67NE7tqaItrH8juur8m4VngCPShG1xSYHUVHbMSDKz5uO8MdO0PznKZHyBfSfx_wA9zr2K2r3cRe1BtyNilmHS7vUa7gRUqIQjDc-XkKSvRFWO5oNtzxf_gjjE8Bdc9iFtkK0LLgKV3Z_Zy5lpXbNHH7Ai3f1b5nKmFwFaux0NJ4Y4-XQugXaCd-CcREu_wijNIiotlNIsWr9SdSwbJs88_BQoI-X_WfVSZT5Ue1To-BxWM5cX3s-npMCzQT4RLOx48VByFXEkgF6sRvu2Sagut0O5mgDWzPTsG7WNZhO4kKWYTkoxLXa9-3vmG3XXdVt3DIH3DpynZWixS7xWs3rBaQointVe-jgckOqW3SV7MuIJtTw2YVd4AHPMHr-tApljOtjzttYg_TL_T3RO5KzFax3z6Ox_H89vTf-qcSvDrrYgSiG42VmLQV5E5z7JVM7VToj-3WQmWLkJKM3gGlVHd0iEkaezcJ6F2eJIPMfPNDZT7XkzIPkiUXwkDMpxwkpCI7dhszy91Sg1r-zxjGymrcA7yV1d4gehiJSQp1wLMpClLePgJtDp38NkKYVzFhYfaaC6cPxDZU7RLqRIIaWaGVVCvg0_GeplGS8j3UJJ_wXDDGa9ojviyUsRbVIqJJMRASzc9vpyyiHQgX7_6jrP4M-eAXSlYdh3pSz-nRp35BJ8Bg2ErKgk3rI9V2V_MxpRwE2qFP0bIAhhHuHZVuQKbjYsOkJNfKLwG4y151zXhfAGotxFmGHGmpfYiOmlqa9lFod6LfAoi0oKov724_Us1fg84WSlBOPrpgX7dFzAnpwUY
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+✅ Kliknuto na eTicket v selectTicketType.js
+⏱️ Výběr typu lístku: 1:11.131 (m:ss.mmm)
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Vyplněn e-mail: danmitka@gmail.com v fillEmail.js
+⏱️ Vyplňování emailu: 8.005ms
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Zaškrtnuto 4 checkboxů v acceptTerms.js
+⏱️ Zaškrtnutí checkboxů: 62.938ms
+🔁 reCAPTCHA není aktivní. Pokračuji...
+✅ Zvolena platba kartou / Google Pay / Apple Pay v choosePayment.js
+⏱️ Doba pollingu 'Zvolit platbu': 20.046ms
+⏻ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js
+🔁 Navigace zjištěna, aktualizuji frame
+🔁 Navigace zjištěna, aktualizuji frame
+🔁 Navigace zjištěna, aktualizuji frame
+⏱️ Kliknutí na tlačítko 'Zaplatit': 227.946ms
+✅ Kliknuto na tlačítko 'Zaplatit' v submitPayment.js
+🔁 Čekám na tlačítko 'Ano, potvrdit' v confirmEmailModal.js
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+🔁 Navigace zjištěna, aktualizuji frame
+🔁 Navigace zjištěna, aktualizuji frame
+🔁 Navigace zjištěna, aktualizuji frame
+✅ Kliknuto na 'Ano, potvrdit' v confirmEmailModal.js
+⏱️ Klikání na tlačítko 'Ano, potvrdit': 3.191s
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+❌ Stránka se možná ještě nenačetla v setupBrowser.js v kodu pro alert monitor Execution context was destroyed, most likely because of a navigation.
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+🔁 Alert: Maximum lístků na email – měním email a opakuji formFilling...
+🔁 reCAPTCHA není aktivní. Pokračuji...
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6Le1xjcaAAAAAPW5Kft8v2nhqj5uX0SK6W3PrDeJ
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79702344367
+⏳ Pokus 1/24 – čekám 5s...
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 348.861ms
+🛑 Čekám na vyřešení reCAPTCHA...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×
+        Povolený počet míst: 3. Prosím upravte počet míst v košíku."
+^C%                                                                                                                                         
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % cleaer
+zsh: command not found: cleaer
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % 

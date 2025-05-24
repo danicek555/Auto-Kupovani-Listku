@@ -63,8 +63,21 @@ async function runBot() {
   //await waitForPaymentPage(page);
   //await setupAlertMonitor(page);
 
-  await formFilling(page);
-  console.timeEnd("🔁 Doba spuštění botu");
+  const success = await formFilling(page);
+  if (success) {
+    const pocetListku = process.env.TICKET_COUNT;
+    let sklonovaniSlovicka = "listků";
+    if (pocetListku === 1) {
+      sklonovaniSlovicka = "lístek";
+    } else if (pocetListku > 1 && pocetListku < 5) {
+      sklonovaniSlovicka = "listky";
+    } else {
+      sklonovaniSlovicka = "listků";
+    }
+    console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
+
+    console.timeEnd("🔁 Doba spuštění botu");
+  }
 }
 
 runBot().catch(console.error);

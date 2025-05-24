@@ -19,17 +19,8 @@ async function formFilling(page) {
       "⏻ Zapnuto submit payment - submitPayment.js, confirmEmailModal.js"
     );
     await submitPayment(page);
-    await confirmEmailModal(page);
-    const pocetListku = process.env.TICKET_COUNT;
-    let sklonovaniSlovicka = "listků";
-    if (pocetListku === 1) {
-      sklonovaniSlovicka = "listek";
-    } else if (pocetListku > 1 && pocetListku < 5) {
-      sklonovaniSlovicka = "listky";
-    } else {
-      sklonovaniSlovicka = "listků";
-    }
-    console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
+    const emailConfirmed = await confirmEmailModal(page);
+    return emailConfirmed;
   } else {
     console.log("⏻ Není zapnuto submit payment");
   }
