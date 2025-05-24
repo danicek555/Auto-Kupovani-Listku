@@ -13,44 +13,40 @@ export async function clickBasketButton(page) {
   const maxAttempts = 20;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    const clicked = await page.evaluate(() => {
-      const btn = document.querySelector("#hladisko-basket-btn");
-      if (!btn) {
-        console.error(
-          "❌ Element 'hladisko-basket-btn' v clickBasketButton.js nebyl nalezen"
-        );
-        return false;
-      }
-      btn.click();
-      return true;
-    });
+    const button = await page.$("#hladisko-basket-btn");
+    if (!button) {
+      console.error(
+        "❌ Element 'hladisko-basket-btn' v clickBasketButton.js nebyl nalezen"
+      );
+      await new Promise((resolve) => setTimeout(resolve, interval));
+      continue;
+    }
 
-    if (clicked) {
+    await button.click();
+
+    if (process.env.CONSOLE_LOGS === "true") {
+      console.log(
+        `✅ Pokus #${attempt}: Kliknutí provedeno, čekám na /Basket...`
+      );
+    }
+
+    try {
+      await page.waitForFunction(() => location.pathname.includes("/Basket"), {
+        timeout: 3000,
+      });
+
       if (process.env.CONSOLE_LOGS === "true") {
-        console.log(
-          `✅ Pokus #${attempt}: Kliknutí provedeno, čekám na /Basket...`
-        );
+        console.log("✅ Detekováno přesměrování na /Basket.");
       }
 
-      try {
-        await page.waitForFunction(
-          () => location.pathname.includes("/Basket"),
-          { timeout: 1000 }
-        );
+      if (process.env.EXECUTION_TIME === "true") {
+        console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
+      }
 
-        if (process.env.CONSOLE_LOGS === "true") {
-          console.log("✅ Detekováno přesměrování na /Basket.");
-        }
-
-        if (process.env.EXECUTION_TIME === "true") {
-          console.timeEnd("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
-        }
-
-        return attempt; // můžeš i return true, nebo nějaký jiný výstup
-      } catch (e) {
-        if (process.env.CONSOLE_LOGS === "true") {
-          console.warn("⚠️ URL se nezměnila, zkouším znovu...");
-        }
+      return attempt;
+    } catch (e) {
+      if (process.env.CONSOLE_LOGS === "true") {
+        console.warn("⚠️ URL se nezměnila, zkouším znovu...");
       }
     }
 

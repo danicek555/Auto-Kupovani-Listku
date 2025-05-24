@@ -129,8 +129,82 @@ export async function seatClickSlow(page) {
                 });
 
               if (isConsecutive) {
-                selectedSeats = group;
-                break;
+                const getSeatNum = (seat) => Number(seat[1].trim());
+                const isFree = (seat) => seat[10] === 0;
+
+                for (const key in bySectorAndRow) {
+                  const sorted = bySectorAndRow[key].sort(
+                    (a, b) => getSeatNum(a) - getSeatNum(b)
+                  );
+
+                  for (let i = 0; i <= sorted.length - maxCount; i++) {
+                    let group = sorted.slice(i, i + maxCount);
+
+                    const isConsecutive =
+                      group.length === maxCount &&
+                      group.every(
+                        (seat, idx) =>
+                          idx === 0 ||
+                          getSeatNum(seat) === getSeatNum(group[idx - 1]) + 1
+                      );
+
+                    if (!isConsecutive) continue;
+
+                    let shiftLeftPossible = i > 0;
+                    let shiftRightPossible = i + maxCount < sorted.length;
+
+                    let shiftDirection = null;
+
+                    // Check for lonely gaps
+                    const lonelyLeft =
+                      shiftLeftPossible &&
+                      isFree(sorted[i - 1]) &&
+                      (!sorted[i - 2] || !isFree(sorted[i - 2]));
+                    const lonelyRight =
+                      shiftRightPossible &&
+                      isFree(sorted[i + maxCount]) &&
+                      (!sorted[i + maxCount + 1] ||
+                        !isFree(sorted[i + maxCount + 1]));
+
+                    if (lonelyLeft && shiftRightPossible)
+                      shiftDirection = "right";
+                    if (lonelyRight && shiftLeftPossible)
+                      shiftDirection = "left";
+
+                    if (shiftDirection === "left") {
+                      const tryLeft = sorted.slice(i - 1, i - 1 + maxCount);
+                      if (
+                        tryLeft.length === maxCount &&
+                        tryLeft.every(
+                          (seat, idx) =>
+                            idx === 0 ||
+                            getSeatNum(seat) ===
+                              getSeatNum(tryLeft[idx - 1]) + 1
+                        ) &&
+                        tryLeft.every(isFree)
+                      ) {
+                        group = tryLeft;
+                      }
+                    } else if (shiftDirection === "right") {
+                      const tryRight = sorted.slice(i + 1, i + 1 + maxCount);
+                      if (
+                        tryRight.length === maxCount &&
+                        tryRight.every(
+                          (seat, idx) =>
+                            idx === 0 ||
+                            getSeatNum(seat) ===
+                              getSeatNum(tryRight[idx - 1]) + 1
+                        ) &&
+                        tryRight.every(isFree)
+                      ) {
+                        group = tryRight;
+                      }
+                    }
+
+                    selectedSeats = group;
+                    break;
+                  }
+                }
               }
             }
             if (selectedSeats.length > 0) break;

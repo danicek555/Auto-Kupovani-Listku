@@ -1,0 +1,238 @@
+danielmitka@Daniels-MacBook-Air Programování % cd '/Users/danielmitka/Desktop/Programování/3AutoKupovaniListku copy'
+danielmitka@Daniels-MacBook-Air 3AutoKupovaniListku copy % node index.js 
+⏱️ Spuštění prohlížeče: 572.998ms
+⏱️ Zapnutí browser console logů: 175.179ms
+⏱️ Nastavení blokace zdrojů: 3.424ms
+⏱️ Nastavení user agentu: 0.353ms
+⏱️ Načtení stránky: 4.407s
+⏱️ Nastavení viewportu: 5.542ms
+⏱️ Celkový čas setupu: 5.167s
+zapl jsem se 
+🔁 Alert checker spuštěn
+⏱️ Zapnutí alert monitoru: 10.25ms
+🌀 Pokus 1 | Čas od startu: 0 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 51.332ms
+⏱️ cekam na m: 886.023ms
+⏱️ evaluate m: 42.901ms
+⚠️ Pokus 1: Vadná data. Zkouším znovu...
+⏱️ cekam na m: 4.373ms
+⏱️ evaluate m: 40.68ms
+✅ Data uložena (pokus 2) do m_data.json v getM.js
+⏱️ m execution time: 6.000s
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 152.684ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 3.671ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 8.681ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 76.258ms
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 93.965ms
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 99.058ms
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1142,
+  filteredBySector: 0,
+  filteredByPrice: 0,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(8 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(7 / řada 11) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(8 / řada 11) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(1 / řada 12) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(2 / řada 12) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(3 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(4 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(5 / řada 12) (sektor: 101, cena: 1990) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 291.329ms
+⏱️ selectSeats.js: 6.728s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+🔁 Alert: místo obsazené – retry výběru jiných míst...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⏱️ cekam na m: 3.07ms
+⏱️ evaluate m: 40.562ms
+✅ Data uložena (pokus 1) do m_data.json v getM.js
+⏱️ m execution time: 53.828ms
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 150.438ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 2.593ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 5.093ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 88.681ms
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 87.861ms
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 87.335ms
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1142,
+  filteredBySector: 0,
+  filteredByPrice: 0,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(8 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(7 / řada 11) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(8 / řada 11) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(1 / řada 12) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(2 / řada 12) (sektor: 101, cena: null) 
+✅ Clicked: OnSeat_click(3 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(4 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(5 / řada 12) (sektor: 101, cena: 1990) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 399.797ms
+⏱️ selectSeats.js: 876.897ms
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+(node:74951) Warning: Label '⏱️ Doba kliknutí na 'Pokračovat do košíku'' already exists for console.time()
+(Use `node --trace-warnings ...` to show where the warning was created)
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #4: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #4: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #5: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #5: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #6: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #6: Kliknutí provedeno, čekám na /Basket...
+^C%                                                                                                                                                       
+danielmitka@Daniels-MacBook-Air 3AutoKupovaniListku copy % 

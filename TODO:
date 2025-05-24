@@ -13,3 +13,402 @@
 ✅ Clicked: OnSeat_click(2 / řada 10) (sektor: 101, cena: null) 
 cena nemuze byt null
 
+  togetherNotFound: true
+}
+⚠️ Nebylo vybráno žádné místo.
+❌ Žádná volná místa s cenou do 2000 Kč.
+❌ Nebylo možné najít skupinu sousedních sedadel ve stejné řadě.
+❌ Žádná volná místa splňující kombinaci sektor + cena.
+kdyz bude nejaka chyba vyser se na to a zacni fastclcikseat
+
+
+⏱️ selectSeats.js: 6.592s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+Error: Execution context was destroyed, most likely because of a navigation.
+    at rewriteError (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:455:15)
+    at async #evaluate (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:388:60)
+    at async ExecutionContext.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:329:16)
+    at async IsolatedWorld.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:89:16)
+    at async CdpJSHandle.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/JSHandle.js:157:20)
+    at async CdpElementHandle.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:351:20)
+    at async CSSQueryHandler.queryOne (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/common/QueryHandler.js:137:59)
+    at async CdpElementHandle.$ (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:406:21)
+    at async CdpElementHandle.<anonymous> (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:132:24)
+    at async CdpFrame.$ (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Frame.js:386:20)
+^C%                                                                                                                                                       
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % 
+
+
+
+⏱️ selectSeats.js: 2.120s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+(node:73457) Warning: Label '⏱️ Doba kliknutí na 'Pokračovat do košíku'' already exists for console.time()
+(Use `node --trace-warnings ...` to show where the warning was created)
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #4: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #4: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #5: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #5: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #6: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #6: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #7: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #7: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #8: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #8: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #9: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #9: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #10: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #10: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #11: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #11: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #12: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #12: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #13: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #13: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #14: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #14: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #15: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #15: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #16: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+
+
+
+
+
+
+
+
+
+✅ Clicked: OnSeat_click(1 / řada 10) (sektor: 101, cena: null) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 289.167ms
+⏱️ selectSeats.js: 7.182s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #4: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+
+
+
+
+
+
+⏱️ seatClickFAST execution time: 125.982ms
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+🔁 Alert: místo obsazené – retry výběru jiných míst...
+(node:74035) Warning: Label '⏱️ selectSeats.js' already exists for console.time()
+(Use `node --trace-warnings ...` to show where the warning was created)
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⏱️ cekam na m: 259.533ms
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⏱️ evaluate m: 228.48ms
+✅ Data uložena (pokus 1) do m_data.json v getM.js
+⏱️ m execution time: 597.933ms
+⏻ Clicking FAST seats without screenshots v seatClickFast.js
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+Clicked ID: -2130050541
+Clicked ID: -2130050528
+Clicked ID: -2130050527
+⏱️ seatClickFAST execution time: 239.876ms
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+(node:74035) Warning: Label '⏱️ Doba kliknutí na 'Pokračovat do košíku'' already exists for console.time()
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Místo je obsazené"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Místo je obsazené"
+⚠️ URL se nezměnila, zkouším znovu...
+⚠️ URL se nezměnila, zkouším znovu...
+Error: Node is either not clickable or not an Element
+    at CdpElementHandle.clickablePoint (/Users/danielmitka/Desktop/Programování/2AutoKupovaniListku copy/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:694:23)
+    at async CdpElementHandle.<anonymous> (/Users/danielmitka/Desktop/Programování/2AutoKupovaniListku copy/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:121:20)
+    at async CdpElementHandle.click (/Users/danielmitka/Desktop/Programování/2AutoKupovaniListku copy/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:724:30)
+    at async CdpElementHandle.<anonymous> (/Users/danielmitka/Desktop/Programování/2AutoKupovaniListku copy/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:132:24)
+    at async clickBasketButton (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/2AutoKupovaniListku%20copy/components/navigation/clickBasketButton.js:25:5)
+    at async clickBasketAndSelectSeats (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/2AutoKupovaniListku%20copy/components/utils/clickBasketAndSelectSeats.js:6:3)
+    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/2AutoKupovaniListku%20copy/index.js:58:3)
+❌ Chyba při retry flow (místo obsazené): Node is either not clickable or not an Element
+^C%                                                                                                                                                       
+danielmitka@Daniels-MacBook-Air 2AutoKupovaniListku copy % 

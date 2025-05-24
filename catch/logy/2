@@ -1,0 +1,96 @@
+anielmitka@Daniels-MacBook-Air 3AutoKupovaniListku copy % node index.js 
+)⏱️ Spuštění prohlížeče: 908.635ms
+⏱️ Zapnutí browser console logů: 219.918ms
+⏱️ Nastavení blokace zdrojů: 0.005ms
+⏱️ Nastavení user agentu: 0.394ms
+⏱️ Načtení stránky: 4.111s
+⏱️ Nastavení viewportu: 4.717ms
+⏱️ Celkový čas setupu: 5.245s
+zapl jsem se 
+🔁 Alert checker spuštěn
+⏱️ Zapnutí alert monitoru: 9.941ms
+🌀 Pokus 1 | Čas od startu: 0 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 20.275ms
+⏱️ cekam na m: 554.834ms
+⏱️ evaluate m: 18.932ms
+⚠️ Pokus 1: Vadná data. Zkouším znovu...
+⏱️ cekam na m: 2.86ms
+⏱️ evaluate m: 38.247ms
+✅ Data uložena (pokus 2) do m_data.json v getM.js
+⏱️ m execution time: 5.628s
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 144.425ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 3.748ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 10.805ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 76.839ms
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 101.489ms
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 99.276ms
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1135,
+  filteredBySector: 0,
+  filteredByPrice: 0,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(4 / řada 10) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(7 / řada 11) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(8 / řada 11) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(11 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(12 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(13 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(14 / řada 12) (sektor: 101, cena: 1990) 
+✅ Clicked: OnSeat_click(15 / řada 12) (sektor: 101, cena: 1990) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 289.552ms
+⏱️ selectSeats.js: 6.356s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Maximální limit pro nákup: 6 ks"
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Maximální limit pro nákup: 6 ks"
+✅ Detekováno přesměrování na /Basket.
+⏱️ Doba kliknutí na 'Pokračovat do košíku': 3.521s
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 1.076s
+✅ Kliknuto na eTicket v selectTicketType.js
+⏱️ Výběr typu lístku: 74.666ms
+✅ Vyplněn e-mail: listecky007@gmail.com v fillEmail.js
+⏱️ Vyplňování emailu: 38.937ms
+✅ Zaškrtnuto 4 checkboxů v acceptTerms.js
+⏱️ Zaškrtnutí checkboxů: 33.684ms
+✅ Zvolena platba kartou / Google Pay / Apple Pay v choosePayment.js
+⏱️ Doba pollingu 'Zvolit platbu': 34.191ms
+⏻ Není zapnuto submit payment
+🔁 Doba spuštění botu: 16.419s
+^C%                                                                                                                                                       
+danielmitka@Daniels-MacBook-Air 3AutoKupovaniListku copy % 
