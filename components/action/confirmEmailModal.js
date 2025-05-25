@@ -126,11 +126,12 @@
 // }
 
 // export default confirmEmailModal;
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function confirmEmailModal(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Klikání na tlačítko 'Ano, potvrdit'");
   }
-
+  await waitForCaptchaToFinish();
   try {
     console.log("🔁 Čekám na tlačítko 'Ano, potvrdit' v confirmEmailModal.js");
     await page.waitForSelector("#quick-buy-btn-confirm-confirm", {

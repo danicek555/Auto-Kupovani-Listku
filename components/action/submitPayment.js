@@ -1,8 +1,9 @@
+import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
 export async function submitPayment(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Kliknutí na tlačítko 'Zaplatit'");
   }
-
+  await waitForCaptchaToFinish();
   const maxTime = 5000; // maximální čekání (ms)
   const interval = 50; // interval mezi pokusy (ms)
   const start = Date.now();

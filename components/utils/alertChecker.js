@@ -69,3 +69,4 @@ function alertChecker(page) {
 }
 
 export default alertChecker;
+//⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."

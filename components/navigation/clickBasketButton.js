@@ -1,28 +1,27 @@
+import { sleep } from "../utils/sleep.js";
+
 export async function clickBasketButton(page) {
   if (process.env.CONSOLE_LOGS === "true") {
-    console.log(
-      "🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js"
-    );
+    console.log("🔁 Začínám polling tlačítka 'Pokračovat do košíku'...");
   }
 
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Doba kliknutí na 'Pokračovat do košíku'");
   }
 
-  const interval = 10;
+  const interval = 100; // mírně prodloužím pro stabilitu
   const maxAttempts = 20;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     const button = await page.$("#hladisko-basket-btn");
     if (!button) {
-      console.error(
-        "❌ Element 'hladisko-basket-btn' v clickBasketButton.js nebyl nalezen"
-      );
-      await new Promise((resolve) => setTimeout(resolve, interval));
+      console.error("❌ Element 'hladisko-basket-btn' nebyl nalezen");
+      await sleep(interval);
       continue;
     }
 
-    await button.click();
+    // Pro jistotu použij .evaluate(), aby spustil i JS funkce z href
+    await page.evaluate((btn) => btn.click(), button);
 
     if (process.env.CONSOLE_LOGS === "true") {
       console.log(
@@ -31,12 +30,15 @@ export async function clickBasketButton(page) {
     }
 
     try {
-      await page.waitForFunction(() => location.pathname.includes("/Basket"), {
-        timeout: 3000,
-      });
+      await page.waitForFunction(
+        () => window.location.pathname.includes("/Basket"),
+        {
+          timeout: 3000,
+        }
+      );
 
       if (process.env.CONSOLE_LOGS === "true") {
-        console.log("✅ Detekováno přesměrování na /Basket.");
+        console.log("✅ Přesměrování na /Basket detekováno.");
       }
 
       if (process.env.EXECUTION_TIME === "true") {
@@ -44,13 +46,13 @@ export async function clickBasketButton(page) {
       }
 
       return attempt;
-    } catch (e) {
+    } catch {
       if (process.env.CONSOLE_LOGS === "true") {
-        console.warn("⚠️ URL se nezměnila, zkouším znovu...");
+        console.warn("⚠️ Přesměrování nenastalo, zkouším znovu...");
       }
     }
 
-    await new Promise((resolve) => setTimeout(resolve, interval));
+    await sleep(interval);
   }
 
   console.warn(
@@ -63,4 +65,5 @@ export async function clickBasketButton(page) {
 
   return null;
 }
+
 export default clickBasketButton;

@@ -13,13 +13,6 @@
 ✅ Clicked: OnSeat_click(2 / řada 10) (sektor: 101, cena: null) 
 cena nemuze byt null
 
-  togetherNotFound: true
-}
-⚠️ Nebylo vybráno žádné místo.
-❌ Žádná volná místa s cenou do 2000 Kč.
-❌ Nebylo možné najít skupinu sousedních sedadel ve stejné řadě.
-❌ Žádná volná místa splňující kombinaci sektor + cena.
-kdyz bude nejaka chyba vyser se na to a zacni fastclcikseat
 
 
 ⏱️ selectSeats.js: 6.592s

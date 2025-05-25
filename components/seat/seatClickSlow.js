@@ -1,5 +1,6 @@
 import fs from "fs";
 import dotenv from "dotenv";
+import { seatClickFast } from "./seatClickFast.js";
 
 dotenv.config(); // ⬅️ aktivuje .env
 export async function seatClickSlow(page) {
@@ -262,10 +263,22 @@ export async function seatClickSlow(page) {
 
   const { clickedLogs, totalSeats, reasonStats } = result;
   console.log("DEBUG: reasonStats", reasonStats);
+  let fastClickTriggered = false;
+
+  function enableFastClick() {
+    if (!fastClickTriggered) {
+      console.warn("⚡ Fastclick mód aktivován!");
+      seatClickFast(page); // nebo zavolej přímo funkci, pokud máš: startFastClick()
+      fastClickTriggered = true;
+    }
+  }
+
   // 🔸 Nic se nevybralo vůbec
   if (clickedLogs.length === 0) {
     console.warn("⚠️ Nebylo vybráno žádné místo.");
+    enableFastClick();
   }
+
   // 🔸 Výběr byl částečný
   const clickedCount = clickedLogs.filter((line) =>
     line.startsWith("✅ Clicked:")
@@ -275,17 +288,21 @@ export async function seatClickSlow(page) {
     console.warn(
       `⚠️ Podařilo se vybrat pouze ${clickedCount} z požadovaných ${maxCount} míst.`
     );
+    enableFastClick();
   }
+
   // 🔸 Vždy vypiš když uživatel chtěl víc, než bylo možné
   if (reasonStats.available < maxCount) {
     console.warn(
       `⚠️ K dispozici je jen ${reasonStats.available} volných míst – méně než požadovaných ${maxCount}.`
     );
+    enableFastClick();
   }
 
   // 🔸 Vždy vypiš pokud sektor vůbec neexistuje
   if (process.env.SEKTOR === "true" && reasonStats.totalInSector === 0) {
     console.warn(`❌ Sektor ${process.env.SEKTOR_NUMBER} neexistuje v datech.`);
+    enableFastClick();
   }
 
   // 🔸 I když nějaká místa jsou, může být sektor prázdný
@@ -293,7 +310,10 @@ export async function seatClickSlow(page) {
     console.warn(
       `❌ V sektoru ${process.env.SEKTOR_NUMBER} nejsou žádná volná místa.`
     );
+    enableFastClick();
   }
+
+  // 🔸 Cena neodpovídá
   if (
     process.env.PRICE === "true" &&
     reasonStats.available > 0 &&
@@ -302,15 +322,16 @@ export async function seatClickSlow(page) {
     console.warn(
       `❌ Žádná volná místa s cenou do ${process.env.PRICE_MAX} Kč.`
     );
+    enableFastClick();
   }
+
   // 🔸 TOGETHER failure – i když se kliklo třeba na 2 místa
   if (reasonStats.togetherNotFound) {
     console.warn(
       "❌ Nebylo možné najít skupinu sousedních sedadel ve stejné řadě."
     );
+    enableFastClick();
   }
-
-  // 🔸 Cena nesedí
 
   // 🔸 Kombinace cena + sektor selhala
   if (
@@ -321,11 +342,13 @@ export async function seatClickSlow(page) {
       reasonStats.available
   ) {
     console.warn(`❌ Žádná volná místa splňující kombinaci sektor + cena.`);
+    enableFastClick();
   }
 
   if (process.env.CONSOLE_LOGS === "true") {
     console.log(clickedLogs.join("\n")); // výpis kliknutých ID
   }
+
   if (process.env.SCREENSHOTS === "true") {
     if (process.env.EXECUTION_TIME === "true") {
       console.time(
