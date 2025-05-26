@@ -1,0 +1,106 @@
+
+
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % node index.js 
+⏱️ Spuštění prohlížeče: 671.674ms
+⏱️ Zapnutí browser console logů: 167.442ms
+⏱️ Nastavení blokace zdrojů: 0.957ms
+⏱️ Nastavení user agentu: 0.481ms
+⏱️ Načtení stránky: 5.287s
+⏱️ Nastavení viewportu: 8.292ms
+⏱️ Celkový čas setupu: 6.137s
+zapl jsem se 
+🔁 Alert checker spuštěn
+⏱️ Zapnutí alert monitoru: 4.569ms
+🌀 Pokus 1 | Čas od startu: 0 ms
+🌐 Aktuální URL: https://www.ticketportal.cz/event/JASON-DERULO
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 36.005ms
+⏱️ cekam na m: 868.989ms
+⏱️ evaluate m: 33.775ms
+⚠️ Pokus 1: Vadná data. Zkouším znovu...
+⏱️ cekam na m: 6.56ms
+⏱️ evaluate m: 66.203ms
+✅ Data uložena (pokus 2) do m_data.json v getM.js
+⏱️ m execution time: 6.008s
+✅ Data uložena (pokus 1) do m_all_data.json v getMALL.js
+⏱️ m_all execution time: 516.213ms
+✅ Data uložena (pokus 1) do s_all_data.json v getSALL.js
+⏱️ s_all execution time: 6.295ms
+✅ Data uložena (pokus 1) do g_performance_data.json v getGPerformance.js
+⏱️ getGPerformance execution time: 19.24ms
+✅ m_all a m data byla úspěšně spojena a uložena do merged_m_all_and_m.json v mergeMAndMALL.js
+⏱️ mergeMAndMAll execution time: 972.345ms
+✅ s_all byly přidány na konec každého záznamu v mergeMAndMALLAndSALL.js → merged_m_all_and_m_with_s_all.json
+⏱️ mergeMAndMALLAndSALL execution time: 901.736ms
+✅ g.performance.PriceCategories byly přidány na konec každého záznamu v mergeMAndMALLAndSALLAndGPerformance.js → merged_m_all_and_m_with_s_all_and_g_performance.json
+⏱️ MergeMAllAndMWithSectorLabelsAndGPerformance execution time: 366.576ms
+jsem tu
+⏻ Clicking seats without screenshots v seatClick.js
+OnSeat_click dostupná? true v seatClick.js
+DEBUG: reasonStats {
+  available: 1110,
+  filteredBySector: 0,
+  filteredByPrice: 16762,
+  totalInSector: 0,
+  availableInSector: 0,
+  togetherNotFound: false
+}
+✅ Clicked: OnSeat_click(3 / řada 9) (sektor: 118, cena: 1990) 
+✅ Clicked: OnSeat_click(4 / řada 9) (sektor: 118, cena: 1990) 
+✅ Clicked: OnSeat_click(5 / řada 9) (sektor: 118, cena: 1990) 
+✅ Clicked: OnSeat_click(6 / řada 9) (sektor: 118, cena: 1990) 
+✅ Clicked: OnSeat_click(7 / řada 9) (sektor: 118, cena: 1990) 
+kliknul jse mtu
+⏱️ seatClickSlow execution time: 692.308ms
+⏱️ selectSeats.js: 9.486s
+🔁 Začínám polling tlačítka 'Pokračovat do košíku'...
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ Přesměrování nenastalo, zkouším znovu...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+✅ Přesměrování na /Basket detekováno.
+⏱️ Doba kliknutí na 'Pokračovat do košíku': 4.223s
+✅ Pojištění 'ne' bylo zvoleno
+⏱️ Výběr pojištění execution time: 1.202s
+✅ Kliknuto na eTicket v selectTicketType.js
+⏱️ Výběr typu lístku: 426.048ms
+✅ Vyplněn e-mail: listecky007@gmail.com v fillEmail.js
+⏱️ Vyplňování emailu: 172.783ms
+✅ Zaškrtnuto 4 checkboxů v acceptTerms.js
+⏱️ Zaškrtnutí checkboxů: 93.017ms
+✅ Zvolena platba kartou / Google Pay / Apple Pay v choosePayment.js
+⏱️ Doba pollingu 'Zvolit platbu': 28.061ms
+⏻ Není zapnuto submit payment
+^C%                                                                                                                                                           
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % 

@@ -65,6 +65,9 @@ function alertChecker(page) {
       }
       retrying = false;
     }
+    if (text.includes("Prosíme, nenechávejte mezi místy mezeru.")) {
+      console.log("🔁 Alert: nenechávejte mezi místy mezeru.");
+    }
   });
 }
 

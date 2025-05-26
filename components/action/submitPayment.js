@@ -1,4 +1,5 @@
 import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import { sleep } from "../utils/sleep.js";
 export async function submitPayment(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Kliknutí na tlačítko 'Zaplatit'");
@@ -8,7 +9,7 @@ export async function submitPayment(page) {
   const interval = 50; // interval mezi pokusy (ms)
   const start = Date.now();
   let clicked = false;
-
+  //await sleep(10000);
   while (Date.now() - start < maxTime) {
     clicked = await page.evaluate(() => {
       const btn = document.querySelector("#basket-btn-zaplatit");

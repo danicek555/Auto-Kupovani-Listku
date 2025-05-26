@@ -230,9 +230,11 @@ export async function seatClickSlow(page) {
 
           OnSeat_click(record);
           logs.push(
-            `✅ Clicked: OnSeat_click(${record[1].trim()} / řada ${
-              record[2]
-            }) (sektor: ${record[11]}, cena: ${record[12]}) `
+            `✅ Clicked: OnSeat_click(skupina: ${
+              record[0]
+            }, místo: ${record[1].trim()} / řada ${record[2]}) (sektor: ${
+              record[11]
+            }, cena: ${record[12]}) `
           );
         } catch (err) {
           logs.push(`❌ Chyba při klikání na místo: ${err.message}`);
