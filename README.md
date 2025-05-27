@@ -12,6 +12,7 @@
 - [Struktura projektu](#-struktura-projektu)
 - [Budoucí plány](#-budoucí-plány)
 - [Poznámky](#-poznámky)
+- [Licence](#-licence)
 
 ## ⚡ Funkce
 
@@ -135,6 +136,8 @@ Skript loguje všechny důležité kroky:
 Tento projekt je licencován pod [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 © 2025 Daniel Mitka. Pokud projekt používáte, prosím o zmínku autora.
+
+> **Poznámka k 2Captcha API:** Pokud potřebujete můj 2Captcha API klíč pro testování, neváhejte mi napsat na email danmitka@gmail.com nebo na instagram dan_mitka
 
 ---
 
