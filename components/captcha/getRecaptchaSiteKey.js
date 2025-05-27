@@ -1,4 +1,4 @@
-import { sleep } from "./sleep.js";
+import { sleep } from "../utils/sleep.js";
 
 async function getRecaptchaSitekey(page) {
   // Dej stránce čas na načtení iframe

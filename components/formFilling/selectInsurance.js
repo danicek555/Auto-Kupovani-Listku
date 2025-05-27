@@ -1,4 +1,4 @@
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 export async function selectInsurance(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Výběr pojištění execution time");

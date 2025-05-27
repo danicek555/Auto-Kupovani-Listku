@@ -1,5 +1,5 @@
 import { selectSeats } from "../seat/selectSeats.js";
-import { clickBasketButton } from "../navigation/clickBasketButton.js";
+import { clickBasketButton } from "../action/clickBasketButton.js";
 
 async function clickBasketAndSelectSeats(page) {
   await selectSeats(page);

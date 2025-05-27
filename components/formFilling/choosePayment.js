@@ -1,4 +1,4 @@
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 export async function choosePayment(page) {
   const selector = "#template_payOption_17";
   const timeout = 5000;

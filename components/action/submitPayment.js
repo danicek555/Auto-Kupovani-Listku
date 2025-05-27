@@ -1,4 +1,4 @@
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 import { sleep } from "../utils/sleep.js";
 export async function submitPayment(page) {
   if (process.env.EXECUTION_TIME === "true") {

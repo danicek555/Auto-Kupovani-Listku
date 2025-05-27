@@ -104,22 +104,16 @@ Skript loguje všechny důležité kroky:
 ```
 ├── index.js                 # Hlavní skript pro spuštění bota
 ├── components/             # Komponenty pro jednotlivé akce
-│   ├── action/            # Akce pro nákup lístků
-│   │   ├── seatClick.js   # Klikání na sedadla
-│   │   ├── selectSeats.js # Výběr sedadel
-│   │   ├── selectTicketType.js
-│   │   ├── fillEmail.js
-│   │   ├── acceptTerms.js
-│   │   └── choosePayment.js
+│   ├── seat/            # Akce pro nákup lístků
+│   │   ├── seatClickFast.js    # Klikání na sedadla
+│   │   ├── seatClickSlow.js    # Výběr sedadel
+│   │   ├── selectSeats.js
 │   └── utils/             # Pomocné utility
-│       ├── getM.js
-│       ├── getMALL.js
-│       ├── getSALL.js
-│       ├── getGPerformance.js
-│       └── mergeMAndMALL.js
+│       ├── sleep.js
+│       ├── clickBasketAndSelectSeats.js
 ├── public/                # Veřejné soubory
 │   └── screenshots/      # Screenshoty pro debug
-├── catch/                # Složka pro zachycené výstupy
+├── catch/                # Složka pro zachycené vadné výstupy
 ├── node_modules/         # Závislosti projektu
 ├── package.json          # Konfigurace projektu
 ├── .env                  # Konfigurační soubor (není v gitu)
@@ -131,11 +125,16 @@ Skript loguje všechny důležité kroky:
 - [ ] Fullstack aplikace s moderním frontendem
 - [ ] Databáze pro sledování rychlosti nákupu
 - [ ] Statistiky úspěšnosti
-- [ ] Dashboard pro správu
 
 ## ⚠️ Poznámky
 
 > **Důležité:** V kódu se mohou nacházet chyby! Prosím o nahlášení případných problémů.
+
+## 📄 Licence
+
+Tento projekt je licencován pod [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+© 2025 Daniel Mitka. Pokud projekt používáte, prosím o zmínku autora.
 
 ---
 

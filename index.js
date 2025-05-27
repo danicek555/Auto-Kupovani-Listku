@@ -1,17 +1,21 @@
-import { solveCaptcha } from "./components/captcha/captchaSolver.js"; // mock solver
+// Copyright 2025 Daniel Mitka
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 import dotenv from "dotenv";
 import { setupBrowser } from "./components/browser/setupBrowser.js";
 import { clickBuyButton } from "./components/action/clickBuyButton.js";
 import { selectSeats } from "./components/seat/selectSeats.js";
-// import { waitForPaymentPage } from "./components/old/waitForPaymentPage.js";
-import { selectInsurance } from "./components/formFilling/selectInsurance.js";
-import { selectTicketType } from "./components/formFilling/selectTicketType.js";
-import { fillEmail } from "./components/formFilling/fillEmail.js";
-import { acceptTerms } from "./components/formFilling/acceptTerms.js";
-import { choosePayment } from "./components/formFilling/choosePayment.js";
-import { submitPayment } from "./components/action/submitPayment.js";
-import { confirmEmailModal } from "./components/action/confirmEmailModal.js";
-import { clickBasketButton } from "./components/navigation/clickBasketButton.js";
+
 import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 import formFilling from "./components/formFilling/formFilling.js";
 import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
@@ -81,7 +85,3 @@ async function runBot() {
 }
 
 runBot().catch(console.error);
-
-//** husty */
-//! co musim udealt
-//// tohle uz ne

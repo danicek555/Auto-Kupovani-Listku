@@ -19,7 +19,7 @@
 //   }
 // }
 
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 export async function fillEmail(page) {
   if (process.env.EXECUTION_TIME === "true")
     console.time("⏱️ Vyplňování emailu");

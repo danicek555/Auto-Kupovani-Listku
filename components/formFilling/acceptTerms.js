@@ -1,4 +1,4 @@
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 
 export async function acceptTerms(page) {
   if (process.env.EXECUTION_TIME === "true") {

@@ -174,7 +174,7 @@
 // }
 
 // export default confirmEmailModal;
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 
 export async function confirmEmailModal(page) {
   if (process.env.EXECUTION_TIME === "true") {

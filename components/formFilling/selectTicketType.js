@@ -1,4 +1,4 @@
-import waitForCaptchaToFinish from "../utils/waitForCaptchaToFinish.js";
+import waitForCaptchaToFinish from "../captcha/waitForCaptchaToFinish.js";
 export async function selectTicketType(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Výběr typu lístku");

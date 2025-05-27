@@ -31,13 +31,13 @@
 
 import fs from "fs-extra";
 import setupAlertMonitor from "../utils/setupAlertMonitor.js";
-import { sleep } from "../utils/sleep.js";
+
 import puppeteer from "puppeteer-extra";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 //import puppeteer from "puppeteer";
-import getRecaptchaSitekey from "../utils/getRecaptchaSiteKey.js";
-import solveRecaptcha from "../utils/solveRecaptcha.js";
-import { startRecaptchaWatcher } from "../utils/recaptchaWatcher.js";
+import getRecaptchaSitekey from "../captcha/getRecaptchaSiteKey.js";
+import solveRecaptcha from "../captcha/solveRecaptcha.js";
+import { startRecaptchaWatcher } from "../captcha/recaptchaWatcher.js";
 //import { sleep } from "../utils/sleep.js";
 
 export async function setupBrowser(url) {
