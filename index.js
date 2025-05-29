@@ -14,8 +14,6 @@
 import dotenv from "dotenv";
 import { setupBrowser } from "./components/browser/setupBrowser.js";
 import { clickBuyButton } from "./components/action/clickBuyButton.js";
-import { selectSeats } from "./components/seat/selectSeats.js";
-
 import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 import formFilling from "./components/formFilling/formFilling.js";
 import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
@@ -40,32 +38,8 @@ async function runBot() {
     }
   }
 
-  //await handleCookies(page);
-
-  //* CAPTCHA řešení
-
-  // const captchaFrame = page
-  //   .frames()
-  //   .find((frame) => frame.url().includes("recaptcha"));
-  // if (captchaFrame) {
-  //   await solveCaptcha(page, captchaFrame, TICKET_URL);
-  // }
-  // const usesRecaptcha = await page.evaluate(
-  //   () => !!document.querySelector("script[src*='recaptcha']")
-  // );
-  // if (usesRecaptcha) {
-  //   console.log("✅ Stránka používá Google reCAPTCHA.");
-  // } //TODO: musim v budoucnu udelat captcha solver
-  // await closePopups(page);
-
   await clickBuyButton(page);
   await clickBasketAndSelectSeats(page);
-  // await selectSeats(page);
-
-  // //* STRANKA NA ZAPLACENI
-  // await clickBasketButton(page);
-  //await waitForPaymentPage(page);
-  //await setupAlertMonitor(page);
 
   const success = await formFilling(page);
   if (success) {

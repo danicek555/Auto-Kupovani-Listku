@@ -1,6 +1,4 @@
 //? Jaky je maximalni pocet requestu na ticket portal at to nepretizim?,
 //? Co dalsiho musim opatrit aby kod byl safe?
-//Zachytavat chyby z Alert Monitoru a podle toho co napise tak udelat to co je potreba - vylepsit
-
-
-
+//TODO: že by google chrome by lpořád zapnutý a ty by jsi jen otevíral stránky a pracoval s nimi??
+//⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."

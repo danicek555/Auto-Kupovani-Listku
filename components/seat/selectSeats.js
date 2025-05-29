@@ -99,31 +99,7 @@ export async function selectSeats(page) {
     }
   }
 
-  // await extractNumbersFromImage("./public/screenshots/4_canvas.png")
-  //   .then(async (numbers) => {
-  //     console.log("Výstup OCR:", numbers);
-
-  //     // Převod na čísla a filtrování platných hodnot (1 až 500)
-  //     const validNumbers = numbers
-  //       .map((num) => parseInt(num, 10)) // Převede řetězce na čísla
-  //       .filter((num) => !isNaN(num) && num > 100 && num <= 500); // Filtruje jen čísla v rozmezí 1-500
-
-  //     console.log("Validní čísla:", validNumbers); // Debugging
-
-  //     if (validNumbers.some((num) => num > 100 && num < 500)) {
-  //       console.log("Jsou tam sekce!");
-  //       await selectSections(page);
-  //     } else {
-  //       console.log("Nebyly nalezeny sekce!");
-  //     }
-  //   })
-  //   .catch((err) => console.error("Chyba při OCR:", err));
-
-  // await clickOnSection(page, "999");
-  // await clickPlusButtonFiveTimes(page);
-  //await sleep(2000);
   if (process.env.FAST_CLICK === "true") {
-    //await sleep(2000);
     await getM(page);
     await seatClickFast(page);
     return;
@@ -135,41 +111,9 @@ export async function selectSeats(page) {
     await mergeMAndMALL();
     await mergeMAndMALLAndSALL();
     await mergeMAndMALLAndSALLAndGPerformance();
-    //await sleep(2000);
     await seatClickSlow(page);
   }
 
-  // console.log("Detekuji volná místa");
-  // const { image, clusters } = await detectFreeSeats(
-  //   "./public/screenshots/4_canvas.png"
-  // );
-
-  // if (clusters.length === 0) {
-  //   console.log("Žádná volná místa nenalezena!");
-  //   return;
-  // }
-
-  // // Kliknutí na první 4 volná místa
-  // for (let i = 0; i < Math.min(4, clusters.length); i++) {
-  //   await clickOnCluster(page, canvas, clusters[i], image);
-  // }
-
-  // await image.write("./public/screenshots/5_blue_free_spots.png");
-  // console.log(
-  //   "Debug obrázek uložen jako ./public/screenshots/5_blue_free_spots.png"
-  // );
-
-  // Click seats quickly
-  // for (let i = 0; i < Math.min(4, clusters.length); i++) {
-  //   await clickOnCluster(page, canvas, clusters[i], image);
-  //   await sleep(500);
-  // }
-
-  // await page.waitForSelector("#hladisko-basket-btn", {
-  //   visible: true,
-  //   timeout: 5000,
-  // });
-  // await page.click("#hladisko-basket-btn");
   if (process.env.EXECUTION_TIME === "true") {
     console.timeEnd("⏱️ selectSeats.js");
   }
