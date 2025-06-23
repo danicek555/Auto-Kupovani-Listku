@@ -23,46 +23,81 @@ export async function checkIfInQueue(page) {
   }
 
   try {
-    // Check for the waiting queue modal
-    const queueModal = await page.$("#waiting-queue");
-    if (!queueModal) {
-      if (process.env.CONSOLE_LOGS === "true") {
-        console.log("✅ Nejsem ve frontě");
-      }
-      return null;
-    }
-
-    // Check if the modal is visible
-    const isVisible = await page.evaluate((modal) => {
-      const style = window.getComputedStyle(modal);
-      return style.display !== "none" && style.visibility !== "hidden";
-    }, queueModal);
-
-    if (!isVisible) {
-      if (process.env.CONSOLE_LOGS === "true") {
-        console.log("✅ Fronta není viditelná");
-      }
-      return null;
-    }
-
-    // Extract queue information
+    // Check if the modal is actually active and displayed with queue information
     const queueInfo = await page.evaluate(() => {
+      const modal = document.getElementById("waiting-queue");
+
+      if (!modal) {
+        return null;
+      }
+
+      // Check if modal is visible and active
+      const style = window.getComputedStyle(modal);
+      const isVisible =
+        style.display !== "none" && style.visibility !== "hidden";
+
+      // Check if modal is not hidden by aria-hidden attribute
+      const isNotHidden = modal.getAttribute("aria-hidden") !== "true";
+
+      // Check for Bootstrap modal classes that indicate it's active
+      const hasActiveClass =
+        modal.classList.contains("in") || modal.classList.contains("show");
+
+      // Check if modal backdrop exists (Bootstrap creates this when modal is active)
+      const backdrop = document.querySelector(".modal-backdrop");
+      const hasBackdrop = backdrop && backdrop.style.display !== "none";
+
+      // Check if body has modal-open class (Bootstrap adds this when modal is active)
+      const bodyHasModalOpen = document.body.classList.contains("modal-open");
+
+      // Additional check: modal should be positioned properly (not off-screen)
+      const rect = modal.getBoundingClientRect();
+      const isPositioned = rect.width > 0 && rect.height > 0 && rect.top >= 0;
+
+      // Most important: check if there are actual queue numbers
       const queueOrderElement = document.getElementById("queue-order");
       const queueOrder2Element = document.getElementById("queue-order-2");
 
       const queueOrder = queueOrderElement
         ? queueOrderElement.textContent.trim()
-        : null;
+        : "";
       const queueOrder2 = queueOrder2Element
         ? queueOrder2Element.textContent.trim()
-        : null;
+        : "";
+
+      // Check if queue numbers actually contain meaningful data (not empty)
+      const hasQueueNumbers = queueOrder.length > 0 || queueOrder2.length > 0;
+
+      // Check if the modal is actually displayed (has display: block style)
+      const hasDisplayBlock =
+        style.display === "block" || modal.style.display === "block";
+
+      // All conditions must be met for the user to be in queue
+      const isInQueue =
+        isVisible &&
+        isNotHidden &&
+        hasDisplayBlock &&
+        (hasActiveClass || hasBackdrop || bodyHasModalOpen) &&
+        isPositioned &&
+        hasQueueNumbers;
+
+      if (!isInQueue) {
+        return null;
+      }
 
       return {
-        queueOrder: queueOrder,
-        queueOrder2: queueOrder2,
+        queueOrder: queueOrder || null,
+        queueOrder2: queueOrder2 || null,
         inQueue: true,
       };
     });
+
+    if (!queueInfo) {
+      if (process.env.CONSOLE_LOGS === "true") {
+        console.log("✅ Nejsem ve frontě");
+      }
+      return null;
+    }
 
     if (process.env.CONSOLE_LOGS === "true") {
       console.log(

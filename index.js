@@ -14,6 +14,10 @@
 import dotenv from "dotenv";
 import { setupBrowser } from "./components/browser/setupBrowser.js";
 import { clickBuyButton } from "./components/action/clickBuyButton.js";
+import {
+  selectTickets,
+  continueToBasket,
+} from "./components/action/selectTickets.js";
 import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 import formFilling from "./components/formFilling/formFilling.js";
 import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
@@ -36,6 +40,7 @@ dotenv.config();
 
 const envFilePath = path.join(__dirname, ".env");
 const TICKET_URL = process.env.TICKET_URL;
+const TICKET_COUNT = process.env.TICKET_COUNT || "3"; // Default to 3 tickets
 
 if (!existsSync(envFilePath)) {
   console.log("Soubor .env neexistuje!!!");
@@ -49,7 +54,7 @@ if (!TICKET_URL) {
 
 async function runBot() {
   console.time("🔁 Doba spuštění botu");
-  const { browser, page } = await setupBrowser(TICKET_URL); //* optimalizace done
+  const { browser, page } = await setupBrowser(TICKET_URL);
 
   if (process.env.ALERT_MONITOR === "true") {
     if (process.env.EXECUTION_TIME === "true") {
@@ -64,8 +69,6 @@ async function runBot() {
 
   await clickBuyButton(page);
 
-  //await clickBasketAndSelectSeats(page);
-
   // Simple queue check
   const queueInfo = await checkIfInQueue(page);
   if (queueInfo) {
@@ -73,31 +76,88 @@ async function runBot() {
   }
 
   // Wait for queue resolution
-  await waitForQueueResolution(page, 2400000); // 10 minutes 600 000 - 20minutes 1 200 000, 30 minutes 240000
+  await waitForQueueResolution(page, 2400000); // 40 minutes
+
   if (process.env.ONLY_CLICK === "false") {
-    await clickBasketAndSelectSeats(page);
-    const success = await formFilling(page);
-    // Handle queue after click with retry
-    //const success = await handleQueueAfterClick(page, async (page) => {
-    //  // Your retry action here
-    //  await clickBasketAndSelectSeats(page);
-    //});
+    // NEW: Try ticket selection first
+    const ticketSelectionSuccess = await selectTickets(page);
 
-    if (success) {
-      const pocetListku = process.env.TICKET_COUNT;
-      let sklonovaniSlovicka = "listků";
-      if (pocetListku === 1) {
-        sklonovaniSlovicka = "lístek";
-      } else if (pocetListku > 1 && pocetListku < 5) {
-        sklonovaniSlovicka = "listky";
+    if (ticketSelectionSuccess) {
+      console.log(
+        `✅ Úspěšně vybráno ${TICKET_COUNT} vstupenek pomocí dropdownu`
+      );
+
+      // Continue to basket
+      const basketSuccess = await continueToBasket(page);
+
+      if (basketSuccess) {
+        console.log("✅ Úspěšně pokračováno do košíku");
+
+        // Continue with form filling
+        const success = await formFilling(page);
+
+        if (success) {
+          let sklonovaniSlovicka = "listků";
+          if (TICKET_COUNT === "1") {
+            sklonovaniSlovicka = "lístek";
+          } else if (parseInt(TICKET_COUNT) > 1 && parseInt(TICKET_COUNT) < 5) {
+            sklonovaniSlovicka = "listky";
+          } else {
+            sklonovaniSlovicka = "listků";
+          }
+          console.log(
+            "🎉 Bot nakoupil " + TICKET_COUNT + " " + sklonovaniSlovicka
+          );
+          console.timeEnd("🔁 Doba spuštění botu");
+        }
       } else {
-        sklonovaniSlovicka = "listků";
-      }
-      console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
+        console.log(
+          "Zkouším původní metodu, protože pokračování do košíku nebylo úspěšné..."
+        );
+        // Fallback to original method
+        await clickBasketAndSelectSeats(page);
+        const success = await formFilling(page);
 
-      console.timeEnd("🔁 Doba spuštění botu");
+        if (success) {
+          let sklonovaniSlovicka = "listků";
+          if (TICKET_COUNT === "1") {
+            sklonovaniSlovicka = "lístek";
+          } else if (parseInt(TICKET_COUNT) > 1 && parseInt(TICKET_COUNT) < 5) {
+            sklonovaniSlovicka = "listky";
+          } else {
+            sklonovaniSlovicka = "listků";
+          }
+          console.log(
+            "🎉 Bot nakoupil " + TICKET_COUNT + " " + sklonovaniSlovicka
+          );
+          console.timeEnd("🔁 Doba spuštění botu");
+        }
+      }
+    } else {
+      console.log(
+        "❌ Nepodařilo se vybrat vstupenky, zkouším původní metodu..."
+      );
+      // Fallback to original method
+      await clickBasketAndSelectSeats(page);
+      const success = await formFilling(page);
+
+      if (success) {
+        let sklonovaniSlovicka = "listků";
+        if (TICKET_COUNT === "1") {
+          sklonovaniSlovicka = "lístek";
+        } else if (parseInt(TICKET_COUNT) > 1 && parseInt(TICKET_COUNT) < 5) {
+          sklonovaniSlovicka = "listky";
+        } else {
+          sklonovaniSlovicka = "listků";
+        }
+        console.log(
+          "🎉 Bot nakoupil " + TICKET_COUNT + " " + sklonovaniSlovicka
+        );
+        console.timeEnd("🔁 Doba spuštění botu");
+      }
     }
   }
+
   if (process.env.ONLY_CLICK === "true") {
     console.log("Bot kliknul a prošel frontou");
   }
