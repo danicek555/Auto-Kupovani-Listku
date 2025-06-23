@@ -132,49 +132,7 @@ export async function waitForQueueResolution(page, timeout = 300000) {
   return false;
 }
 
-/**
- * Handles queue situation after a click action
- * @param {Page} page - Puppeteer page object
- * @param {Function} retryAction - Function to retry if queue is resolved
- * @returns {Promise<boolean>} True if action was successful, false otherwise
- */
-export async function handleQueueAfterClick(page, retryAction) {
-  const queueInfo = await checkIfInQueue(page);
-
-  if (queueInfo && queueInfo.inQueue) {
-    console.log(
-      `🔄 Detekována fronta po kliknutí! Pořadí: ${
-        queueInfo.queueOrder || queueInfo.queueOrder2
-      }`
-    );
-
-    const queueResolved = await waitForQueueResolution(page);
-
-    if (queueResolved && retryAction) {
-      if (process.env.CONSOLE_LOGS === "true") {
-        console.log("🔄 Fronta vyřešena, opakuji akci...");
-      }
-
-      try {
-        await retryAction(page);
-        return true;
-      } catch (error) {
-        console.error(
-          "❌ Chyba při opakování akce po vyřešení fronty:",
-          error.message
-        );
-        return false;
-      }
-    }
-
-    return queueResolved;
-  }
-
-  return true; // No queue detected, action was successful
-}
-
 export default {
   checkIfInQueue,
   waitForQueueResolution,
-  handleQueueAfterClick,
 };

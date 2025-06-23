@@ -18,15 +18,34 @@ import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 import formFilling from "./components/formFilling/formFilling.js";
 import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
 import alertChecker from "./components/utils/alertChecker.js";
+
+import { existsSync } from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
 import {
   checkIfInQueue,
   waitForQueueResolution,
-  handleQueueAfterClick,
 } from "./components/utils/queueChecker.js";
 
+// Fix for __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 dotenv.config();
-const TICKET_URL =
-  process.env.TICKET_URL || console.log("Nezadal jsi URL do .env!!!");
+
+const envFilePath = path.join(__dirname, ".env");
+const TICKET_URL = process.env.TICKET_URL;
+
+if (!existsSync(envFilePath)) {
+  console.log("Soubor .env neexistuje!!!");
+  process.exit(1);
+}
+
+if (!TICKET_URL) {
+  console.log("Nezadal jsi URL do .env!!!");
+  process.exit(1);
+}
 
 async function runBot() {
   console.time("🔁 Doba spuštění botu");
@@ -44,6 +63,7 @@ async function runBot() {
   }
 
   await clickBuyButton(page);
+
   //await clickBasketAndSelectSeats(page);
 
   // Simple queue check
@@ -53,28 +73,33 @@ async function runBot() {
   }
 
   // Wait for queue resolution
-  await waitForQueueResolution(page, 600000); // 10 minutes
-  await clickBasketAndSelectSeats(page);
-  const success = await formFilling(page);
-  // Handle queue after click with retry
-  //const success = await handleQueueAfterClick(page, async (page) => {
-  //  // Your retry action here
-  //  await clickBasketAndSelectSeats(page);
-  //});
+  await waitForQueueResolution(page, 2400000); // 10 minutes 600 000 - 20minutes 1 200 000, 30 minutes 240000
+  if (process.env.ONLY_CLICK === "false") {
+    await clickBasketAndSelectSeats(page);
+    const success = await formFilling(page);
+    // Handle queue after click with retry
+    //const success = await handleQueueAfterClick(page, async (page) => {
+    //  // Your retry action here
+    //  await clickBasketAndSelectSeats(page);
+    //});
 
-  if (success) {
-    const pocetListku = process.env.TICKET_COUNT;
-    let sklonovaniSlovicka = "listků";
-    if (pocetListku === 1) {
-      sklonovaniSlovicka = "lístek";
-    } else if (pocetListku > 1 && pocetListku < 5) {
-      sklonovaniSlovicka = "listky";
-    } else {
-      sklonovaniSlovicka = "listků";
+    if (success) {
+      const pocetListku = process.env.TICKET_COUNT;
+      let sklonovaniSlovicka = "listků";
+      if (pocetListku === 1) {
+        sklonovaniSlovicka = "lístek";
+      } else if (pocetListku > 1 && pocetListku < 5) {
+        sklonovaniSlovicka = "listky";
+      } else {
+        sklonovaniSlovicka = "listků";
+      }
+      console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
+
+      console.timeEnd("🔁 Doba spuštění botu");
     }
-    console.log("🎉 Bot nakoupil " + pocetListku + " " + sklonovaniSlovicka);
-
-    console.timeEnd("🔁 Doba spuštění botu");
+  }
+  if (process.env.ONLY_CLICK === "true") {
+    console.log("Bot kliknul a prošel frontou");
   }
 }
 
