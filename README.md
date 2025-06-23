@@ -54,7 +54,7 @@ npm install
 # Základní nastavení
 TICKET_URL=           # URL vstupenek
 CONTACT_EMAIL=        # Hlavní email pro nákup
-SECOND_CONTACT_EMAIL= # Zálohní email (max 6 lístků/30min)
+SECOND_CONTACT_EMAIL= # Záložní email (max 6 lístků/30min)
 TICKET_COUNT=         # Počet lístků (max 6)
 
 # Nastavení prohlížeče
@@ -108,10 +108,10 @@ Skript loguje všechny důležité kroky:
 │   ├── seat/            # Akce pro nákup lístků
 │   │   ├── seatClickFast.js    # Klikání na sedadla
 │   │   ├── seatClickSlow.js    # Výběr sedadel
-│   │   ├── selectSeats.js
+│   │   └── selectSeats.js
 │   └── utils/             # Pomocné utility
 │       ├── sleep.js
-│       ├── clickBasketAndSelectSeats.js
+│       └── clickBasketAndSelectSeats.js
 ├── public/                # Veřejné soubory
 │   └── screenshots/      # Screenshoty pro debug
 ├── catch/                # Složka pro zachycené vadné výstupy

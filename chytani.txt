@@ -1,0 +1,1127 @@
+LOGY: 
+<div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="fa fa-clock-o fa-3" aria-hidden="true"></i> Čakajte prosím, ste v poradí</h4>
+                </div>
+                <div class="modal-body waiting-queue">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-10 wait-block">
+                            <p class="info info-1"><span>Čakajte prosím,</span><br>budete automaticky presmerovaný</p>
+                            <div class="preloader invert flex-c">
+                                <i class="fa fa-clock-o fa-4" aria-hidden="true"></i>
+                                <div class="double_bounce1"></div>
+                                <div class="double_bounce2"></div>
+                            </div>
+                            <div class="info info-2" id="fronta_cnt_poradie">
+                                Vaše poradie
+                                <span id="queue-order">12212</span>
+                            </div>
+                            <div class="text-danger hidden" id="fronta_errbox"></div>
+                        </div>
+                        <div class="col-md-14 col-sm-14 wait-text">
+                            <p>Vážený zákazník,</p>
+                            <p>
+                                práve ste sa zaradil do poradia zákazníkov čakajúcich pred Vami. Ste <span id="queue-order-2">12212</span>
+                                v poradí, hneď ako na Vás príde rad, budete automaticky presmerovaný do hľadiska. <br> Po opustení stránky alebo obnovení stránky Vás systém zaradí na koniec poradia čakajúcich zákazníkov.
+                            </p>
+                            <p class="text-right">
+                                <br>
+                                Ďakujeme! Váš Ticketportal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclic="$('#waiting-queue').modal('hide');" class="btn btn-danger btn-lg" data-dismiss="modal" aria-label="Close">Opustiť frontu</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="modal-dialog modal-fullscreen-xxl-down">
+            <div class="modal-content">
+                
+                <div class="modal-header modal-header-v2 d-flex justify-content-between">
+                    <div class="special-icon align-self-center p-3">
+                        <i class="fa fa-ticket link-color" aria-hidden="true"></i>
+                        
+                    </div>
+                    <div class="modal-title align-self-center w-100 p-3 pl-0">
+                        <span id="NPerformance_Name" class="fw-bold">Rubicon Festival 2025 - Jednodňová vstupenka Nedeľa 20.7.2025</span><br>
+                        <small id="quickpurchase_performance_info" class="modal-subtitle"><span id="NPerformance_date">20. júl 2025 Nedeľa / 1 dňová vstupenka "CLASSIC" </span>, <span id="NPerformance_venue">Záhorská Bystrica, Bratislava</span></small>
+                    </div>
+                    <a id="closeModalBtn" class="close-1 align-self-center p-3" data-dismiss="modal" aria-label="Close"><i class="fa fa-close" aria-hidden="true"></i></a>
+                </div>
+
+                
+                <div class="modal-body vyber-zlavy one">
+                    <div class="title mb-2">Vstupenky</div>
+                    <div class="list-group list-group-discounts"><div class="list-group-item">    <div class="item auto">        <div class="title h4">Základné vstupné</div>        <p class="text"></p>    </div>    <div class="item initial text-nowrap select-count">        <select class="form-control" name="dis_207486_0" id="dis_207486_0" suma="180" manipulacnypoplatok="2" onchange="Nperf_dis_sel();">            <option value="0" selected="selected">0</option>            <option value="1">1</option>            <option value="2">2</option>            <option value="3">3</option>            <option value="4">4</option>            <option value="5">5</option>            <option value="6">6</option>            <option value="7">7</option>            <option value="8">8</option>        </select>    </div>    <div class="item initial  price text-nowrap">180.00 €</div></div><p id="manipulacny_poplatok_root" class="price-sumar hidden">    <span class="">Archivačno-manipulačný poplatok</span>     <span id="manipulacny_poplatok_value" class="text-nowrap">0</span></p><p class="price-sumar">    <span class="">Spolu</span>     <span id="lbSpolu_value" class="text-nowrap">0.00 €</span></p></div>
+                </div>
+
+                
+                <div class="modal-body vyber-poctu-miest pb-0 two hidden">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-24">
+                            <div class="row">
+                                <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 npl">
+                                    <span class="h4">Počet vstupeniek</span>
+                                </div>
+                                <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+                                    <p class="cena-miesta h3" id="NPerformance_SumPrice" style="color: black;">1ks = 180.00 €</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-14 col-md-14 col-sm-14 col-xs-24">
+                            <div class="btn-group-pocet" data-toggle="buttons">
+                                <label class="btn btn-default" id="NPerformance_count_1" onclick="NPerformance_setCount(1);">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked=""> 1
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_2" onclick="NPerformance_setCount(2);">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> 2
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_3" onclick="NPerformance_setCount(3);">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> 3
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_4" onclick="NPerformance_setCount(4);">
+                                    <input type="radio" name="options" id="option4" autocomplete="off"> 4
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_5" onclick="NPerformance_setCount(5);">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 5
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_6" onclick="NPerformance_setCount(6);">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 6
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_7" onclick="NPerformance_setCount(7);">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 7
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_8" onclick="NPerformance_setCount(8);">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 8
+                                </label>
+
+                                <label class="btn btn-default hidden" id="NPerformance_count_9" onclick="NPerformance_setCount(9);" disabled="disabled">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 9
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_10" onclick="NPerformance_setCount(10);" disabled="disabled">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 10
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_11" onclick="NPerformance_setCount(11);" disabled="disabled">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 11
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_12" onclick="NPerformance_setCount(12);" disabled="disabled">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 12
+                                </label>
+
+                                <label class="btn btn-default hidden" id="NPerformance_count_13" onclick="NPerformance_setCount(13);" disabled="disabled">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 13
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_14" onclick="NPerformance_setCount(14);" disabled="disabled">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 14
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_15" onclick="NPerformance_setCount(15);" disabled="disabled">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 15
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_16" onclick="NPerformance_setCount(16);" disabled="disabled">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 16
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div id="modalVyberPocetMiest20_8msg" class="row hidden">
+                            <div class="col-md-24" style="margin-top:20px">
+                                <span>V prípade, že máte záujem o vyšší počet vstupeniek, kontaktujte nás na objednavky@ticketportal.sk.</span>
+                            </div>
+                        </div>
+
+                </div>
+
+
+                <div id="resaleNseats" class="modal-body next-options pt-0 three hidden">
+                    <div class="title mb-2">[SK|dalsi.moznosti]</div>
+                    <div class="list-group">
+                        <div class="list-group-item d-flex align-items-center flex-wrap">
+                            <img class="pr-2" width="50" src="https://dev.ticketportal.cz/content/images/icons/resale-icon-red-master.svg" alt="Ověřené přeprodávané vstupenky">
+                            <div class="item auto ">
+                                <div class="d-flex align-items-center fw-bold">[SK|ResaleOvereneVst] <a class="p-1" href="javascript:void(0);"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
+                                <p class="text">[SK|ResaleVstOdLudi]</p>
+                            </div>
+                            <div class="item initial text-nowrap select-count w-100 p-2 pl-0 pr-0 m-0">
+                                <select class="form-control" id="resaleNseats-count">
+                                    <option id="resaleNseats-count-0" value="0" selected="selected">[SK|ResaleZvoltePocet]</option>
+                                    <option id="resaleNseats-count-1" value="1">1</option>
+                                    <option id="resaleNseats-count-2" value="2">2</option>
+                                    <option id="resaleNseats-count-3" value="3">3</option>
+                                    <option id="resaleNseats-count-4" value="4">4</option>
+                                    <option id="resaleNseats-count-5" value="5">5</option>
+                                    <option id="resaleNseats-count-6" value="6">6</option>
+                                    <option id="resaleNseats-count-7" value="7">7</option>
+                                    <option id="resaleNseats-count-8" value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="item initial price text-nowrap w-100"><button id="resale-btn-nseat-over" class="btn btn-clear">[SK|ResaleOveritDostup]</button></div>
+                        </div>
+
+                        <div id="resale-nseat-res1" class="alert alert-warning mt-2 hidden">Nenasli sme ale mame toto</div>
+                        <h6 id="resale-nseat-res2" class="text-muted hidden">Dostupne:</h6>
+                        <div id="resale-nseat-res3" class="list-group hidden"></div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-md-24 col-sm-24 col-xs-24 btn-group-footer">
+                        <button class="btn btn-default pull-left" data-dismiss="modal" aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="btn btn-buy pokracuj-kosik-btn" type="button" onclick="Nperf_dis_add();" disabled="disabled"><i class="fa fa-shopping-cart"></i> Pokračuj do košíka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ¨
+
+
+
+
+
+<div class="modal modalVyberPocetMiest20 modal-v2 fade in" id="modalVyberPocetMiest20" tabindex="-1" role="dialog" aria-labelledby="modalVyberPocetMiest20" aria-hidden="true" style="display: block;">
+        <div class="modal-dialog modal-fullscreen-xxl-down">
+            <div class="modal-content">
+                
+                <div class="modal-header modal-header-v2 d-flex justify-content-between">
+                    <div class="special-icon align-self-center p-3">
+                        <i class="fa fa-ticket link-color" aria-hidden="true"></i>
+                        
+                    </div>
+                    <div class="modal-title align-self-center w-100 p-3 pl-0">
+                        <span id="NPerformance_Name" class="fw-bold">Rubicon Festival 2025 - Jednodňová vstupenka Nedeľa 20.7.2025</span><br>
+                        <small id="quickpurchase_performance_info" class="modal-subtitle"><span id="NPerformance_date">20. júl 2025 Nedeľa / 1 dňová vstupenka "CLASSIC" </span>, <span id="NPerformance_venue">Záhorská Bystrica, Bratislava</span></small>
+                    </div>
+                    <a id="closeModalBtn" class="close-1 align-self-center p-3" data-dismiss="modal" aria-label="Close"><i class="fa fa-close" aria-hidden="true"></i></a>
+                </div>
+
+                
+                <div class="modal-body vyber-zlavy one">
+                    <div class="title mb-2">Vstupenky</div>
+                    <div class="list-group list-group-discounts"><div class="list-group-item">    <div class="item auto">        <div class="title h4">Základné vstupné</div>        <p class="text"></p>    </div>    <div class="item initial text-nowrap select-count">        <select class="form-control" name="dis_207486_0" id="dis_207486_0" suma="180" manipulacnypoplatok="2" onchange="Nperf_dis_sel();">            <option value="0" selected="selected">0</option>            <option value="1">1</option>            <option value="2">2</option>            <option value="3">3</option>            <option value="4">4</option>            <option value="5">5</option>            <option value="6">6</option>            <option value="7">7</option>            <option value="8">8</option>        </select>    </div>    <div class="item initial  price text-nowrap">180.00 €</div></div><p id="manipulacny_poplatok_root" class="price-sumar">    <span class="">Archivačno-manipulačný poplatok</span>     <span id="manipulacny_poplatok_value" class="text-nowrap">14.00 €</span></p><p class="price-sumar">    <span class="">Spolu</span>     <span id="lbSpolu_value" class="text-nowrap">1274.00 €</span></p></div>
+                </div>
+
+                
+                <div class="modal-body vyber-poctu-miest pb-0 two hidden">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-24">
+                            <div class="row">
+                                <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 npl">
+                                    <span class="h4">Počet vstupeniek</span>
+                                </div>
+                                <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+                                    <p class="cena-miesta h3" id="NPerformance_SumPrice" style="color: black;">1ks = 180.00 €</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-14 col-md-14 col-sm-14 col-xs-24">
+                            <div class="btn-group-pocet" data-toggle="buttons">
+                                <label class="btn btn-default" id="NPerformance_count_1" onclick="NPerformance_setCount(1);">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked=""> 1
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_2" onclick="NPerformance_setCount(2);">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> 2
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_3" onclick="NPerformance_setCount(3);">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> 3
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_4" onclick="NPerformance_setCount(4);">
+                                    <input type="radio" name="options" id="option4" autocomplete="off"> 4
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_5" onclick="NPerformance_setCount(5);">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 5
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_6" onclick="NPerformance_setCount(6);">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 6
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_7" onclick="NPerformance_setCount(7);">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 7
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_8" onclick="NPerformance_setCount(8);">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 8
+                                </label>
+
+                                <label class="btn btn-default hidden" id="NPerformance_count_9" onclick="NPerformance_setCount(9);" disabled="disabled">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 9
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_10" onclick="NPerformance_setCount(10);" disabled="disabled">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 10
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_11" onclick="NPerformance_setCount(11);" disabled="disabled">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 11
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_12" onclick="NPerformance_setCount(12);" disabled="disabled">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 12
+                                </label>
+
+                                <label class="btn btn-default hidden" id="NPerformance_count_13" onclick="NPerformance_setCount(13);" disabled="disabled">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 13
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_14" onclick="NPerformance_setCount(14);" disabled="disabled">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 14
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_15" onclick="NPerformance_setCount(15);" disabled="disabled">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 15
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_16" onclick="NPerformance_setCount(16);" disabled="disabled">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 16
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div id="modalVyberPocetMiest20_8msg" class="row hidden">
+                            <div class="col-md-24" style="margin-top:20px">
+                                <span>V prípade, že máte záujem o vyšší počet vstupeniek, kontaktujte nás na objednavky@ticketportal.sk.</span>
+                            </div>
+                        </div>
+
+                </div>
+
+
+                <div id="resaleNseats" class="modal-body next-options pt-0 three hidden">
+                    <div class="title mb-2">[SK|dalsi.moznosti]</div>
+                    <div class="list-group">
+                        <div class="list-group-item d-flex align-items-center flex-wrap">
+                            <img class="pr-2" width="50" src="https://dev.ticketportal.cz/content/images/icons/resale-icon-red-master.svg" alt="Ověřené přeprodávané vstupenky">
+                            <div class="item auto ">
+                                <div class="d-flex align-items-center fw-bold">[SK|ResaleOvereneVst] <a class="p-1" href="javascript:void(0);"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
+                                <p class="text">[SK|ResaleVstOdLudi]</p>
+                            </div>
+                            <div class="item initial text-nowrap select-count w-100 p-2 pl-0 pr-0 m-0">
+                                <select class="form-control" id="resaleNseats-count">
+                                    <option id="resaleNseats-count-0" value="0" selected="selected">[SK|ResaleZvoltePocet]</option>
+                                    <option id="resaleNseats-count-1" value="1">1</option>
+                                    <option id="resaleNseats-count-2" value="2">2</option>
+                                    <option id="resaleNseats-count-3" value="3">3</option>
+                                    <option id="resaleNseats-count-4" value="4">4</option>
+                                    <option id="resaleNseats-count-5" value="5">5</option>
+                                    <option id="resaleNseats-count-6" value="6">6</option>
+                                    <option id="resaleNseats-count-7" value="7">7</option>
+                                    <option id="resaleNseats-count-8" value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="item initial price text-nowrap w-100"><button id="resale-btn-nseat-over" class="btn btn-clear">[SK|ResaleOveritDostup]</button></div>
+                        </div>
+
+                        <div id="resale-nseat-res1" class="alert alert-warning mt-2 hidden">Nenasli sme ale mame toto</div>
+                        <h6 id="resale-nseat-res2" class="text-muted hidden">Dostupne:</h6>
+                        <div id="resale-nseat-res3" class="list-group hidden"></div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-md-24 col-sm-24 col-xs-24 btn-group-footer">
+                        <button class="btn btn-default pull-left" data-dismiss="modal" aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="btn btn-buy pokracuj-kosik-btn" type="button" onclick="Nperf_dis_add();"><i class="fa fa-shopping-cart"></i> Pokračuj do košíka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal modalVyberPocetMiest20 modal-v2 fade in" id="modalVyberPocetMiest20" tabindex="-1" role="dialog" aria-labelledby="modalVyberPocetMiest20" aria-hidden="true" style="display: block;">
+        <div class="modal-dialog modal-fullscreen-xxl-down">
+            <div class="modal-content">
+                
+                <div class="modal-header modal-header-v2 d-flex justify-content-between">
+                    <div class="special-icon align-self-center p-3">
+                        <i class="fa fa-ticket link-color" aria-hidden="true"></i>
+                        
+                    </div>
+                    <div class="modal-title align-self-center w-100 p-3 pl-0">
+                        <span id="NPerformance_Name" class="fw-bold">Rubicon Festival 2025 - Jednodňová vstupenka Nedeľa 20.7.2025</span><br>
+                        <small id="quickpurchase_performance_info" class="modal-subtitle"><span id="NPerformance_date">20. júl 2025 Nedeľa / 1 dňová vstupenka "CLASSIC" </span>, <span id="NPerformance_venue">Záhorská Bystrica, Bratislava</span></small>
+                    </div>
+                    <a id="closeModalBtn" class="close-1 align-self-center p-3" data-dismiss="modal" aria-label="Close"><i class="fa fa-close" aria-hidden="true"></i></a>
+                </div>
+
+                
+                <div class="modal-body vyber-zlavy one">
+                    <div class="title mb-2">Vstupenky</div>
+                    <div class="list-group list-group-discounts"><div class="list-group-item">    <div class="item auto">        <div class="title h4">Základné vstupné</div>        <p class="text"></p>    </div>    <div class="item initial text-nowrap select-count">        <select class="form-control" name="dis_207486_0" id="dis_207486_0" suma="180" manipulacnypoplatok="2" onchange="Nperf_dis_sel();">            <option value="0" selected="selected">0</option>            <option value="1">1</option>            <option value="2">2</option>            <option value="3">3</option>            <option value="4">4</option>            <option value="5">5</option>            <option value="6">6</option>            <option value="7">7</option>            <option value="8">8</option>        </select>    </div>    <div class="item initial  price text-nowrap">180.00 €</div></div><p id="manipulacny_poplatok_root" class="price-sumar">    <span class="">Archivačno-manipulačný poplatok</span>     <span id="manipulacny_poplatok_value" class="text-nowrap">14.00 €</span></p><p class="price-sumar">    <span class="">Spolu</span>     <span id="lbSpolu_value" class="text-nowrap">1274.00 €</span></p></div>
+                </div>
+
+                
+                <div class="modal-body vyber-poctu-miest pb-0 two hidden">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-24">
+                            <div class="row">
+                                <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24 npl">
+                                    <span class="h4">Počet vstupeniek</span>
+                                </div>
+                                <div class="col-lg-24 col-md-24 col-sm-24 col-xs-24">
+                                    <p class="cena-miesta h3" id="NPerformance_SumPrice" style="color: black;">1ks = 180.00 €</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-14 col-md-14 col-sm-14 col-xs-24">
+                            <div class="btn-group-pocet" data-toggle="buttons">
+                                <label class="btn btn-default" id="NPerformance_count_1" onclick="NPerformance_setCount(1);">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked=""> 1
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_2" onclick="NPerformance_setCount(2);">
+                                    <input type="radio" name="options" id="option2" autocomplete="off"> 2
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_3" onclick="NPerformance_setCount(3);">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> 3
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_4" onclick="NPerformance_setCount(4);">
+                                    <input type="radio" name="options" id="option4" autocomplete="off"> 4
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_5" onclick="NPerformance_setCount(5);">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 5
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_6" onclick="NPerformance_setCount(6);">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 6
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_7" onclick="NPerformance_setCount(7);">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 7
+                                </label>
+                                <label class="btn btn-default" id="NPerformance_count_8" onclick="NPerformance_setCount(8);">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 8
+                                </label>
+
+                                <label class="btn btn-default hidden" id="NPerformance_count_9" onclick="NPerformance_setCount(9);" disabled="disabled">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 9
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_10" onclick="NPerformance_setCount(10);" disabled="disabled">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 10
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_11" onclick="NPerformance_setCount(11);" disabled="disabled">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 11
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_12" onclick="NPerformance_setCount(12);" disabled="disabled">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 12
+                                </label>
+
+                                <label class="btn btn-default hidden" id="NPerformance_count_13" onclick="NPerformance_setCount(13);" disabled="disabled">
+                                    <input type="radio" name="options" id="option5" autocomplete="off"> 13
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_14" onclick="NPerformance_setCount(14);" disabled="disabled">
+                                    <input type="radio" name="options" id="option6" autocomplete="off"> 14
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_15" onclick="NPerformance_setCount(15);" disabled="disabled">
+                                    <input type="radio" name="options" id="option7" autocomplete="off"> 15
+                                </label>
+                                <label class="btn btn-default hidden" id="NPerformance_count_16" onclick="NPerformance_setCount(16);" disabled="disabled">
+                                    <input type="radio" name="options" id="option8" autocomplete="off"> 16
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div id="modalVyberPocetMiest20_8msg" class="row hidden">
+                            <div class="col-md-24" style="margin-top:20px">
+                                <span>V prípade, že máte záujem o vyšší počet vstupeniek, kontaktujte nás na objednavky@ticketportal.sk.</span>
+                            </div>
+                        </div>
+
+                </div>
+
+
+                <div id="resaleNseats" class="modal-body next-options pt-0 three hidden">
+                    <div class="title mb-2">[SK|dalsi.moznosti]</div>
+                    <div class="list-group">
+                        <div class="list-group-item d-flex align-items-center flex-wrap">
+                            <img class="pr-2" width="50" src="https://dev.ticketportal.cz/content/images/icons/resale-icon-red-master.svg" alt="Ověřené přeprodávané vstupenky">
+                            <div class="item auto ">
+                                <div class="d-flex align-items-center fw-bold">[SK|ResaleOvereneVst] <a class="p-1" href="javascript:void(0);"><i class="fa fa-question-circle" aria-hidden="true"></i></a></div>
+                                <p class="text">[SK|ResaleVstOdLudi]</p>
+                            </div>
+                            <div class="item initial text-nowrap select-count w-100 p-2 pl-0 pr-0 m-0">
+                                <select class="form-control" id="resaleNseats-count">
+                                    <option id="resaleNseats-count-0" value="0" selected="selected">[SK|ResaleZvoltePocet]</option>
+                                    <option id="resaleNseats-count-1" value="1">1</option>
+                                    <option id="resaleNseats-count-2" value="2">2</option>
+                                    <option id="resaleNseats-count-3" value="3">3</option>
+                                    <option id="resaleNseats-count-4" value="4">4</option>
+                                    <option id="resaleNseats-count-5" value="5">5</option>
+                                    <option id="resaleNseats-count-6" value="6">6</option>
+                                    <option id="resaleNseats-count-7" value="7">7</option>
+                                    <option id="resaleNseats-count-8" value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="item initial price text-nowrap w-100"><button id="resale-btn-nseat-over" class="btn btn-clear">[SK|ResaleOveritDostup]</button></div>
+                        </div>
+
+                        <div id="resale-nseat-res1" class="alert alert-warning mt-2 hidden">Nenasli sme ale mame toto</div>
+                        <h6 id="resale-nseat-res2" class="text-muted hidden">Dostupne:</h6>
+                        <div id="resale-nseat-res3" class="list-group hidden"></div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="col-md-24 col-sm-24 col-xs-24 btn-group-footer">
+                        <button class="btn btn-default pull-left" data-dismiss="modal" aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="btn btn-buy pokracuj-kosik-btn" type="button" onclick="Nperf_dis_add();"><i class="fa fa-shopping-cart"></i> Pokračuj do košíka</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="modal fade in waiting-queue" id="waiting-queue" tabindex="-1" role="dialog" aria-labelledby="waiting-queue" aria-hidden="true" style="display: block; padding-left: 0px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="fa fa-clock-o fa-3" aria-hidden="true"></i> Čakajte prosím, ste v poradí</h4>
+                </div>
+                <div class="modal-body waiting-queue">
+                    <div class="row">
+                        <div class="col-md-10 col-sm-10 wait-block">
+                            <p class="info info-1"><span>Čakajte prosím,</span><br>budete automaticky presmerovaný</p>
+                            <div class="preloader invert flex-c">
+                                <i class="fa fa-clock-o fa-4" aria-hidden="true"></i>
+                                <div class="double_bounce1"></div>
+                                <div class="double_bounce2"></div>
+                            </div>
+                            <div class="info info-2" id="fronta_cnt_poradie">
+                                Vaše poradie
+                                <span id="queue-order">11791</span>
+                            </div>
+                            <div class="text-danger hidden" id="fronta_errbox"></div>
+                        </div>
+                        <div class="col-md-14 col-sm-14 wait-text">
+                            <p>Vážený zákazník,</p>
+                            <p>
+                                práve ste sa zaradil do poradia zákazníkov čakajúcich pred Vami. Ste <span id="queue-order-2">11791</span>
+                                v poradí, hneď ako na Vás príde rad, budete automaticky presmerovaný do hľadiska. <br> Po opustení stránky alebo obnovení stránky Vás systém zaradí na koniec poradia čakajúcich zákazníkov.
+                            </p>
+                            <p class="text-right">
+                                <br>
+                                Ďakujeme! Váš Ticketportal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclic="$('#waiting-queue').modal('hide');" class="btn btn-danger btn-lg" data-dismiss="modal" aria-label="Close">Opustiť frontu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 1715 | Čas od startu: 291544 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025-Jednodnova-vstupenka-Nedela-2072025
+📋 Výsledek kontroly tlačítka: {
+  found: false,
+  disabled: true,
+  type: 'info',
+  statusText: 'Pripravujeme do predaja..'
+}
+🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 1716 | Čas od startu: 292242 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025-Jednodnova-vstupenka-Nedela-2072025
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 5:14.779 (m:ss.mmm)
+⏳ Pokus 1: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+(Use `node --trace-warnings ...` to show where the warning was created)
+⏳ Pokus 2: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 3: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 4: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 5: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 6: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 7: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 8: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 9: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 10: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 11: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 12: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 13: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 14: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 15: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 16: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 17: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 18: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 19: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 20: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 21: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 22: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 23: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 24: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 25: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 26: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 27: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 28: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 29: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 30: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 31: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 32: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 33: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 34: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 35: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 36: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 37: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 38: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 39: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 40: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 41: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 42: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 43: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 44: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 45: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 46: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 47: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 48: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 49: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 50: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 51: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 52: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 53: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 54: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 55: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 56: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 57: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 58: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 59: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 60: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 61: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 62: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 63: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 64: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 65: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 66: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 67: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 68: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 69: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 70: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 71: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 72: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 73: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 74: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 75: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 76: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 77: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 78: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 79: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 80: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 81: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 82: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 83: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 84: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 85: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 86: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 87: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 88: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 89: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 90: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 91: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 92: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 93: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 94: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 95: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 96: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 97: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 98: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 99: m ještě není dostupné
+(node:62043) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 100: m ještě není dostupné
+Error: ❌ Nepodařilo se získat validní m ani po několika pokusech.
+    at getM (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku3/components/getSeatData/getM.js:90:9)
+    at async selectSeats (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku3/components/seat/selectSeats.js:107:5)
+    at async clickBasketAndSelectSeats (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku3/components/utils/clickBasketAndSelectSeats.js:17:3)
+    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku3/index.js:42:3)
+
+
+
+🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 922 | Čas od startu: 207676 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025
+📋 Výsledek kontroly tlačítka: {
+  found: false,
+  disabled: true,
+  type: 'info',
+  statusText: 'Pripravujeme do predaja..'
+}
+🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 923 | Čas od startu: 207930 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 3:28.648 (m:ss.mmm)
+⏳ Pokus 1: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+(Use `node --trace-warnings ...` to show where the warning was created)
+⏳ Pokus 2: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 3: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 4: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 5: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 6: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 7: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 8: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 9: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 10: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 11: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 12: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 13: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 14: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 15: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 16: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 17: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 18: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 19: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 20: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 21: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 22: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 23: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 24: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 25: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 26: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 27: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 28: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 29: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 30: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 31: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 32: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 33: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 34: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 35: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 36: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 37: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 38: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 39: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 40: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 41: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 42: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 43: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 44: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 45: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 46: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 47: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 48: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 49: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 50: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 51: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 52: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 53: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 54: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 55: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 56: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 57: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 58: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 59: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 60: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 61: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 62: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 63: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 64: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 65: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 66: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 67: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 68: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 69: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 70: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 71: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 72: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 73: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 74: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 75: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 76: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 77: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 78: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 79: m ještě není dostupné
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6LdJvzsaAAAAAD6lWsJSkHjY3jtNIkKu-miKzUTa
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79935249484
+⏳ Pokus 1/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 2/24 – čekám 5s...
+⏳ Pokus 80: m ještě není dostupné
+⏳ Pokus 3/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 81: m ještě není dostupné
+⏳ Pokus 4/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 5/24 – čekám 5s...
+⏳ Pokus 82: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 6/24 – čekám 5s...
+⏳ Pokus 83: m ještě není dostupné
+⏳ Pokus 7/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 8/24 – čekám 5s...
+⏳ Pokus 84: m ještě není dostupné
+⏳ Pokus 9/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 85: m ještě není dostupné
+⏳ Pokus 10/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 11/24 – čekám 5s...
+⏳ Pokus 86: m ještě není dostupné
+⏳ Pokus 12/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 87: m ještě není dostupné
+⏳ Pokus 13/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 14/24 – čekám 5s...
+⏳ Pokus 88: m ještě není dostupné
+⏳ Pokus 15/24 – čekám 5s...
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 89: m ještě není dostupné
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA6lTXok3N3BT9kvjI1RWEaAMm5eziMyGrEHQ_p-QpgmtMInk4F9HP_vcsZKWPHY9EuCX0TUfe0B-XCXgmRaXD7yrqlC78COcFKjecWnryKkjM7yyG9QWFzkj2G8nTdyUnfLFcjeL8c8vDm2Td-fM3bFJURxMSk5N1vC_z4IPDv9bQ3ETHMqFdA5i5dU8LoWVkaBI-gDKcBfbGDX3vQEdM8jE5pfS6F3idhSIfxqeK8V7mcRE21eC8oebeGm6wGbM6RCKNtwIWKq9PQGhPN9mtSn3PkA2tYblX6zSQcY4-mUamm8wF4m3y_anuLt38SgiMqBxCbJAph0O5KpZoxduXRle2N-s_U67udzR9uT7zSw-pIXU3Jr0C1FFtf1C3tFaHW72jVALvEMNWWtSbzZClqorNLSga5Xj0EPXrYaO4-HBUozwfhVP47UdlDAvETGrxhBUdEUvNSb6lSI4T4muZWux3-90lFDF6nQXBwWu35gzs5nY1lh1JpIZde0T4gOLDGyFDYMIx_gmP4pGlXRvak4dZPX--ETy6s3hU9YTHii347zgis9tyt3KVicp_qQe9R3IC73nSFggnRpPrhrUqsBSW2R31SboZeTSkyMb1eBIx3HOXNYXrHukWnI4bvwAttI_VtZ4hZjygIDcSWy0hngsfMWdGNSbZ0X2c5z82ciL9BGP_mH9nPmw1Oil_ZpYETNrQXTbgZ08_-Bdxi3LqHyfz4DaAyTApEap3cxlpPolx081NwMDtQlInE0qulihTNytK26KbwleyEnei228ydF0cIJv6pf8t8eh_VjDyc8uhzn1kFPlNUa0r-eRhyRIlPOfwgQUEIiS_2o7_v5NZFa7ONv5qd_HzAswEXiFqdEKy_CWIEppLL1JIegMQC9w6PtPoUTKV9W3fXGdwk2hVhMbFHfpiybUNE0O68fQXh6YOC0mFjHrEGEfIi8179Z8zlN8U7jcvVgs8hK2wGs56nZVcLyLTSexOZ9p2dHyDQ2iKys0Rg5bjQ3s86onVGSmchkKUPsoBl3hympCQYS0AkgnfNb-MQfg3xZmurPlZxegj-CWrs4qvWcyw_fmrAt95QmRsiJ
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 90: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 91: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 92: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 93: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 94: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 95: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 96: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 97: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 98: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 99: m ještě není dostupné
+(node:62384) Warning: Label '⏱️ cekam na m' already exists for console.time()
+⏳ Pokus 100: m ještě není dostupné
+Error: ❌ Nepodařilo se získat validní m ani po několika pokusech.
+    at getM (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku1/components/getSeatData/getM.js:90:9)
+    at async selectSeats (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku1/components/seat/selectSeats.js:107:5)
+    at async clickBasketAndSelectSeats (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku1/components/utils/clickBasketAndSelectSeats.js:17:3)
+    at async runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku1/index.js:42:3)
+
+
+
+    🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 1156 | Čas od startu: 211357 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025-Jednodnova-vstupenka-Nedela-2072025
+📋 Výsledek kontroly tlačítka: {
+  found: false,
+  disabled: true,
+  type: 'info',
+  statusText: 'Pripravujeme do predaja..'
+}
+🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 1157 | Čas od startu: 211678 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025-Jednodnova-vstupenka-Nedela-2072025
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 3:31.944 (m:ss.mmm)
+HOTOVO
+
+
+
+
+🕒 Prodej ještě nezačal – stav: Pripravujeme do predaja..
+🌀 Pokus 1489 | Čas od startu: 239286 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025-Jednodnova-vstupenka-Nedela-2072025
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 3:59.631 (m:ss.mmm)
+HOTOVO
+🧩 Znovu detekována reCAPTCHA! Spouštím řešení...
+🧩 Detekována reCAPTCHA s sitekey: 6LdJvzsaAAAAAD6lWsJSkHjY3jtNIkKu-miKzUTa
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79935268143
+⏳ Pokus 1/24 – čekám 5s...
+⏳ Pokus 2/24 – čekám 5s...
+⏳ Pokus 3/24 – čekám 5s...
+⏳ Pokus 4/24 – čekám 5s...
+⏳ Pokus 5/24 – čekám 5s...
+⏳ Pokus 6/24 – čekám 5s...
+⏳ Pokus 7/24 – čekám 5s...
+⏳ Pokus 8/24 – čekám 5s...
+⏳ Pokus 9/24 – čekám 5s...
+⏳ Pokus 10/24 – čekám 5s...
+⏳ Pokus 11/24 – čekám 5s...
+⏳ Pokus 12/24 – čekám 5s...
+⏳ Pokus 13/24 – čekám 5s...
+⏳ Pokus 14/24 – čekám 5s...
+⏳ Pokus 15/24 – čekám 5s...
+⏳ Pokus 16/24 – čekám 5s...
+⏳ Pokus 17/24 – čekám 5s...
+⏳ Pokus 18/24 – čekám 5s...
+⏳ Pokus 19/24 – čekám 5s...
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA599Pu5Xj8LBp2QedkJdHXYu8BPqoLp9WGQLcxVIs5hQsOC6443O2tV2ZmW-Q-l1ZiysO14aCjgWMRusWW-F84BUKdy-oAiPK1wilKfZpz6GKY3JZd314Y4_LpDQwgKH0AH71mpJK6pQEdIwpZWSD9dqPuyvpoMNKV14HOwtwVtQKvwc4dl5GAHuQbBzfj7mXGkJL7bGxW0njBBmaNwHkO3wYo9zLHGTQ2CdNkfGlbcwWfmqgu_bY3jxO4wyWd8DmyKUzC2W9S0X3nVrykVJ9MiqlfOhi5fPM6dUlv6mEVTeDGVoRNKTSPWjVdYKybd4hZzdAMwPMRh18ZBFUoojdv-36Lcd9R1HNyMrw-ec_g7-xSCx_4CbjTZhnbOallozYQLhgpiGT_X3mhKe6H_hmwDcH3ZClUPx7ZnAJEL9JIMIQvzSXq9rRKqDmw8o8tB4H2RxTxtV-oA5Mo1_kVwqPyYVQywMEJm9ZwlOD18gZh23bJJcMzfAQYTHZNikfFLjiqoj26TjrgNhWXmNQsx2Brj4feZoW4ZwHqlXQPz0Fn-Va9XJ8m5DN20PQ1zcs9I75SNzNE7xR5v1nSDR-xmdN66tvxtgJzAw8yhLBKbh9PGWM3HGtWLLonjuZO2KO5ySTVPN2qqhqluV-lFLuBVC0EM6HY4UaSxjCzXnhQkQj8eTQlIwc2aHoO6Hu22r3L4dQe5mt2s_Z0oMfHEq3yIDyyJijHj6vy365or6mA-eRtt1WwvMwgw86FYaDWEk5hjmZWDppnFxzV_OvfSK6_5_dNQZmKGupHg5MlHwlfQAQWbl-DZEE1-gExoUiUrag1s-Ax7BA5v_7P2_VNN0OCcglE-pOQq46NREcdlWrawazeXQmW5_UxSHr9P3u_VWiLF-DCcplV9IvYb7xbDAXA3m5ekIJ9WvzJTPhDcpIDXpqCUZIKeTGVC34irTBO49AUha09u1JQQBL39PtR13q7gdQ1KZS3KEgOSiaqtyFhq4adKzlBIGYOxT9fjPwPqWUa3Okffw101vmrDysDX7kChJbRXof_JbQ
+✅ Token vložen do stránky
+✅ CAPTCHA vyřešena. Pokračuji.
+
+
+
+
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku4 copy 2 % node index.js 
+⏱️ Spuštění prohlížeče: 4.641s
+⏱️ Zapnutí browser console logů: 1.673s
+⏱️ Nastavení blokace zdrojů: 0.019ms
+⏱️ Nastavení user agentu: 25.794ms
+jsem pred captchou
+🧩 Detekována reCAPTCHA s sitekey: 6LdJvzsaAAAAAD6lWsJSkHjY3jtNIkKu-miKzUTa
+🧩 API_KEY: da950a402f7c6a2d6f9c1ab47207c903
+🔐 Posílám CAPTCHA požadavek...
+✅ CAPTCHA zadána, čekám na token... ID: 79935182720
+⏳ Pokus 1/24 – čekám 5s...
+⏳ Pokus 2/24 – čekám 5s...
+⏳ Pokus 3/24 – čekám 5s...
+⏳ Pokus 4/24 – čekám 5s...
+⏳ Pokus 5/24 – čekám 5s...
+⏳ Pokus 6/24 – čekám 5s...
+⏳ Pokus 7/24 – čekám 5s...
+⏳ Pokus 8/24 – čekám 5s...
+⏳ Pokus 9/24 – čekám 5s...
+⏳ Pokus 10/24 – čekám 5s...
+⏳ Pokus 11/24 – čekám 5s...
+⏳ Pokus 12/24 – čekám 5s...
+✅ Token úspěšně získán!
+✅ Token získán z 2captcha: 03AFcWeA4F1CDTlHVQzftnu8xpRRuCouLPusJmWLHQiW6zu0mavs30Rd9N_xqoISx7ZgCrA45rwvrhZkKOgd5yelEip8bRbvb4UwJ5Ia5rBxiSsK-GDIeJCUZyWcaCRXg-poTGZ5kqkxKJa0TALM0rGjTJ0J2yjCBxYvbkXocaRu8QZls6faMs3pnqt0bx2VykibUaiE8rlWZeuDCzKr12KS0qCXEQ5o5y7bzMtW8KJIPE0cngnwZH1XFc-lGqgBgNH7t_5g7FI5r0gBqnM3QqUterrvHSoncfU90Vdud0ibNuT1W_dCQH6Tu_FcaBwyBTItBkgzTyz3_NbRVa-xX59T2vcvd84csmgN4QSfCqKi6POM3IenI9KIsMQqLmhfsQnd1qurU-LxpyRaur-4ev7GQjfPk1gRa7rBQzYPpJA8nU0wbcR7hWxG4xvDPtAmxCrTZEXPUQ9XYrovaOBk60gixgHXpdTQ_d9BrcAv5ckWyZQ-ySwaP_lNk0B0NlbA9fVLFWwgGmNs5dBRdT_mWP2gRDNEClA6eQwpV0fIUsEUyceMIRmnkk9OoA15pETg3DlWeCfrfxVTpOtn4hLTy5zAeqjyovLYRL8oLoD08wUX1Tgwj-UFGnLh_X-rqG1LLgKnJXwJfUMo8UJmaIx_Jb7yG5QOfZeR4uuG_y6o5IFoCyE_m4HZlq_YxMbpLdsmRG_TgCrTCaMP_KEbvBSpbukjDrpeAoi_A-oZwOomgFTTGedqSTsxS-2PhRFQHFryLJM9FFIOg_3xWDsRaCX5hFyN5e9z7JnSetg9fWKRn-NZE9ge0it0zTaJ-a9YR2LWiRCSvWYFYUpwUoPG8Q1_5rrZ957n4dKr4jTJiQCeUYmbqvo8gXRXZBvKXWtYSuAXi-fbv1N-m3Je658z4xKwIaTPjH5RYZlySukXSRhqWMPVjUuKwQbrkNh-gVns3be5wqUTkKB_eVFVGHNlX0T7FbAhesLUiSj6EBWp08o94XsSc3WqsCV-UQqHlrPABvNkac2o_HCjP7pBu2TEk-reIr0DxuMI8BF6J8mkPNe9ybWk8tmbOP63CQziY
+✅ Token vložen do stránky
+✅ CAPTCHA před startem vyřešena.
+⏱️ Načtení stránky: 1:34.345 (m:ss.mmm)
+⏱️ Nastavení viewportu: 150.345ms
+⏱️ Celkový čas setupu: 1:41.035 (m:ss.mmm)
+zapl jsem se 
+🔁 Alert checker spuštěn
+⏱️ Zapnutí alert monitoru: 297.689ms
+🌀 Pokus 1 | Čas od startu: 0 ms
+🌐 Aktuální URL: https://www.ticketportal.sk/event/Rubicon-Festival-2025-Jednodnova-vstupenka-Nedela-2072025
+📋 Výsledek kontroly tlačítka: { found: true, disabled: false, type: 'buy' }
+✅ Tlačítko `Koupit` nalezeno a aktivní. Klikám...
+✅ Kliknutí proběhlo
+⏱️ Kliknutí na tlačítko 'Koupit': 170.113ms
+HOTOVO
+ReferenceError: sleep is not defined
+    at runBot (file:///Users/danielmitka/Desktop/Programova%CC%81ni%CC%81/YE/AutoKupovaniListku4%20copy%202/index.js:43:3)
+

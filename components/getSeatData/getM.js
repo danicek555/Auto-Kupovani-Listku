@@ -55,12 +55,29 @@ export async function getM(page) {
       if (process.env.EXECUTION_TIME === "true")
         console.timeEnd("⏱️ evaluate m");
 
-      const keys = Object.keys(data);
-      const hasValidKeys = keys.some(
-        (k) => k.startsWith("-") || parseInt(k) < 0
-      );
-
-      if (hasValidKeys) {
+      if (process.env.SECURE_DATA === "true") {
+        console.log("Zapl jsem secure");
+        const keys = Object.keys(data);
+        const hasValidKeys = keys.some(
+          (k) => k.startsWith("-") || parseInt(k) < 0
+        );
+        if (hasValidKeys) {
+          await fs.writeFile("public/data/m_data.json", JSON.stringify(data));
+          if (process.env.CONSOLE_LOGS === "true") {
+            console.log(
+              `✅ Data uložena (pokus ${attempt}) do m_data.json v getM.js`
+            );
+          }
+          if (process.env.EXECUTION_TIME === "true")
+            console.timeEnd("⏱️ m execution time");
+          return data;
+        } else {
+          if (process.env.CONSOLE_LOGS === "true") {
+            console.warn(`⚠️ Pokus ${attempt}: Vadná data. Zkouším znovu...`);
+          }
+          await new Promise((res) => setTimeout(res, waitBetween));
+        }
+      } else {
         await fs.writeFile("public/data/m_data.json", JSON.stringify(data));
         if (process.env.CONSOLE_LOGS === "true") {
           console.log(
@@ -70,11 +87,6 @@ export async function getM(page) {
         if (process.env.EXECUTION_TIME === "true")
           console.timeEnd("⏱️ m execution time");
         return data;
-      } else {
-        if (process.env.CONSOLE_LOGS === "true") {
-          console.warn(`⚠️ Pokus ${attempt}: Vadná data. Zkouším znovu...`);
-        }
-        await new Promise((res) => setTimeout(res, waitBetween));
       }
     } catch (evalErr) {
       if (process.env.CONSOLE_LOGS === "true") {

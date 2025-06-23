@@ -18,6 +18,11 @@ import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 import formFilling from "./components/formFilling/formFilling.js";
 import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
 import alertChecker from "./components/utils/alertChecker.js";
+import {
+  checkIfInQueue,
+  waitForQueueResolution,
+  handleQueueAfterClick,
+} from "./components/utils/queueChecker.js";
 
 dotenv.config();
 const TICKET_URL =
@@ -39,9 +44,24 @@ async function runBot() {
   }
 
   await clickBuyButton(page);
-  await clickBasketAndSelectSeats(page);
+  //await clickBasketAndSelectSeats(page);
 
+  // Simple queue check
+  const queueInfo = await checkIfInQueue(page);
+  if (queueInfo) {
+    console.log(`In queue at position: ${queueInfo.queueOrder}`);
+  }
+
+  // Wait for queue resolution
+  await waitForQueueResolution(page, 600000); // 10 minutes
+  await clickBasketAndSelectSeats(page);
   const success = await formFilling(page);
+  // Handle queue after click with retry
+  //const success = await handleQueueAfterClick(page, async (page) => {
+  //  // Your retry action here
+  //  await clickBasketAndSelectSeats(page);
+  //});
+
   if (success) {
     const pocetListku = process.env.TICKET_COUNT;
     let sklonovaniSlovicka = "listků";

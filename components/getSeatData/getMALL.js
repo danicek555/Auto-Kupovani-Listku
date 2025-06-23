@@ -33,32 +33,45 @@ export async function getMAll(page) {
         return obj;
       });
 
-      const keys = Object.keys(data);
-      const hasValidKeys = keys.some(
-        (k) => k.startsWith("-") || parseInt(k) < 0
-      );
-
-      if (hasValidKeys) {
+      if (process.env.SECURE_DATA === "true") {
+        console.log("Zapl jsem secure");
+        const keys = Object.keys(data);
+        const hasValidKeys = keys.some(
+          (k) => k.startsWith("-") || parseInt(k) < 0
+        );
+        if (hasValidKeys) {
+          await fs.writeFile(
+            "public/data/m_all_data.json",
+            JSON.stringify(data)
+          );
+          if (process.env.CONSOLE_LOGS === "true") {
+            console.log(
+              `✅ Data uložena (pokus ${attempt}) do m_all_data.json v getMALL.js`
+            );
+          }
+          if (process.env.EXECUTION_TIME === "true") {
+            console.timeEnd("⏱️ m_all execution time");
+          }
+          return data;
+        } else {
+          if (process.env.CONSOLE_LOGS === "true") {
+            console.warn(
+              `⚠️ Pokus ${attempt}: Vadná data (např. "0", "1" klíče). Zkouším znovu... v getMALL.js`
+            );
+          }
+          await new Promise((res) => setTimeout(res, waitBetween));
+        }
+      } else {
         await fs.writeFile("public/data/m_all_data.json", JSON.stringify(data));
-
         if (process.env.CONSOLE_LOGS === "true") {
           console.log(
             `✅ Data uložena (pokus ${attempt}) do m_all_data.json v getMALL.js`
           );
         }
-
         if (process.env.EXECUTION_TIME === "true") {
           console.timeEnd("⏱️ m_all execution time");
         }
-
         return data;
-      } else {
-        if (process.env.CONSOLE_LOGS === "true") {
-          console.warn(
-            `⚠️ Pokus ${attempt}: Vadná data (např. "0", "1" klíče). Zkouším znovu... v getMALL.js`
-          );
-        }
-        await new Promise((res) => setTimeout(res, waitBetween));
       }
     } catch (err) {
       if (process.env.CONSOLE_LOGS === "true") {

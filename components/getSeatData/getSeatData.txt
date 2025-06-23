@@ -8,29 +8,6 @@ m_all - vsechny sedadla
 SektorPocetVolnych ukaze sektory a kolik je tam volnych mist
 s_all vsechny sektory
 
-// let allData = []; // Vytvoříme pole pro uchování dat
-
-// export async function getMAll(page) {
-//   // Čekáme, až bude proměnná `m_all` dostupná na stránce
-//   await page.waitForFunction('typeof m_all !== "undefined"'); // Čekáme, až bude `m_all` definována
-
-//   // Extrahujeme data z proměnné `m_all`
-//   const data = await page.evaluate(() => {
-//     console.log("Data z m_all:", window.m_all); // Debug: Zobrazíme obsah `m_all` v konzoli
-//     return window.m_all; // Získáme data z proměnné `m_all` na stránce
-//   });
-
-//   // Zkontrolujeme, jestli jsou data validní
-//   if (data && data.length > 0) {
-//     // Přidáme data do existujícího pole
-//     allData.push(...data); // Používáme spread operátor k přidání všech položek z `m_all` do `allData`
-
-//     // Zobrazíme prvních 50 položek z pole (nebo tolik, kolik je v poli, pokud je méně než 50)
-//     console.log("Prvních 50 položek z array:", allData.slice(0, 50));
-//   } else {
-//     console.log("m_all je prázdná nebo není ve správném formátu");
-//   }
-// }
 
 //  var id_kategoria = m_all[i][3];
 //    var id_sektor = m_all[i][7];

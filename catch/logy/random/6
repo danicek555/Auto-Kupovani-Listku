@@ -1,0 +1,56 @@
+
+
+⏱️ selectSeats.js: 6.592s
+🔁 Začínám rychlý polling tlačítka 'Pokračovat do košíku'... v clickBasketButton.js
+✅ Pokus #1: Kliknutí provedeno, čekám na /Basket...
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #2: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+✅ Pokus #3: Kliknutí provedeno, čekám na /Basket...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️ URL se nezměnila, zkouším znovu...
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován notify alert: "Prosíme, nenechávejte mezi místy mezeru."
+⚠️⚠️⚠️[ALERT] Detekován standardní alert: "×  Prosíme, nenechávejte mezi místy mezeru."
+Error: Execution context was destroyed, most likely because of a navigation.
+    at rewriteError (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:455:15)
+    at async #evaluate (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:388:60)
+    at async ExecutionContext.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/ExecutionContext.js:329:16)
+    at async IsolatedWorld.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/IsolatedWorld.js:89:16)
+    at async CdpJSHandle.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/JSHandle.js:157:20)
+    at async CdpElementHandle.evaluateHandle (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:351:20)
+    at async CSSQueryHandler.queryOne (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/common/QueryHandler.js:137:59)
+    at async CdpElementHandle.$ (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:406:21)
+    at async CdpElementHandle.<anonymous> (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/ElementHandle.js:132:24)
+    at async CdpFrame.$ (/Users/danielmitka/Desktop/Programování/AutoKupovaniListku/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Frame.js:386:20)
+^C%                                                                                                                                                       
+danielmitka@Daniels-MacBook-Air AutoKupovaniListku % 
+
