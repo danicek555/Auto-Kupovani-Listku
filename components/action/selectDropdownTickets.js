@@ -125,7 +125,7 @@ export async function checkIfTicketModalActive(page) {
   }
 }
 
-export async function selectTickets(page) {
+export async function selectDropdownTickets(page) {
   if (process.env.EXECUTION_TIME === "true") {
     console.time("⏱️ Výběr vstupenek");
   }
@@ -355,7 +355,7 @@ async function selectTicketsViaRadio(page, ticketCount) {
 }
 
 // Function to continue to basket after ticket selection
-export async function continueToBasket(page) {
+export async function continueToBasketDropdown(page) {
   try {
     console.log("🛒 Pokračuji do košíku...");
 
@@ -472,4 +472,4 @@ export async function checkTicketSelection(page) {
   }
 }
 
-export default selectTickets;
+export default selectDropdownTickets;

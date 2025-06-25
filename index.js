@@ -15,9 +15,9 @@ import dotenv from "dotenv";
 import { setupBrowser } from "./components/browser/setupBrowser.js";
 import { clickBuyButton } from "./components/action/clickBuyButton.js";
 import {
-  selectTickets,
-  continueToBasket,
-} from "./components/action/selectTickets.js";
+  selectDropdownTickets,
+  continueToBasketDropdown,
+} from "./components/action/selectDropdownTickets.js";
 import setupAlertMonitor from "./components/utils/setupAlertMonitor.js";
 import formFilling from "./components/formFilling/formFilling.js";
 import clickBasketAndSelectSeats from "./components/utils/clickBasketAndSelectSeats.js";
@@ -80,63 +80,50 @@ async function runBot() {
 
   if (process.env.ONLY_CLICK === "false") {
     // NEW: Try ticket selection first
-    const ticketSelectionSuccess = await selectTickets(page);
+    if (process.env.DROPDOWN_TICKETS === "true") {
+      const ticketSelectionSuccess = await selectDropdownTickets(page);
 
-    if (ticketSelectionSuccess) {
-      console.log(
-        `✅ Úspěšně vybráno ${TICKET_COUNT} vstupenek pomocí dropdownu`
-      );
-
-      // Continue to basket
-      const basketSuccess = await continueToBasket(page);
-
-      if (basketSuccess) {
-        console.log("✅ Úspěšně pokračováno do košíku");
-
-        // Continue with form filling
-        const success = await formFilling(page);
-
-        if (success) {
-          let sklonovaniSlovicka = "listků";
-          if (TICKET_COUNT === "1") {
-            sklonovaniSlovicka = "lístek";
-          } else if (parseInt(TICKET_COUNT) > 1 && parseInt(TICKET_COUNT) < 5) {
-            sklonovaniSlovicka = "listky";
-          } else {
-            sklonovaniSlovicka = "listků";
-          }
-          console.log(
-            "🎉 Bot nakoupil " + TICKET_COUNT + " " + sklonovaniSlovicka
-          );
-          console.timeEnd("🔁 Doba spuštění botu");
-        }
-      } else {
+      if (ticketSelectionSuccess) {
         console.log(
-          "Zkouším původní metodu, protože pokračování do košíku nebylo úspěšné..."
+          `✅ Úspěšně vybráno ${TICKET_COUNT} vstupenek pomocí dropdownu`
         );
-        // Fallback to original method
-        await clickBasketAndSelectSeats(page);
-        const success = await formFilling(page);
 
-        if (success) {
-          let sklonovaniSlovicka = "listků";
-          if (TICKET_COUNT === "1") {
-            sklonovaniSlovicka = "lístek";
-          } else if (parseInt(TICKET_COUNT) > 1 && parseInt(TICKET_COUNT) < 5) {
-            sklonovaniSlovicka = "listky";
-          } else {
-            sklonovaniSlovicka = "listků";
+        // Continue to basket
+        const basketSuccess = await continueToBasketDropdown(page);
+
+        if (basketSuccess) {
+          console.log("✅ Úspěšně pokračováno do košíku");
+
+          // Continue with form filling
+          const success = await formFilling(page);
+
+          if (success) {
+            let sklonovaniSlovicka = "listků";
+            if (TICKET_COUNT === "1") {
+              sklonovaniSlovicka = "lístek";
+            } else if (
+              parseInt(TICKET_COUNT) > 1 &&
+              parseInt(TICKET_COUNT) < 5
+            ) {
+              sklonovaniSlovicka = "listky";
+            } else {
+              sklonovaniSlovicka = "listků";
+            }
+            console.log(
+              "🎉 Bot nakoupil " + TICKET_COUNT + " " + sklonovaniSlovicka
+            );
+            console.timeEnd("🔁 Doba spuštění botu");
           }
-          console.log(
-            "🎉 Bot nakoupil " + TICKET_COUNT + " " + sklonovaniSlovicka
-          );
-          console.timeEnd("🔁 Doba spuštění botu");
         }
       }
     } else {
-      console.log(
-        "❌ Nepodařilo se vybrat vstupenky, zkouším původní metodu..."
-      );
+      if (process.env.DROPDOWN_TICKETS === "false") {
+        console.log("🔍 Zkouším normální metodu...");
+      } else {
+        console.log(
+          "❌ Nepodařilo se vybrat vstupenky pomocí dropdownu, zkouším normální metodu..."
+        );
+      }
       // Fallback to original method
       await clickBasketAndSelectSeats(page);
       const success = await formFilling(page);
